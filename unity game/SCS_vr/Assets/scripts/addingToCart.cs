@@ -6,9 +6,13 @@ public class addingToCart : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "ingredient")
+        if (col.gameObject.tag == "nonvegan")
         {
-            Debug.Log("collision detected");
+            Debug.Log("nonvegan collision detected");
+        }
+        else if (col.gameObject.tag == "vegan")
+        {
+            Debug.Log("vegan collision detected");
         }
     }
 }
