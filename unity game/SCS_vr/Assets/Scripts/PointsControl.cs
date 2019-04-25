@@ -4,45 +4,45 @@ using System.Collections;
 
 public class PointsControl : MonoBehaviour
 {
-    private int popularity, greenPoints;
-    private float money;
+    public int popularity, greenPoints;
+    public float money;
     public Text moneyText, popText, greenText;
 
     void Start()
     {
-        money = 0; //some value
-        greenPoints = 0; //some value
-        popularity = 0; //some value
-        setText();
+        money = 20; //some value
+        greenPoints = 10; //some value
+        popularity = 5; //some value
+        SetText();
     }
 
     //geters and setters
-    public float getMoney()
+    public float GetMoney()
     {
         return money;
     }
 
-    public void setMoney(float mon)
+    public void SetMoney(float mon)
     {
         money = mon;
     }
 
-    public int getGreenPoints()
+    public int GetGreenPoints()
     {
         return greenPoints;
     }
 
-    public void setGreenPoints(int green)
+    public void SetGreenPoints(int green)
     {
         greenPoints = green;
     }
 
-    public int getPop()
+    public int GetPop()
     {
         return popularity;
     }
 
-    public void setPop(int pop)
+    public void SetPop(int pop)
     {
         popularity = pop;
     }
@@ -50,7 +50,7 @@ public class PointsControl : MonoBehaviour
     //Other functions start here
 
     //use to update whenever changes are made → make global
-    public void setText()
+    private void SetText()
     {
         moneyText.text = "Money: " + money.ToString();
         greenText.text = "Green Points: "  + greenPoints.ToString();
@@ -59,20 +59,20 @@ public class PointsControl : MonoBehaviour
 
     //Function to be used when buying products to make tacos
     //Updates money & green points
-    public void buyProducts (float cost, int green)
+    public void BuyProducts (float cost, int green)
     {
         money -= cost;
         greenPoints += green;//green should be positive or negative
-        setText();
+        SetText();
 	}
 
     //Used when a customer receives their food
     //Updates money & customer popularity points
-    public void serveCustomer (float earn, int satisfaction)
+    public void ServeCustomer (float earn, int satisfaction)
     { 
         money += earn;
         popularity += satisfaction;//make satis positive or negative based on likes/dislikes
-        setText();
+        SetText();
     }
 
 }

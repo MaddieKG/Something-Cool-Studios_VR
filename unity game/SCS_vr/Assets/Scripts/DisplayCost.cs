@@ -5,30 +5,45 @@ using UnityEngine.UI;
 
 public class DisplayCost : MonoBehaviour {
 
-    public Canvas costDisplay;
+    private GameObject costDisplay;
     private bool isShowing;
-    public Text costText;
+    public Text costText, remainingMonText;
+    private GameObject controller;
+    private float monRemaining, cost;
 
 	// Use this for initialization
-	void Start () { 
-        costDisplay = GetComponent<Canvas> ();
-        isShowing = false;
-	}
+	void Start () {
+        controller = GameObject.Find("GameController");
+        costDisplay = GameObject.Find("CostDisplay");
+        PointsControl controlScript = controller.GetComponent<PointsControl>();
+
+        costDisplay.SetActive(true);
+        monRemaining = controlScript.money;
+        cost = 0;
+        SetText(monRemaining, cost);
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		if (isShowing == true)
+
+    public void SetCost (float cost) {
+        monRemaining -= cost;
+        SetText(monRemaining, cost);
+    }
+
+    private void HideCost (bool inBasket)
+    {
+        if (inBasket == true)
         {
-            costDisplay.enabled = true;
-            //may need to change costDisplay.enabled to costDisplay.SetActive(isShowing)
+            costDisplay.SetActive(true);
         }
         else
         {
-            costDisplay.enabled = false;
+            costDisplay.SetActive(false);
         }
-	}
+    }
 
-    public void setCost (float cost) {
+    private void SetText(float money, float cost)
+    {
         costText.text = "Total cost: " + cost.ToString();
+        remainingMonText.text = "Remaining Money: " + money.ToString();
     }
 }
