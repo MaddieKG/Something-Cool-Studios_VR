@@ -6,5 +6,5 @@ public class spawningTaco : MonoBehaviour
 {
     public Transform Spawnpoint;
     public GameObject Taco;
-    void OnTriggerEnter() => Instantiate(Taco, Spawnpint.position, Spawnpoint.rotation);
+    void OnTriggerEnter() => Instantiate(Taco, Spawnpoint.position, Spawnpoint.rotation);
 }
