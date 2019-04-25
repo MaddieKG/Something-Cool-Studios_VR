@@ -5,6 +5,7 @@ using UnityEngine;
 public class addingToCart : MonoBehaviour
 {
     public bool one, two, three;
+    public Vector3 cartPos;
 
     void Start()
     {
