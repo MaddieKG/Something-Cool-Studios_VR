@@ -5,14 +5,14 @@ using System.Collections;
 public class PointsControl
 {
 
-    private int popularity, green;
+    private int popularity, greenPoints;
     private float money;
     public Text moneyText, popText, greenText;
 
     void Start()
     {
         money = 0; //some value
-        green = 0; //some value
+        greenPoints = 0; //some value
         popularity = 0; //some value
         setText();
     }
@@ -22,9 +22,9 @@ public class PointsControl
         return money;
     }
 
-    public int getGreen()
+    public int getGreenPoints()
     {
-        return green;
+        return greenPoints;
     }
 
     public int getPop()
@@ -36,26 +36,23 @@ public class PointsControl
     void setText()
     {
         moneyText.text = "Money: " + money.ToString();
-        greenText.text = "Green Points: "  + green.ToString();
-        popText.text = "Popularity: " +popularity.ToString();
+        greenText.text = "Green Points: "  + greenPoints.ToString();
+        popText.text = "Popularity: " + popularity.ToString();
     }
 
-    public void buyProducts (float cost)
+    public void buyProducts (float cost, int green)
     {
         money -= cost;
+        greenPoints += green;//green should be positive or negative
         setText();
 	}
 
-    public void serveCustomer (float price, int satisfaction)
+    public void serveCustomer (float earn, int satisfaction)
     { 
-        money += price;
+        money += earn;
         popularity += satisfaction;//make satis positive or negative based on likes/dislikes
         setText();
     }
-   /** void customerServed ()
-    {
-        money += value;
-        popularity += value;
-        setText();
-    }**/
+    
+   
 }
