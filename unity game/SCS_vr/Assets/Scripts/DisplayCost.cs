@@ -7,7 +7,7 @@ public class DisplayCost : MonoBehaviour {
 
     public Canvas costDisplay;
     private bool isShowing;
-    public Text costText
+    public Text costText;
 
 	// Use this for initialization
 	void Start () { 
