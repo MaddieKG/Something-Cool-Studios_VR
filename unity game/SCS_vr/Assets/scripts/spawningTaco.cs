@@ -8,7 +8,6 @@ public class spawningTaco : MonoBehaviour
     public GameObject Taco;
     void OnTriggerEnter()
     {
-        Debug.Log("lever hit");
         Instantiate(Taco, Spawnpoint.position, Spawnpoint.rotation);
     }
 }
