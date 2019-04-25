@@ -6,5 +6,12 @@ public class spawningTaco : MonoBehaviour
 {
     public Transform Spawnpoint;
     public GameObject Taco;
-    void OnTriggerEnter() => Instantiate(Taco, Spawnpoint.position, Spawnpoint.rotation);
+    void OnCollisionEnter(Collision col)
+    {
+      if(col.gameObject.name == "lever")
+      {
+        Debug.Log("lever hit");
+        Instantiate(Taco, Spawnpoint.position, Spawnpoint.rotation);
+      }
+    }
 }
