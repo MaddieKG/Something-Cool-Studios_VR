@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class addingToCart : MonoBehaviour
 {
-    public int one = 0;
-    public int two = 0;
-    public int three = 0;
+    public bool one, two, three;
+
+    void Start()
+    {
+        one = false;
+        two = false;
+        three = false;
+    }
 
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "ingredient1")
         {
-            if(one >= 1)
+            if (one == true)
             {
               Debug.Log("ingredient1 already picked");
               col.gameObject.transform.position = new Vector3(-1,1,-2);
             }
-            if (one == 0)
+            else if (one == false)
             {
                 if (col.gameObject.name == "nonvegan1")
                 {
@@ -29,18 +34,17 @@ public class addingToCart : MonoBehaviour
                     Debug.Log("vegan1 collision detected");
                     //change points
                 }
-                one += 1;
+                one = true;
             }
-
         }
         else if (col.gameObject.tag == "ingredient2")
         {
-          if(two >= 1)
+          if(two == true)
           {
             Debug.Log("ingredient2 already picked");
             col.gameObject.transform.position = new Vector3(-1,1,-2);
           }
-          if (two == 0)
+          else if (two == false)
           {
               if (col.gameObject.name == "nonvegan2")
               {
@@ -52,18 +56,17 @@ public class addingToCart : MonoBehaviour
                   Debug.Log("vegan2 collision detected");
                   //change points
               }
-              two += 1;
-          }
-
+                two = true;
+            }
         }
         else if (col.gameObject.tag == "ingredient3")
         {
-          if(three >= 1)
+          if(three == true)
           {
             Debug.Log("ingredient3 already picked");
             col.gameObject.transform.position = new Vector3(-1,1,-2);
           }
-          if (three == 0)
+          else if (three == false)
           {
               if (col.gameObject.name == "nonvegan3")
               {
@@ -75,9 +78,8 @@ public class addingToCart : MonoBehaviour
                   Debug.Log("vegan3 collision detected");
                   //change points
               }
-              three += 1;
-          }
-
+                three = true;
+            }
         }
     }
 }
