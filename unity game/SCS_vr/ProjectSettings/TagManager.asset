@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - nonvegan
-  - vegan
+  - ingredient1
+  - ingredient2
+  - ingredient3
   layers:
   - Default
   - TransparentFX
