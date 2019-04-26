@@ -11,11 +11,17 @@ public class StartControl : MonoBehaviour {
         start = false;
 	}
 
-	
-	void Update () {
-	    //may need for future use
-	}
+    private void OnTriggerEnter()
+    {
+        start = !start;
+    }
 
+    /***
+     
+    void Update () {
+        //may need for future use
+    }
+    
     //Is button colliding with player hand?
     //Returns bool
     private bool IsHand(Collider other)
@@ -35,5 +41,5 @@ public class StartControl : MonoBehaviour {
             Debug.Log("Yay! A hand collided!");
             start = !start;
         }
-    }
+    }***/
 }
