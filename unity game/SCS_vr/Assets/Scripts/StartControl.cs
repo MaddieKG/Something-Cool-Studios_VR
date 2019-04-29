@@ -8,6 +8,7 @@ public class StartControl : MonoBehaviour {
     public bool start;
     public Text buttonDisplay;
 	//object this is attached to needs a RigidBody
+    //please attach to a StartButton object
 
 	void Start () {
         start = false;
