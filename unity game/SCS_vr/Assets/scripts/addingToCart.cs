@@ -9,6 +9,7 @@ public class addingToCart : MonoBehaviour
 
     void Start()
     {
+        //ingredients from each category are in basket
         one = false;
         two = false;
         three = false;
