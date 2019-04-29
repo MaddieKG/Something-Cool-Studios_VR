@@ -9,15 +9,8 @@ public class all_cust_opts : ScriptableObject {
 	int num_customers;
 	string[] names = {"Paula", "Fred", "Pablo", "Samantha", "Shawn", "Sianna", "Raymond", "Riley", "Calvin", "Ms. Marvel", "Emily", "Caped Crusader", "Bruce","Peter","Shawna",
 										"John","Sarah","Barry", "Finn", "Mr. Man", "Claire", "A. Alex"};
-
-	// Use this for initialization
-	void Start () {
-	}
-
+										
 	public void create_customers() {
-		//Random rand = new Random();
-		//this.num_customers = .get_num_spawn_customers();
-
 		string prefGreens = Customer_Spawner.GREEN;
 		string prefMeat = Customer_Spawner.NONGREEN;
 
@@ -65,14 +58,4 @@ public class all_cust_opts : ScriptableObject {
 		return preferences;
 	}
 
-
-
-
-
-
-
-	// Update is called once per frame
-	void Update () {
-
-	}
 }
