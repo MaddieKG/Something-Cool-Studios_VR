@@ -4934,7 +4934,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.478
+      value: 0.659
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -13805,6 +13805,7 @@ MonoBehaviour:
   one: 0
   two: 0
   three: 0
+  cartPos: {x: 0, y: 0, z: 0}
 --- !u!114 &1316346115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20502,6 +20503,22 @@ Transform:
   m_Father: {fileID: 1984701903}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -2.493, y: -14.900001, z: -9.286}
+--- !u!1 &1885405420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: ce816f2e6abb0504092c23ed9b970dfd,
+    type: 2}
+  m_PrefabInternal: {fileID: 478438790}
+--- !u!114 &1885405422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1885405420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d50dd0d40d6c864dbd9467110990dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1890855833
 GameObject:
   m_ObjectHideFlags: 0
