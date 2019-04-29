@@ -13,14 +13,18 @@ public class Customer_Spawner : ScriptableObject
     public int numberOfPrefabsToCreate;
     public Vector3[] spawnPoints;
 
-    public cPreferenceManager mealPrefs;
+    public all_cust_opts our_customers;
 
-}
-
-int public get_num_spawn_customers () {
+public int get_num_spawn_customers () {
 	return numberOfPrefabsToCreate;
 }
 
-void public set_num_spawn_customers(int x) {
+public void set_num_spawn_customers(int x) {
 	this.numberOfPrefabsToCreate = x;
+}
+
+public void set_our_customers() {
+	our_customers.preferences = get_customers_with_prefs();
+}
+
 }

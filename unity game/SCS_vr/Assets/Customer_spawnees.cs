@@ -10,13 +10,14 @@ public class AIOrderBuilder : MonoBehaviour
     public Customer_Spawner custInstance;
 
     int instanceNum = 0;
+
     // Start is called before the first frame update
     void Start()
     {
           SpawnCustModels(); //Call in another class
     }
 
-    void SpawnCustModels() {
+    public void SpawnCustModels() {
       int currentSpawnIndex = 0;
 
       for (int i = 0; i < custInstance.numberOfPrefabsToCreate; i++) {
@@ -33,5 +34,6 @@ public class AIOrderBuilder : MonoBehaviour
 
         ++instanceNum;
       }
-    }
+
+		}
 }

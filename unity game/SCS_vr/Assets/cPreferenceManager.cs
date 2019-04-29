@@ -10,15 +10,15 @@ public class cPreferenceManager : MonoBehaviour
   private string prefGreens;
   private string prefMeat;
 
-	string public get_name () {
+	public string get_name () {
 	  return customerName;
 	}
 
-	string public get_pref_greens() {
+	public string get_pref_greens() {
 	  return prefGreens;
 	}
 
-	string public get_pref_meat() {
+	public string get_pref_meat() {
 	  return prefMeat;
 	}
 
