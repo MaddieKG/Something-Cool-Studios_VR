@@ -24,7 +24,7 @@ public void set_num_spawn_customers(int x) {
 }
 
 public void set_our_customers() {
-	our_customers.preferences = get_customers_with_prefs();
+	our_customers.set_customers_with_prefs();
 }
 
 }

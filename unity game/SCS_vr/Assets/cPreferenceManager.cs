@@ -14,6 +14,18 @@ public class cPreferenceManager : MonoBehaviour
 	  return customerName;
 	}
 
+	public void set_name(string name) {
+		this.customerName = name;
+	}
+
+	public void set_pref_meat(string pref) {
+		this.prefMeat = pref;
+	}
+
+	public void set_pref_greens(string pref) {
+		this.prefGreens = pref;
+	}
+
 	public string get_pref_greens() {
 	  return prefGreens;
 	}

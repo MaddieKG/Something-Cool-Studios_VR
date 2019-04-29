@@ -15,50 +15,57 @@ public class all_cust_opts : ScriptableObject {
 	}
 
 	public void create_customers() {
-		Random rand = new Random();
+		//Random rand = new Random();
 		//this.num_customers = .get_num_spawn_customers();
 
 		string prefGreens = Customer_Spawner.GREEN;
 		string prefMeat = Customer_Spawner.NONGREEN;
 
 		for (int i = 0; i < 10; i++) {
-			int index = rand.Next(names.Length);
-			preferences[i].customerName = preferences[i];
+			int index = Random.Range(0, preferences.Length);
+			preferences[i] = new cPreferenceManager();
+			preferences[i].set_name(names[index]);
 			 if (i==1) { 	//Can clean this up later-- values will repeat over
-				prefGreens = NONGREEN;
+				prefGreens = Customer_Spawner.NONGREEN;
 			} else if (i==2) {
-				prefMeat = GREEN;
+				prefMeat = Customer_Spawner.GREEN;
 			} else if (i==3) {
-				prefGreens = GREEN;
-				prefMeat = GREEN;
+				prefGreens = Customer_Spawner.GREEN;
+				prefMeat = Customer_Spawner.GREEN;
 			} else if (i==4) {
-				prefGreens = GREEN;
-				prefMeat = NONGREEN;
+				prefGreens = Customer_Spawner.GREEN;
+				prefMeat = Customer_Spawner.NONGREEN;
 			} else if (i==5) {
-				prefGreens = NONGREEN;
-				prefMeat = NONGREEN;
+				prefGreens = Customer_Spawner.NONGREEN;
+				prefMeat = Customer_Spawner.NONGREEN;
 			} else if (i==6) {
-				prefGreens = GREEN;
-				prefMeat = GREEN;
+				prefGreens = Customer_Spawner.GREEN;
+				prefMeat = Customer_Spawner.GREEN;
 			} else if (i==7) {
-				prefGreens = NONGREEN;
-				prefMeat = NONGREEN;
+				prefGreens = Customer_Spawner.NONGREEN;
+				prefMeat = Customer_Spawner.NONGREEN;
 			} else if (i==8) {
-				prefGreens = GREEN;
-				prefMeat = GREEN;
+				prefGreens = Customer_Spawner.GREEN;
+				prefMeat = Customer_Spawner.GREEN;
 			} else if (i==9) {
-				prefGreens = GREEN;
-				prefMeat = GREEN;
+				prefGreens = Customer_Spawner.GREEN;
+				prefMeat = Customer_Spawner.GREEN;
 			}
-			preferences[i].prefMeat = prefMeat;
-			preferences[i].prefGreens = prefGreens;
+			preferences[i].set_pref_meat(prefMeat);
+			preferences[i].set_pref_greens(prefGreens);
 		}
 	}
 
-	public cPreferenceManager[] get_customers_with_prefs() {
+	public cPreferenceManager[] set_customers_with_prefs() {
 		create_customers();
 		return preferences;
 	}
+
+	public cPreferenceManager[] get_customers_with_prefs() {
+		return preferences;
+	}
+
+
 
 
 

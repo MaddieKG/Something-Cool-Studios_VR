@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIOrderBuilder : MonoBehaviour
+public class Customer_spawnees : MonoBehaviour
 {
     public GameObject customer; //obj to substantiate
 
