@@ -1,20 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ProductData : MonoBehaviour {
+public class Product
+{
+    public int money, green, popularity;
 
-    public class Product
+    public Product(int m, int g, int p)
     {
-        public float cost;
-        public int green;
-        public int happiness;
-
-        public Product(float c, int g, int h)
-        {
-            cost = c;
-            green = g;
-            happiness = h;
-        }
+        money = m;
+        green = g;
+        popularity = p;
     }
 }
