@@ -28,13 +28,13 @@ public class addingToCart : MonoBehaviour
             else if (one == false)
             {
                 //Debug.Log("line 29(f): " + one);
-                if (col.gameObject.name == "nonvegan1")
+                if (col.gameObject.name == "beef")
                 {
                     //Debug.Log("nonvegan1 collision detected");
                     Destroy(col.gameObject);
                     //change points
                 }
-                else if (col.gameObject.name == "vegan1")
+                else if (col.gameObject.name == "chicken")
                 {
                     //Debug.Log("vegan1 collision detected");
                     Destroy(col.gameObject);
@@ -53,13 +53,13 @@ public class addingToCart : MonoBehaviour
           }
           else if (two == false)
           {
-              if (col.gameObject.name == "nonvegan2")
+              if (col.gameObject.name == "gmoLettuce")
               {
                     //Debug.Log("nonvegan2 collision detected");
                     Destroy(col.gameObject);
                     //change points
                 }
-              else if (col.gameObject.name == "vegan2")
+              else if (col.gameObject.name == "orgLettuce")
               {
                     //Debug.Log("vegan2 collision detected");
                     Destroy(col.gameObject);
@@ -68,6 +68,7 @@ public class addingToCart : MonoBehaviour
                 two = true;
             }
         }
+        /**
         else if (col.gameObject.tag == "ingredient3")
         {
           if(three == true)
@@ -91,6 +92,6 @@ public class addingToCart : MonoBehaviour
                 }
                 three = true;
             }
-        }
+        }**/
     }
 }
