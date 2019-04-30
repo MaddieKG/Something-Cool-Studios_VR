@@ -48,7 +48,7 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        startButton = GameObject.Find("StartButton");//need a StartButton object
+        /**startButton = GameObject.Find("StartButton");//need a StartButton object
         StartControl startScript = startButton.GetComponent<StartControl>();
         if (startScript.start == true)
         {
@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour {
         else
         {
             
-        }
+        }**/
 	}
 
     private void setObjective()
@@ -107,7 +107,7 @@ public class GameController : MonoBehaviour {
     //Functions to be used when buying products to make tacos
 
     //Updates money & green points
-    public void BuyProducts(int cost, int green)
+    public void buyProducts(int cost, int green)
     {
         money -= cost;
         greenPoints += green;//green should be positive or negative
@@ -116,7 +116,7 @@ public class GameController : MonoBehaviour {
 
     //Used when a customer receives their food
     //Updates money & customer popularity points
-    public void ServeCustomer(int earn, int satisfaction)
+    public void serveCustomer(int earn, int satisfaction)
     {
         money += earn;
         popularity += satisfaction;//make satis positive or negative based on likes/dislikes

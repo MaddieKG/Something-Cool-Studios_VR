@@ -16,15 +16,16 @@ public class ProductController : MonoBehaviour {
 	void Update () {
         startButton = GameObject.Find("StartButton");//need a StartButton object
         StartControl startScript = startButton.GetComponent<StartControl>();
+        /**Need to fix
         if (startScript.start == true)
         {
-            Destroy(gameObject.GetComponent<Rigidbody>());
+            Destroy(gameObject.GetComponent<Rigidbody>());//this causes game to stop working
             //rb.detectCollisions = false;
         }
         else
         {
             gameObject.AddComponent<Rigidbody>();
             //rb.detectCollisions = true;
-        }
+        }**/
     }
 }

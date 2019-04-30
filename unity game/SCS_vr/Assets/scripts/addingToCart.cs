@@ -4,18 +4,43 @@ using UnityEngine;
 
 public class addingToCart : MonoBehaviour
 {
+    private GameObject startButton, controller;
+    private bool onPress;
     public bool one, two, three;
     public Vector3 cartPos;
+    public int totalCost, totalGreen, itemsInCart;
 
     void Start()
     {
+        controller = GameObject.Find("GameController");
+
         one = false;
         two = false;
         three = false;
+        onPress = true;
+        totalCost = 0;
+        totalGreen = 0;
+        itemsInCart = 0;
+    }
+
+    void Update()
+    {
+        startButton = GameObject.Find("StartButton");
+        StartControl startScript = startButton.GetComponent<StartControl>();
+
+        controller = GameObject.Find("GameController");
+        GameController controlScript = controller.GetComponent<GameController>();
+
+        if (startScript.start == true && itemsInCart > 1 && onPress == true)
+        {
+            onPress = false;
+            controlScript.buyProducts(totalCost, totalGreen);
+        }
     }
 
     void OnCollisionEnter(Collision col)
     {
+        ProductController proControl = gameObject.GetComponent<ProductController>();
         //Debug.Log("line  18: "+ one);
         if (col.gameObject.tag == "ingredient1")
         {
@@ -31,14 +56,18 @@ public class addingToCart : MonoBehaviour
                 if (col.gameObject.name == "beef")
                 {
                     //Debug.Log("nonvegan1 collision detected");
+                    /**totalCost += proControl.money;
+                    totalGreen += proControl.green;
+                    itemsInCart += 1;**/
                     Destroy(col.gameObject);
-                    //change points
                 }
                 else if (col.gameObject.name == "chicken")
                 {
                     //Debug.Log("vegan1 collision detected");
+                    /**totalCost += proControl.money;
+                    totalGreen += proControl.green;
+                    itemsInCart += 1;**/
                     Destroy(col.gameObject);
-                    //change points
                 }
                 one = true;
                 //Debug.Log("line 41(t): " + one);
@@ -56,14 +85,20 @@ public class addingToCart : MonoBehaviour
               if (col.gameObject.name == "gmoLettuce")
               {
                     //Debug.Log("nonvegan2 collision detected");
+                    /**
+                    totalCost += proControl.money;
+                    totalGreen += proControl.green;
+                    itemsInCart += 1;**/
                     Destroy(col.gameObject);
-                    //change points
                 }
               else if (col.gameObject.name == "orgLettuce")
               {
                     //Debug.Log("vegan2 collision detected");
+                    /**
+                    totalCost += proControl.money;
+                    totalGreen += proControl.green;
+                    itemsInCart += 1;**/
                     Destroy(col.gameObject);
-                    //change points
                 }
                 two = true;
             }
