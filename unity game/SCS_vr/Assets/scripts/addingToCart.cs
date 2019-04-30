@@ -18,7 +18,7 @@ public class addingToCart : MonoBehaviour
         controller = GameObject.Find("UIController");
         UIController controlUI = controller.GetComponent<UIController>();
         proController = GameObject.Find("ProductController");
-        ProductController proControl = proController.getComponent<ProductController>();
+        ProductController proControl = proController.GetComponent<ProductController>();
 
         one = false;
         two = false;
@@ -32,11 +32,13 @@ public class addingToCart : MonoBehaviour
     void Update()
     {
         //Debug.Log(itemsInCart.ToString());
+        proController = GameObject.Find("ProductController");
+        ProductController proControl = proController.GetComponent<ProductController>();
         startButton = GameObject.Find("StartButton");
         StartControl startScript = startButton.GetComponent<StartControl>();
         
 
-        if (startScript.start == true && itemsInCart > 1 && onPress == true)
+        if (itemsInCart > 1 && startScript.start == true && onPress == true)
         {
             totalCost *= 2;
             onPress = false;

@@ -70,17 +70,17 @@ public class UIController : MonoBehaviour {
     }
     
     //Sets text in cost display UI to correct values
-    private void setCostText(int money, float cost)
+    public void setCostText(int money, float cost)
     {
         costText.text = "Total cost: " + cost.ToString();
         remainingMonText.text = "Remaining Money: " + money.ToString();
     }
 
     //use to update whenever changes are made → make global
-    private void setPointText()
+    public void setPointText()
     {
-        moneyText.text = "Money: " + money.ToString();
-        greenText.text = "Green Points: " + greenPoints.ToString();
-        popText.text = "Popularity: " + popularity.ToString();
+        moneyText.text = "Money: " + pointsData.Money.ToString();
+        greenText.text = "Green Points: " + pointsData.Green.ToString();
+        popText.text = "Popularity: " + pointsData.Popularity.ToString();
     }
 }

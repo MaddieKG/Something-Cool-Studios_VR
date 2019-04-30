@@ -7,13 +7,13 @@ public class ProductController : MonoBehaviour {
     public PointsData pointsData;
 
     public int money, green;
-    private GameObject startButton, UIcontroller;
+    private GameObject startButton, controller;
     //private RigidBody rb;
 
     // Use this for initialization
     void Start() {
-        UIcontroller = GameObject.Find("UI Controller");
-        UIController controlUI = UIcontroller.GetComponent<UIcontroller>();
+        controller = GameObject.Find("UIController");
+        UIController controlUI = controller.GetComponent<UIController>();
         //rb = gameObject.GetComponent<RigidBody>();
 	}
 	
@@ -35,10 +35,13 @@ public class ProductController : MonoBehaviour {
         }**/
     }
 
-    void buyProducts(int cost, int green)
+    public void buyProducts(int cost, int green)
     {
+        controller = GameObject.Find("UIController");
+        UIController controlUI = controller.GetComponent<UIController>();
         pointsData.money -= cost;
         pointsData.green += green;
-        controlUI.SetPointsText();
+        controlUI.setPointText();
+        Debug.Log("Bought!");
     }
 }
