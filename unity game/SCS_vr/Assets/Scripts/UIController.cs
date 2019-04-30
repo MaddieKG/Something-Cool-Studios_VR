@@ -84,4 +84,16 @@ public class UIController : MonoBehaviour {
         greenText.text = "Green Points: " + pointsData.Green.ToString();
         popText.text = "Popularity: " + pointsData.Popularity.ToString();
     }
+
+    public void updateTranslator(bool likes)
+    {
+        if (likes == true)
+        {
+            message.text = ":)";
+        }
+        else
+        {
+            message.text = ":(";
+        }
+    }
 }
