@@ -8,8 +8,7 @@ public class PointsData : ScriptableObject{
     [SerializeField]
     public int money = 50;
     public int green = 50;
-    public int popularity
-        = 50;
+    public int popularity = 50;
 
     
 

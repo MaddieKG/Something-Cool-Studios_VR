@@ -14,6 +14,4 @@ public class PointsController : MonoBehaviour {
         pointsData.popularity = 50;
 	}
 	
-
-
 }
