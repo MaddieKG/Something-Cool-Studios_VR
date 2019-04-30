@@ -40,7 +40,7 @@ public class UIController : MonoBehaviour {
 
         //sets all text
         setObjective();
-        setCostText(monRemaining, cost);
+        setCostText(cost);
         setPointText();
     }
 
@@ -53,7 +53,7 @@ public class UIController : MonoBehaviour {
     public void setCost(int cost)
     {
         monRemaining -= cost;
-        setCostText(monRemaining, cost);
+        setCostText(cost);
     }
 
     //Hides cost UI whenever buying is not active
@@ -70,10 +70,11 @@ public class UIController : MonoBehaviour {
     }
     
     //Sets text in cost display UI to correct values
-    public void setCostText(int money, float cost)
+    public void setCostText(int cost)
     {
         costText.text = "Total cost: " + cost.ToString();
-        remainingMonText.text = "Remaining Money: " + money.ToString();
+        monRemaining = pointsData.Money - cost;
+        remainingMonText.text = "Remaining Money: " + monRemaining.ToString();
     }
 
     //use to update whenever changes are made → make global

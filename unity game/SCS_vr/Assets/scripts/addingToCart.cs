@@ -6,6 +6,8 @@ public class addingToCart : MonoBehaviour
 {
     [SerializeField]
     public ProductData beefData, chickenData, gmoLettData, orgLettData;
+    public string currentMeat;
+    public string currentLettuce;
 
     private GameObject startButton, controller, proController;
     private bool onPress;
@@ -50,6 +52,10 @@ public class addingToCart : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         ProductController proControl = gameObject.GetComponent<ProductController>();
+
+        controller = GameObject.Find("UIController");
+        UIController controlUI = controller.GetComponent<UIController>();
+
         //Debug.Log("line  18: "+ one);
         if (col.gameObject.tag == "ingredient1")
         {
@@ -65,20 +71,24 @@ public class addingToCart : MonoBehaviour
                 if (col.gameObject.name == "beef")
                 {
                     //Debug.Log("nonvegan1 collision detected");
-                    totalCost += beefData.Money;
+                    totalCost += beefData.Money * 2;
                     Debug.Log(totalCost.ToString());
-                    totalGreen += beefData.Green;
+                    totalGreen += beefData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
+                    currentMeat = "anti";
+                    controlUI.setCostText(totalCost);
                 }
                 else if (col.gameObject.name == "chicken")
                 {
                     //Debug.Log("vegan1 collision detected");
                     totalCost += chickenData.Money;
                     Debug.Log(totalCost.ToString());
-                    totalGreen += chickenData.Green;
+                    totalGreen += chickenData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
+                    currentMeat = "pro";
+                    controlUI.setCostText(totalCost);
                 }
                 one = true;
                 //Debug.Log("line 41(t): " + one);
@@ -97,21 +107,25 @@ public class addingToCart : MonoBehaviour
               {
                     //Debug.Log("nonvegan2 collision detected");
 
-                    totalCost += gmoLettData.Money;
+                    totalCost += gmoLettData.Money * 2;
                     Debug.Log(totalCost.ToString());
-                    totalGreen += gmoLettData.Green;
+                    totalGreen += gmoLettData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
+                    currentLettuce = "anti";
+                    controlUI.setCostText(totalCost);
                 }
               else if (col.gameObject.name == "orgLettuce")
               {
                     //Debug.Log("vegan2 collision detected");
 
-                    totalCost += orgLettData.Money;
+                    totalCost += orgLettData.Money * 2;
                     Debug.Log(totalCost.ToString());
-                    totalGreen += orgLettData.Green;
+                    totalGreen += orgLettData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
+                    currentLettuce = "pro";
+                    controlUI.setCostText(totalCost);
                 }
                 two = true;
             }
