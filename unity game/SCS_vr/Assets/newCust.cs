@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
 
-public class cameraPos : MonoBehaviour {
+public class newCust : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		UnityEngine.XR.InputTracking.Recenter();
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
 	}
 }
