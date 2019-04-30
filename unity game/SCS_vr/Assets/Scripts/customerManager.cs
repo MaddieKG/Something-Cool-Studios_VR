@@ -8,10 +8,11 @@ public class customerManager : MonoBehaviour {
     public GameObject current;
     public GameObject pos;
 
-    public GameObject UIcontrol;
+    public GameObject UIcontrol, cartControl;
 
     void Start()
     {
+        cartControl = GameObject.Find("cart");
         UIcontrol = GameObject.Find("UIController");
     }
 
@@ -36,9 +37,13 @@ public class customerManager : MonoBehaviour {
     void OnTriggerEnter()
     {
         SpawnCustomer();
-        bool likes = true;
+        addingToCart cartScript = cartControl.GetComponent<addingToCart>();
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();
-        controller.updateTranslator(likes);
+        if (cartScript.currentLettuce == "pro" && cartScript.currentMeat == "pro")
+        {
+            Debug.Log("YAY0");
+            controller.updateTranslator(true);
+        }
     }
 }
