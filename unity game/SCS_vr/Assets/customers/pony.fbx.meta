@@ -1,103 +1,97 @@
 fileFormatVersion: 2
-guid: c806f00da7a022a4a9167d71b0bb8836
+guid: 84e62c6d3afbc2c47a898e869be0a25b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: baseball_cap
+    100000: base
     100002: body
     100004: clothing
-    100006: //RootNode
-    100008: courier
-    100010: Game_Head
-    100012: Game_Hips
-    100014: Game_LeftArm
-    100016: Game_LeftFoot
-    100018: Game_LeftForeArm
-    100020: Game_LeftHand
-    100022: Game_LeftHandIndex1
-    100024: Game_LeftHandIndex2
-    100026: Game_LeftHandMiddle1
-    100028: Game_LeftHandMiddle2
-    100030: Game_LeftHandThumb1
-    100032: Game_LeftHandThumb2
-    100034: Game_LeftLeg
-    100036: Game_LeftShoulder
-    100038: Game_LeftUpLeg
-    100040: Game_Neck
-    100042: Game_RightArm
-    100044: Game_RightFoot
-    100046: Game_RightForeArm
-    100048: Game_RightHand
-    100050: Game_RightHandIndex1
-    100052: Game_RightHandIndex2
-    100054: Game_RightHandMiddle1
-    100056: Game_RightHandMiddle2
-    100058: Game_RightHandThumb1
-    100060: Game_RightHandThumb2
-    100062: Game_RightLeg
-    100064: Game_RightShoulder
-    100066: Game_RightUpLeg
-    100068: Game_Spine
-    100070: Game_Spine1
-    100072: Game_Spine2
-    100074: hair06
-    400000: baseball_cap
+    100006: Game_Head
+    100008: Game_Hips
+    100010: Game_LeftArm
+    100012: Game_LeftFoot
+    100014: Game_LeftForeArm
+    100016: Game_LeftHand
+    100018: Game_LeftHandIndex1
+    100020: Game_LeftHandIndex2
+    100022: Game_LeftHandMiddle1
+    100024: Game_LeftHandMiddle2
+    100026: Game_LeftHandThumb1
+    100028: Game_LeftHandThumb2
+    100030: Game_LeftLeg
+    100032: Game_LeftShoulder
+    100034: Game_LeftUpLeg
+    100036: Game_Neck
+    100038: Game_RightArm
+    100040: Game_RightFoot
+    100042: Game_RightForeArm
+    100044: Game_RightHand
+    100046: Game_RightHandIndex1
+    100048: Game_RightHandIndex2
+    100050: Game_RightHandMiddle1
+    100052: Game_RightHandMiddle2
+    100054: Game_RightHandThumb1
+    100056: Game_RightHandThumb2
+    100058: Game_RightLeg
+    100060: Game_RightShoulder
+    100062: Game_RightUpLeg
+    100064: Game_Spine
+    100066: Game_Spine1
+    100068: Game_Spine2
+    100070: hair03
+    100072: //RootNode
+    400000: base
     400002: body
     400004: clothing
-    400006: //RootNode
-    400008: courier
-    400010: Game_Head
-    400012: Game_Hips
-    400014: Game_LeftArm
-    400016: Game_LeftFoot
-    400018: Game_LeftForeArm
-    400020: Game_LeftHand
-    400022: Game_LeftHandIndex1
-    400024: Game_LeftHandIndex2
-    400026: Game_LeftHandMiddle1
-    400028: Game_LeftHandMiddle2
-    400030: Game_LeftHandThumb1
-    400032: Game_LeftHandThumb2
-    400034: Game_LeftLeg
-    400036: Game_LeftShoulder
-    400038: Game_LeftUpLeg
-    400040: Game_Neck
-    400042: Game_RightArm
-    400044: Game_RightFoot
-    400046: Game_RightForeArm
-    400048: Game_RightHand
-    400050: Game_RightHandIndex1
-    400052: Game_RightHandIndex2
-    400054: Game_RightHandMiddle1
-    400056: Game_RightHandMiddle2
-    400058: Game_RightHandThumb1
-    400060: Game_RightHandThumb2
-    400062: Game_RightLeg
-    400064: Game_RightShoulder
-    400066: Game_RightUpLeg
-    400068: Game_Spine
-    400070: Game_Spine1
-    400072: Game_Spine2
-    400074: hair06
-    2100000: hair
-    2100002: b_cap
-    2100004: b_cap2
-    2100006: clothing
-    2100008: skin
-    2100010: white
-    2100012: eyes
-    2100014: mouse
-    2300000: baseball_cap
-    2300002: hair06
-    3300000: baseball_cap
-    3300002: hair06
-    4300000: hair06
-    4300002: baseball_cap
-    4300004: clothing
-    4300006: body
+    400006: Game_Head
+    400008: Game_Hips
+    400010: Game_LeftArm
+    400012: Game_LeftFoot
+    400014: Game_LeftForeArm
+    400016: Game_LeftHand
+    400018: Game_LeftHandIndex1
+    400020: Game_LeftHandIndex2
+    400022: Game_LeftHandMiddle1
+    400024: Game_LeftHandMiddle2
+    400026: Game_LeftHandThumb1
+    400028: Game_LeftHandThumb2
+    400030: Game_LeftLeg
+    400032: Game_LeftShoulder
+    400034: Game_LeftUpLeg
+    400036: Game_Neck
+    400038: Game_RightArm
+    400040: Game_RightFoot
+    400042: Game_RightForeArm
+    400044: Game_RightHand
+    400046: Game_RightHandIndex1
+    400048: Game_RightHandIndex2
+    400050: Game_RightHandMiddle1
+    400052: Game_RightHandMiddle2
+    400054: Game_RightHandThumb1
+    400056: Game_RightHandThumb2
+    400058: Game_RightLeg
+    400060: Game_RightShoulder
+    400062: Game_RightUpLeg
+    400064: Game_Spine
+    400066: Game_Spine1
+    400068: Game_Spine2
+    400070: hair03
+    400072: //RootNode
+    2100000: hair.001
+    2100002: clothing
+    2100004: skin
+    2100006: white
+    2100008: eyes
+    2100010: mouse
+    2300000: hair03
+    3300000: hair03
+    4300000: hair03
+    4300002: clothing
+    4300004: body
     9500000: //RootNode
     13700000: body
     13700002: clothing
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -305,14 +299,6 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: baseball_cap
-      humanName: RightEye
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
     - boneName: Game_LeftHandThumb1
       humanName: Left Thumb Proximal
       limit:
@@ -410,28 +396,18 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: courier(Clone)
+    - name: suit02(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: body
-      parentName: courier(Clone)
-      position: {x: -0, y: 0.0059548477, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
-    - name: clothing
-      parentName: courier(Clone)
-      position: {x: -0, y: 0.0059548477, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
-    - name: courier
-      parentName: courier(Clone)
+    - name: base
+      parentName: suit02(Clone)
       position: {x: -0, y: 0.0059548477, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
     - name: Game_Hips
-      parentName: courier
+      parentName: base
       position: {x: -0.00000001515223, y: 0.000051799845, z: 0.0052323295}
       rotation: {x: 0.6920332, y: 0.000010584534, z: 0.000010044156, w: 0.7218657}
       scale: {x: 1, y: 0.99999994, z: 0.99999994}
@@ -510,14 +486,9 @@ ModelImporter:
       position: {x: -8.5834115e-16, y: 0.0005500403, z: 2.0409e-12}
       rotation: {x: -0.000009510258, y: 0.9999321, z: -0.011655725, w: -0.00008031717}
       scale: {x: 1, y: 0.9999995, z: 0.99999994}
-    - name: baseball_cap
+    - name: hair03
       parentName: Game_Head
-      position: {x: -0.00000014615738, y: 0.0071638515, z: -0.00012282304}
-      rotation: {x: -0.00006915415, y: 0.6226393, z: 0.78250897, w: 0.00004167542}
-      scale: {x: 1, y: 1.0000001, z: 1.0000006}
-    - name: hair06
-      parentName: Game_Head
-      position: {x: 0.0000004907732, y: -0.00006654024, z: -0.0031514615}
+      position: {x: 0.00000024618592, y: -0.009580035, z: -0.00038313217}
       rotation: {x: -0.000064976775, y: 0.6927421, z: 0.7211854, w: 0.00004792865}
       scale: {x: 1, y: 1.0000001, z: 1.0000006}
     - name: Game_RightShoulder
@@ -600,6 +571,16 @@ ModelImporter:
       position: {x: 5.8207657e-12, y: 0.0021333238, z: 1.056469e-10}
       rotation: {x: -0.5856004, y: 0.81014144, z: -0.017576123, w: -0.020835888}
       scale: {x: 0.9999999, y: 0.9999995, z: 0.9999999}
+    - name: body
+      parentName: suit02(Clone)
+      position: {x: -0, y: 0.0059548477, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: clothing
+      parentName: suit02(Clone)
+      position: {x: -0, y: 0.0059548477, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

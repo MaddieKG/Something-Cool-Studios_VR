@@ -1,100 +1,93 @@
 fileFormatVersion: 2
-guid: c806f00da7a022a4a9167d71b0bb8836
+guid: 478a646465fc63b459a5b20bce42bb77
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: baseball_cap
-    100002: body
-    100004: clothing
-    100006: //RootNode
-    100008: courier
-    100010: Game_Head
-    100012: Game_Hips
-    100014: Game_LeftArm
-    100016: Game_LeftFoot
-    100018: Game_LeftForeArm
-    100020: Game_LeftHand
-    100022: Game_LeftHandIndex1
-    100024: Game_LeftHandIndex2
-    100026: Game_LeftHandMiddle1
-    100028: Game_LeftHandMiddle2
-    100030: Game_LeftHandThumb1
-    100032: Game_LeftHandThumb2
-    100034: Game_LeftLeg
-    100036: Game_LeftShoulder
-    100038: Game_LeftUpLeg
-    100040: Game_Neck
-    100042: Game_RightArm
-    100044: Game_RightFoot
-    100046: Game_RightForeArm
-    100048: Game_RightHand
-    100050: Game_RightHandIndex1
-    100052: Game_RightHandIndex2
-    100054: Game_RightHandMiddle1
-    100056: Game_RightHandMiddle2
-    100058: Game_RightHandThumb1
-    100060: Game_RightHandThumb2
-    100062: Game_RightLeg
-    100064: Game_RightShoulder
-    100066: Game_RightUpLeg
-    100068: Game_Spine
-    100070: Game_Spine1
-    100072: Game_Spine2
-    100074: hair06
-    400000: baseball_cap
-    400002: body
-    400004: clothing
-    400006: //RootNode
-    400008: courier
-    400010: Game_Head
-    400012: Game_Hips
-    400014: Game_LeftArm
-    400016: Game_LeftFoot
-    400018: Game_LeftForeArm
-    400020: Game_LeftHand
-    400022: Game_LeftHandIndex1
-    400024: Game_LeftHandIndex2
-    400026: Game_LeftHandMiddle1
-    400028: Game_LeftHandMiddle2
-    400030: Game_LeftHandThumb1
-    400032: Game_LeftHandThumb2
-    400034: Game_LeftLeg
-    400036: Game_LeftShoulder
-    400038: Game_LeftUpLeg
-    400040: Game_Neck
-    400042: Game_RightArm
-    400044: Game_RightFoot
-    400046: Game_RightForeArm
-    400048: Game_RightHand
-    400050: Game_RightHandIndex1
-    400052: Game_RightHandIndex2
-    400054: Game_RightHandMiddle1
-    400056: Game_RightHandMiddle2
-    400058: Game_RightHandThumb1
-    400060: Game_RightHandThumb2
-    400062: Game_RightLeg
-    400064: Game_RightShoulder
-    400066: Game_RightUpLeg
-    400068: Game_Spine
-    400070: Game_Spine1
-    400072: Game_Spine2
-    400074: hair06
+    100000: body
+    100002: clothing
+    100004: Game_Head
+    100006: Game_Hips
+    100008: Game_LeftArm
+    100010: Game_LeftFoot
+    100012: Game_LeftForeArm
+    100014: Game_LeftHand
+    100016: Game_LeftHandIndex1
+    100018: Game_LeftHandIndex2
+    100020: Game_LeftHandMiddle1
+    100022: Game_LeftHandMiddle2
+    100024: Game_LeftHandThumb1
+    100026: Game_LeftHandThumb2
+    100028: Game_LeftLeg
+    100030: Game_LeftShoulder
+    100032: Game_LeftUpLeg
+    100034: Game_Neck
+    100036: Game_RightArm
+    100038: Game_RightFoot
+    100040: Game_RightForeArm
+    100042: Game_RightHand
+    100044: Game_RightHandIndex1
+    100046: Game_RightHandIndex2
+    100048: Game_RightHandMiddle1
+    100050: Game_RightHandMiddle2
+    100052: Game_RightHandThumb1
+    100054: Game_RightHandThumb2
+    100056: Game_RightLeg
+    100058: Game_RightShoulder
+    100060: Game_RightUpLeg
+    100062: Game_Spine
+    100064: Game_Spine1
+    100066: Game_Spine2
+    100068: hair01
+    100070: man_shirt
+    100072: //RootNode
+    400000: body
+    400002: clothing
+    400004: Game_Head
+    400006: Game_Hips
+    400008: Game_LeftArm
+    400010: Game_LeftFoot
+    400012: Game_LeftForeArm
+    400014: Game_LeftHand
+    400016: Game_LeftHandIndex1
+    400018: Game_LeftHandIndex2
+    400020: Game_LeftHandMiddle1
+    400022: Game_LeftHandMiddle2
+    400024: Game_LeftHandThumb1
+    400026: Game_LeftHandThumb2
+    400028: Game_LeftLeg
+    400030: Game_LeftShoulder
+    400032: Game_LeftUpLeg
+    400034: Game_Neck
+    400036: Game_RightArm
+    400038: Game_RightFoot
+    400040: Game_RightForeArm
+    400042: Game_RightHand
+    400044: Game_RightHandIndex1
+    400046: Game_RightHandIndex2
+    400048: Game_RightHandMiddle1
+    400050: Game_RightHandMiddle2
+    400052: Game_RightHandThumb1
+    400054: Game_RightHandThumb2
+    400056: Game_RightLeg
+    400058: Game_RightShoulder
+    400060: Game_RightUpLeg
+    400062: Game_Spine
+    400064: Game_Spine1
+    400066: Game_Spine2
+    400068: hair01
+    400070: man_shirt
+    400072: //RootNode
     2100000: hair
-    2100002: b_cap
-    2100004: b_cap2
-    2100006: clothing
-    2100008: skin
-    2100010: white
-    2100012: eyes
-    2100014: mouse
-    2300000: baseball_cap
-    2300002: hair06
-    3300000: baseball_cap
-    3300002: hair06
-    4300000: hair06
-    4300002: baseball_cap
-    4300004: clothing
-    4300006: body
+    2100002: clothing
+    2100004: skin
+    2100006: white
+    2100008: eyes
+    2100010: mouse
+    2300000: hair01
+    3300000: hair01
+    4300000: hair01
+    4300002: clothing
+    4300004: body
     9500000: //RootNode
     13700000: body
     13700002: clothing
@@ -305,14 +298,6 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: baseball_cap
-      humanName: RightEye
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
     - boneName: Game_LeftHandThumb1
       humanName: Left Thumb Proximal
       limit:
@@ -410,28 +395,28 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: courier(Clone)
+    - name: opentop_m(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: body
-      parentName: courier(Clone)
+      parentName: opentop_m(Clone)
       position: {x: -0, y: 0.0059548477, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      rotation: {x: -0.7071068, y: 0.000000106770166, z: 0.00000010677019, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
     - name: clothing
-      parentName: courier(Clone)
+      parentName: opentop_m(Clone)
       position: {x: -0, y: 0.0059548477, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      rotation: {x: -0.7071068, y: 0.000000106770166, z: 0.00000010677019, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
-    - name: courier
-      parentName: courier(Clone)
+    - name: man_shirt
+      parentName: opentop_m(Clone)
       position: {x: -0, y: 0.0059548477, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      rotation: {x: -0.7071068, y: 0.000000106770166, z: 0.00000010677019, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
     - name: Game_Hips
-      parentName: courier
+      parentName: man_shirt
       position: {x: -0.00000001515223, y: 0.000051799845, z: 0.0052323295}
       rotation: {x: 0.6920332, y: 0.000010584534, z: 0.000010044156, w: 0.7218657}
       scale: {x: 1, y: 0.99999994, z: 0.99999994}
@@ -453,7 +438,7 @@ ModelImporter:
     - name: Game_LeftArm
       parentName: Game_LeftShoulder
       position: {x: -9.3132255e-12, y: 0.00067077414, z: -3.8278813e-10}
-      rotation: {x: -0.04369436, y: 0.01106052, z: 0.082826965, w: 0.9955442}
+      rotation: {x: -0.043694332, y: 0.011060521, z: 0.08282703, w: 0.9955442}
       scale: {x: 1, y: 1.0000001, z: 1}
     - name: Game_LeftForeArm
       parentName: Game_LeftArm
@@ -468,7 +453,7 @@ ModelImporter:
     - name: Game_LeftHandThumb1
       parentName: Game_LeftHand
       position: {x: -0.00022833837, y: 0.00029295133, z: -0.000050325933}
-      rotation: {x: -0.065223195, y: 0.08692355, z: 0.27397057, w: 0.95557857}
+      rotation: {x: -0.06522275, y: 0.086923435, z: 0.27397138, w: 0.95557845}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftHandThumb2
       parentName: Game_LeftHandThumb1
@@ -478,7 +463,7 @@ ModelImporter:
     - name: Game_LeftHandIndex1
       parentName: Game_LeftHand
       position: {x: -0.00023850646, y: 0.00056353485, z: -0.00005664615}
-      rotation: {x: -0.026191378, y: 0.0039709955, z: -0.09758612, w: 0.9948745}
+      rotation: {x: -0.026191402, y: 0.0039710146, z: -0.0975858, w: 0.9948745}
       scale: {x: 1, y: 0.99999994, z: 0.99999994}
     - name: Game_LeftHandIndex2
       parentName: Game_LeftHandIndex1
@@ -488,7 +473,7 @@ ModelImporter:
     - name: Game_LeftHandMiddle1
       parentName: Game_LeftHand
       position: {x: 0.00021134352, y: 0.0005683333, z: -0.000026747723}
-      rotation: {x: -0.039406363, y: -0.0034588159, z: -0.10185164, w: 0.99401283}
+      rotation: {x: -0.03940643, y: -0.003458847, z: -0.101851195, w: 0.99401283}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftHandMiddle2
       parentName: Game_LeftHandMiddle1
@@ -510,14 +495,9 @@ ModelImporter:
       position: {x: -8.5834115e-16, y: 0.0005500403, z: 2.0409e-12}
       rotation: {x: -0.000009510258, y: 0.9999321, z: -0.011655725, w: -0.00008031717}
       scale: {x: 1, y: 0.9999995, z: 0.99999994}
-    - name: baseball_cap
+    - name: hair01
       parentName: Game_Head
-      position: {x: -0.00000014615738, y: 0.0071638515, z: -0.00012282304}
-      rotation: {x: -0.00006915415, y: 0.6226393, z: 0.78250897, w: 0.00004167542}
-      scale: {x: 1, y: 1.0000001, z: 1.0000006}
-    - name: hair06
-      parentName: Game_Head
-      position: {x: 0.0000004907732, y: -0.00006654024, z: -0.0031514615}
+      position: {x: 0.0000002257513, y: -0.009585192, z: -0.00025496352}
       rotation: {x: -0.000064976775, y: 0.6927421, z: 0.7211854, w: 0.00004792865}
       scale: {x: 1, y: 1.0000001, z: 1.0000006}
     - name: Game_RightShoulder
@@ -528,7 +508,7 @@ ModelImporter:
     - name: Game_RightArm
       parentName: Game_RightShoulder
       position: {x: 4.6566128e-12, y: 0.00067706447, z: -6.8139344e-10}
-      rotation: {x: -0.061208874, y: -0.012070194, z: -0.0804327, w: 0.9948057}
+      rotation: {x: -0.061208844, y: -0.012070224, z: -0.08043271, w: 0.9948057}
       scale: {x: 1, y: 1, z: 0.99999994}
     - name: Game_RightForeArm
       parentName: Game_RightArm
@@ -543,7 +523,7 @@ ModelImporter:
     - name: Game_RightHandThumb1
       parentName: Game_RightHand
       position: {x: -0.000021274096, y: 0.00037769586, z: -0.00021859678}
-      rotation: {x: -0.08320727, y: 0.92157054, z: -0.2928547, w: 0.2408745}
+      rotation: {x: -0.08320745, y: 0.9215702, z: -0.29285583, w: 0.24087441}
       scale: {x: 1.0000001, y: 0.9999998, z: 1}
     - name: Game_RightHandThumb2
       parentName: Game_RightHandThumb1
@@ -553,7 +533,7 @@ ModelImporter:
     - name: Game_RightHandIndex1
       parentName: Game_RightHand
       position: {x: -1.0100265e-11, y: 0.000597381, z: -0.00017279116}
-      rotation: {x: 0.051597603, y: 0.7098966, z: 0.052292857, w: 0.70046407}
+      rotation: {x: 0.051598728, y: 0.70989686, z: 0.05229243, w: 0.70046383}
       scale: {x: 0.99999994, y: 1, z: 1}
     - name: Game_RightHandIndex2
       parentName: Game_RightHandIndex1
@@ -563,7 +543,7 @@ ModelImporter:
     - name: Game_RightHandMiddle1
       parentName: Game_RightHand
       position: {x: -2.0325481e-11, y: 0.0005900839, z: 0.00018520656}
-      rotation: {x: 0.052443873, y: 0.70676607, z: 0.05268254, w: 0.7035311}
+      rotation: {x: 0.0524428, y: 0.7067661, z: 0.052681427, w: 0.7035311}
       scale: {x: 1, y: 0.9999999, z: 0.99999994}
     - name: Game_RightHandMiddle2
       parentName: Game_RightHandMiddle1
