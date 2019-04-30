@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour {
+public class UIController : MonoBehaviour {
 
     public Text newsText;
     public Text costText, remainingMonText;
-    public int popularity, greenPoints, money;
     public Text moneyText, popText, greenText;
     public Text message;
 
-    private bool isRoundActive, isCostShowing;
-    private int customersRemaining;
-    //private ProductData[] productList;
-    private string[] objectives;
+    [SerializeField]
+    private PointsData pointsData;
+    private bool isCostShowing;
     private GameObject costDisplay;
     private GameObject startButton;
-    private int monRemaining, cost;
+    private int monRemaining, cost, popularity, greenPoints, money;
 
     // Use this for initialization
     void Start () {
@@ -27,9 +25,10 @@ public class GameController : MonoBehaviour {
         startScript.start = false;
 
         //Main points
-        money = 20; //some value
-        greenPoints = 10; //some value
-        popularity = 5; //some value
+        money = pointsData.Money;
+        Debug.Log(money.ToString());
+        greenPoints = pointsData.Green; 
+        popularity = pointsData.Popularity; 
 
         //cost display stuff
         costDisplay = GameObject.Find("CostDisplay");

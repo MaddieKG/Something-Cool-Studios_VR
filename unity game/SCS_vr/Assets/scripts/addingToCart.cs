@@ -12,7 +12,7 @@ public class addingToCart : MonoBehaviour
 
     void Start()
     {
-        controller = GameObject.Find("GameController");
+        controller = GameObject.Find("UIController");
 
         one = false;
         two = false;
@@ -28,8 +28,8 @@ public class addingToCart : MonoBehaviour
         startButton = GameObject.Find("StartButton");
         StartControl startScript = startButton.GetComponent<StartControl>();
 
-        controller = GameObject.Find("GameController");
-        GameController controlScript = controller.GetComponent<GameController>();
+        controller = GameObject.Find("UIController");
+        UIController controlScript = controller.GetComponent<UIController>();
 
         if (startScript.start == true && itemsInCart > 1 && onPress == true)
         {

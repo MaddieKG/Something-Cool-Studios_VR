@@ -2381,6 +2381,10 @@ Prefab:
       propertyPath: popText
       value: 
       objectReference: {fileID: 1679280033}
+    - target: {fileID: 1660416518475398, guid: 5e2020ba4219f4d4b8d004f1ee600313, type: 2}
+      propertyPath: m_Name
+      value: UIController
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114379810446923002, guid: 5e2020ba4219f4d4b8d004f1ee600313, type: 2}
     - {fileID: 114836644432958520, guid: 5e2020ba4219f4d4b8d004f1ee600313, type: 2}
@@ -16581,13 +16585,11 @@ MonoBehaviour:
   newsText: {fileID: 1006759800}
   costText: {fileID: 808686981}
   remainingMonText: {fileID: 1369071633}
-  popularity: 0
-  greenPoints: 0
-  money: 0
   moneyText: {fileID: 646738397}
   popText: {fileID: 1679280033}
   greenText: {fileID: 1604255063}
   message: {fileID: 940598350}
+  pointsData: {fileID: 11400000, guid: 4f1a7410bc53d7b4b938db60dd6c9cb2, type: 2}
 --- !u!1 &1624518037
 GameObject:
   m_ObjectHideFlags: 0
@@ -20576,6 +20578,9 @@ MonoBehaviour:
   two: 0
   three: 0
   cartPos: {x: 0, y: 0, z: 0}
+  totalCost: 0
+  totalGreen: 0
+  itemsInCart: 0
 --- !u!65 &2091439131
 BoxCollider:
   m_ObjectHideFlags: 0
