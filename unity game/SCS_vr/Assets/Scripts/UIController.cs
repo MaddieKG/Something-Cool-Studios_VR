@@ -26,7 +26,6 @@ public class UIController : MonoBehaviour {
 
         //Main points
         money = pointsData.Money;
-        Debug.Log(money.ToString());
         greenPoints = pointsData.Green; 
         popularity = pointsData.Popularity; 
 
@@ -44,28 +43,11 @@ public class UIController : MonoBehaviour {
         setCostText(monRemaining, cost);
         setPointText();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        /**startButton = GameObject.Find("StartButton");//need a StartButton object
-        StartControl startScript = startButton.GetComponent<StartControl>();
-        if (startScript.start == true)
-        {
-
-        }
-        else
-        {
-            
-        }**/
-	}
 
     private void setObjective()
     {
         newsText.text = "Sell some tacos!";
     }
-
-    //
-    //Functions for cost display UI
     
     //uses money to estimate total cost
     public void setCost(int cost)
@@ -100,31 +82,5 @@ public class UIController : MonoBehaviour {
         moneyText.text = "Money: " + money.ToString();
         greenText.text = "Green Points: " + greenPoints.ToString();
         popText.text = "Popularity: " + popularity.ToString();
-    }
-
-    //
-    //Functions to be used when buying products to make tacos
-
-    //Updates money & green points
-    public void buyProducts(int cost, int green)
-    {
-        money -= cost;
-        greenPoints += green;//green should be positive or negative
-        setPointText();
-    }
-
-    //Used when a customer receives their food
-    //Updates money & customer popularity points
-    public void serveCustomer(int earn, int satisfaction)
-    {
-        money += earn;
-        popularity += satisfaction;//make satis positive or negative based on likes/dislikes
-        setPointText();
-    }
-
-    //Call when customer is in front of window
-    private void customerTalks(string m)
-    {
-        message.text = m;
     }
 }
