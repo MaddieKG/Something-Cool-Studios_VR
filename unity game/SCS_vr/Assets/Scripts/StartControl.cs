@@ -27,31 +27,4 @@ public class StartControl : MonoBehaviour {
             buttonDisplay.text = "Stop";
         }
     }
-
-    /***
-     
-    void Update () {
-        //may need for future use
-    }
-    
-    //Is button colliding with player hand?
-    //Returns bool
-    private bool IsHand(Collider other)
-    {
-        if (other.transform.parent && other.transform.parent.parent && other.transform.parent.parent.GetComponent<HandModel>())
-            return true;
-        else
-            return false;
-    }
-
-    //Checks whenever something collides with object if it is hand
-    //Changes start variable
-    void OnTriggerEnter(Collider other)
-    {
-        if (IsHand(other))
-        {
-            Debug.Log("Yay! A hand collided!");
-            start = !start;
-        }
-    }***/
 }

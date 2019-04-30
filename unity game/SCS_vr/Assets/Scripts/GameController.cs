@@ -11,17 +11,21 @@ public class GameController : MonoBehaviour {
     public Text moneyText, popText, greenText;
     public Text message;
 
-
     private bool isRoundActive, isCostShowing;
     private int customersRemaining;
     //private ProductData[] productList;
     private string[] objectives;
     private GameObject costDisplay;
-    private GameObject controller;
+    private GameObject startButton;
     private int monRemaining, cost;
 
     // Use this for initialization
     void Start () {
+        //Allows for initialization
+        startButton = GameObject.Find("StartButton");//need a StartButton object
+        StartControl startScript = startButton.GetComponent<StartControl>();
+        startScript.start = false;
+
         //Main points
         money = 20; //some value
         greenPoints = 10; //some value
@@ -44,7 +48,16 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        startButton = GameObject.Find("StartButton");//need a StartButton object
+        StartControl startScript = startButton.GetComponent<StartControl>();
+        if (startScript.start == true)
+        {
+            Debug.Log("Start!");
+        }
+        else
+        {
+            Debug.Log("Stop!");
+        }
 	}
 
     private void setObjective()
