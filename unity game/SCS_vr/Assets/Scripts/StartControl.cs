@@ -27,4 +27,9 @@ public class StartControl : MonoBehaviour {
             buttonDisplay.text = "Stop";
         }
     }
+
+    public bool getStart()
+    {
+        return start;
+    }
 }
