@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour {
         StartControl startScript = startButton.GetComponent<StartControl>();
         if (startScript.start == true)
         {
+
         }
         else
         {
