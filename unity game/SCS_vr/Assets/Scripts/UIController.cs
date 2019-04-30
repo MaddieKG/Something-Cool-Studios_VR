@@ -11,7 +11,8 @@ public class UIController : MonoBehaviour {
     public Text message;
 
     [SerializeField]
-    private PointsData pointsData;
+    
+
     private bool isCostShowing;
     private GameObject costDisplay;
     private GameObject startButton;
