@@ -13,12 +13,11 @@ private Animator anim;
 			anim = GetComponent<Animator>();
 	}
 
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetKey(KeyCode.Return)) {
-			anim.SetBool("TestBool", true);
-		} else {
-			anim.SetBool("TestBool", false);
-		}
-	}
+    // Update is called once per frame
+    public void walk()
+    {
+        anim.SetBool("TestBool", true);
+        //anim.SetBool("TestBool", false);
+        Debug.Log("walk");
+    }
 }

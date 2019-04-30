@@ -10,6 +10,7 @@ public class detectTaco : MonoBehaviour
 			if (col.gameObject.name == "taco(Clone)")
 			{
 				yield return new WaitForSeconds(3);
+            ///call something
 				Destroy(col.gameObject);
 				//check customer preference and update points
 			}

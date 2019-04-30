@@ -15982,7 +15982,7 @@ GameObject:
   - component: {fileID: 1497699970}
   - component: {fileID: 1497699974}
   m_Layer: 0
-  m_Name: Cube (11)
+  m_Name: counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

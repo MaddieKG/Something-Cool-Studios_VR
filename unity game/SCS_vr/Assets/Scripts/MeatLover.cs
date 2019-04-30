@@ -7,15 +7,23 @@ public class MeatLover : MonoBehaviour {
     public string cname = "Bob";
     public string greens = "pro";
     public string meat = "anti";
+    private Animator anim;
 
-	void Start () {
+    void Start () {
+        anim = GetComponent<Animator>();
         Debug.Log("name: " + cname);
         Debug.Log("green: " + greens);
         Debug.Log("meat: " + meat);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    /*
+    void OnEnable()
+    {
+        transform.Rotate(0, -90, 0);
+    }
+    */
+
+    void Update()
+    {
+        anim.SetBool("TestBool", true);
+    }
 }
