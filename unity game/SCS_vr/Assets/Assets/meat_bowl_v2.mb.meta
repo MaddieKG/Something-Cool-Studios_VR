@@ -7,10 +7,30 @@ ModelImporter:
     100002: lettuce_bowl_v2:nurbsToPoly37
     100004: nurbsToPoly37
     100006: pDisc2
+    100008: group1
+    100010: lettuce_bowl_v3:group49
+    100012: lettuce_bowl_v3:pDisc1
+    100014: lettuce_bowl_v3:pDisc3
+    100016: lettuce_bowl_v3:pDisc4
+    100018: lettuce_bowl_v3:pDisc5
+    100020: lettuce_bowl_v3:pDisc6
+    100022: lettuce_bowl_v3:pDisc7
+    100024: lettuce_bowl_v3:pDisc8
+    100026: nurbsToPoly38
     400000: //RootNode
     400002: lettuce_bowl_v2:nurbsToPoly37
     400004: nurbsToPoly37
     400006: pDisc2
+    400008: group1
+    400010: lettuce_bowl_v3:group49
+    400012: lettuce_bowl_v3:pDisc1
+    400014: lettuce_bowl_v3:pDisc3
+    400016: lettuce_bowl_v3:pDisc4
+    400018: lettuce_bowl_v3:pDisc5
+    400020: lettuce_bowl_v3:pDisc6
+    400022: lettuce_bowl_v3:pDisc7
+    400024: lettuce_bowl_v3:pDisc8
+    400026: nurbsToPoly38
     2100000: bowl_aiStandardSurface2
     2100002: lettuce_bowl_v2_stripe1_aiStandardSurface1
     2100004: lettuce_bowl_v2_stripe3_aiStandardSurface3
@@ -23,17 +43,48 @@ ModelImporter:
     2100018: lambert9
     2100020: lambert11
     2100022: lambert10
+    2100024: lambert13
+    2100026: lambert15
+    2100028: lambert17
+    2100030: lambert14
+    2100032: lambert16
+    2100034: lambert19
+    2100036: lambert12
     2300000: //RootNode
     2300002: lettuce_bowl_v2:nurbsToPoly37
     2300004: nurbsToPoly37
     2300006: pDisc2
+    2300008: lettuce_bowl_v3:pDisc1
+    2300010: lettuce_bowl_v3:pDisc3
+    2300012: lettuce_bowl_v3:pDisc4
+    2300014: lettuce_bowl_v3:pDisc5
+    2300016: lettuce_bowl_v3:pDisc6
+    2300018: lettuce_bowl_v3:pDisc7
+    2300020: lettuce_bowl_v3:pDisc8
+    2300022: nurbsToPoly38
     3300000: //RootNode
     3300002: lettuce_bowl_v2:nurbsToPoly37
     3300004: nurbsToPoly37
     3300006: pDisc2
+    3300008: lettuce_bowl_v3:pDisc1
+    3300010: lettuce_bowl_v3:pDisc3
+    3300012: lettuce_bowl_v3:pDisc4
+    3300014: lettuce_bowl_v3:pDisc5
+    3300016: lettuce_bowl_v3:pDisc6
+    3300018: lettuce_bowl_v3:pDisc7
+    3300020: lettuce_bowl_v3:pDisc8
+    3300022: nurbsToPoly38
     4300000: lettuce_bowl_v2:nurbsToPoly37
     4300002: nurbsToPoly37
     4300004: pDisc2
+    4300006: lettuce_bowl_v3:pDisc5
+    4300008: lettuce_bowl_v3:pDisc6
+    4300010: lettuce_bowl_v3:pDisc1
+    4300012: lettuce_bowl_v3:pDisc4
+    4300014: lettuce_bowl_v3:pDisc3
+    4300016: lettuce_bowl_v3:pDisc7
+    4300018: nurbsToPoly38
+    4300020: lettuce_bowl_v3:pDisc8
   externalObjects: {}
   materials:
     importMaterials: 1
