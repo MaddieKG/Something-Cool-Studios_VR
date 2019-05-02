@@ -13,9 +13,8 @@ public class UIController : MonoBehaviour {
     [SerializeField]
     private PointsData pointsData;
     private bool isCostShowing;
-    private GameObject costDisplay;
-    private GameObject startButton;
-    private int monRemaining, cost, popularity, greenPoints, money;
+    private GameObject costDisplay, startButton;
+    private int monRemaining, cost;
 
     // Use this for initialization
     void Start () {
@@ -24,15 +23,10 @@ public class UIController : MonoBehaviour {
         StartControl startScript = startButton.GetComponent<StartControl>();
         startScript.start = false;
 
-        //Main points
-        money = pointsData.Money;
-        greenPoints = pointsData.Green; 
-        popularity = pointsData.Popularity; 
-
         //cost display stuff
         costDisplay = GameObject.Find("CostDisplay");
         costDisplay.SetActive(true);
-        monRemaining = money;
+        monRemaining = pointsData.Money;
         cost = 0;
 
         //For translator
@@ -96,4 +90,5 @@ public class UIController : MonoBehaviour {
             message.text = ":(";
         }
     }
+    
 }
