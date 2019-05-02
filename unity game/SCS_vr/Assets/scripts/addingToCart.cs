@@ -9,7 +9,7 @@ public class addingToCart : MonoBehaviour
     public string currentMeat;
     public string currentLettuce;
 
-    private GameObject startButton, controller, proController;
+    private GameObject startButton, controller, pointsController;
     private bool onPress;
     public bool one, two, three;
     public Vector3 cartPos;
@@ -17,11 +17,6 @@ public class addingToCart : MonoBehaviour
 
     void Start()
     {
-        controller = GameObject.Find("UIController");
-        UIController controlUI = controller.GetComponent<UIController>();
-        proController = GameObject.Find("ProductController");
-        ProductController proControl = proController.GetComponent<ProductController>();
-
         one = false;
         two = false;
         three = false;
@@ -33,8 +28,8 @@ public class addingToCart : MonoBehaviour
 
     void Update()
     {
-        proController = GameObject.Find("ProductController");
-        ProductController proControl = proController.GetComponent<ProductController>();
+        pointsController = GameObject.Find("ProductController");
+        PointsController pointsScript = pointsController.GetComponent<PointsController>();
         startButton = GameObject.Find("StartButton");
         StartControl startScript = startButton.GetComponent<StartControl>();
 
@@ -43,7 +38,7 @@ public class addingToCart : MonoBehaviour
         {
             totalCost *= 2;
             onPress = false;
-            proControl.buyProducts(totalCost, totalGreen);
+            pointsScript.buyProducts(totalCost, totalGreen);
 
         }
     }
