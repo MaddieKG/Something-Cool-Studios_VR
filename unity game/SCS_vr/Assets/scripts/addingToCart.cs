@@ -33,19 +33,18 @@ public class addingToCart : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(itemsInCart.ToString());
         proController = GameObject.Find("ProductController");
         ProductController proControl = proController.GetComponent<ProductController>();
         startButton = GameObject.Find("StartButton");
         StartControl startScript = startButton.GetComponent<StartControl>();
-        
+
 
         if (itemsInCart > 1 && startScript.start == true && onPress == true)
         {
             totalCost *= 2;
             onPress = false;
             proControl.buyProducts(totalCost, totalGreen);
-            
+
         }
     }
 
@@ -56,23 +55,20 @@ public class addingToCart : MonoBehaviour
         controller = GameObject.Find("UIController");
         UIController controlUI = controller.GetComponent<UIController>();
 
-        //Debug.Log("line  18: "+ one);
         if (col.gameObject.tag == "ingredient1")
         {
+            //if ingredient already choosen
             if (one == true)
             {
-                //Debug.Log("ingredient1 already picked");
-                //Debug.Log("line 24(t): " + one);
                 col.gameObject.transform.position = new Vector3(-1,1,-2);
             }
+            //picking meat to put in taco
             else if (one == false)
             {
-                //Debug.Log("line 29(f): " + one);
+                //updating points system based on choice of meat
                 if (col.gameObject.name == "beef")
                 {
-                    //Debug.Log("nonvegan1 collision detected");
                     totalCost += beefData.Money * 2;
-                    Debug.Log(totalCost.ToString());
                     totalGreen += beefData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
@@ -81,7 +77,6 @@ public class addingToCart : MonoBehaviour
                 }
                 else if (col.gameObject.name == "chicken")
                 {
-                    //Debug.Log("vegan1 collision detected");
                     totalCost += chickenData.Money;
                     Debug.Log(totalCost.ToString());
                     totalGreen += chickenData.Green * 2;
@@ -91,22 +86,21 @@ public class addingToCart : MonoBehaviour
                     controlUI.setCostText(totalCost);
                 }
                 one = true;
-                //Debug.Log("line 41(t): " + one);
             }
         }
         else if (col.gameObject.tag == "ingredient2")
         {
+          //if ingredient already chosen
           if(two == true)
           {
-            //Debug.Log("ingredient2 already picked");
             col.gameObject.transform.position = new Vector3(-1,1,-2);
           }
+          //choosing which lettuce to put in taco
           else if (two == false)
           {
+            //updating points system based on choice of lettuce
               if (col.gameObject.name == "gmoLettuce")
               {
-                    //Debug.Log("nonvegan2 collision detected");
-
                     totalCost += gmoLettData.Money * 2;
                     Debug.Log(totalCost.ToString());
                     totalGreen += gmoLettData.Green * 2;
@@ -117,8 +111,6 @@ public class addingToCart : MonoBehaviour
                 }
               else if (col.gameObject.name == "orgLettuce")
               {
-                    //Debug.Log("vegan2 collision detected");
-
                     totalCost += orgLettData.Money * 2;
                     Debug.Log(totalCost.ToString());
                     totalGreen += orgLettData.Green * 2;
@@ -130,30 +122,5 @@ public class addingToCart : MonoBehaviour
                 two = true;
             }
         }
-        /**
-        else if (col.gameObject.tag == "ingredient3")
-        {
-          if(three == true)
-          {
-            //Debug.Log("ingredient3 already picked");
-            col.gameObject.transform.position = new Vector3(-1,1,-2);
-          }
-          else if (three == false)
-          {
-              if (col.gameObject.name == "nonvegan3")
-              {
-                    //Debug.Log("nonvegan3 collision detected");
-                    Destroy(col.gameObject);
-                    //change points
-                }
-              else if (col.gameObject.name == "vegan3")
-              {
-                    //Debug.Log("vegan3 collision detected");
-                    Destroy(col.gameObject);
-                    //change points
-                }
-                three = true;
-            }
-        }**/
     }
 }

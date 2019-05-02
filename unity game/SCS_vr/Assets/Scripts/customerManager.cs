@@ -22,9 +22,9 @@ public class customerManager : MonoBehaviour {
         current = allCust[i];
         Instantiate(current, pos.transform.position, transform.rotation);
 
-        current.transform.Rotate(0, 90, 0);        
+        current.transform.Rotate(0, 90, 0);
     }
-    
+
     // Update is called once per frame
     void Update () {
         if (Input.GetKeyDown("space"))
@@ -33,7 +33,7 @@ public class customerManager : MonoBehaviour {
             Debug.Log(current.name);
         }
 	}
-    
+
     void OnTriggerEnter()
     {
         SpawnCustomer();
@@ -42,7 +42,6 @@ public class customerManager : MonoBehaviour {
         UIController controller = UIcontrol.GetComponent<UIController>();
         if (cartScript.currentLettuce == "pro" && cartScript.currentMeat == "pro")
         {
-            Debug.Log("YAY0");
             controller.updateTranslator(true);
         }
     }
