@@ -12718,6 +12718,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsData: {fileID: 11400000, guid: 4f1a7410bc53d7b4b938db60dd6c9cb2, type: 2}
+  money: 50
+  green: 50
+  popularity: 50
 --- !u!4 &1284999087
 Transform:
   m_ObjectHideFlags: 0
@@ -18348,7 +18351,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 477154, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_RootOrder
@@ -18360,11 +18363,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 462068, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y

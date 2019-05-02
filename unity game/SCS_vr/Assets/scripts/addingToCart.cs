@@ -28,18 +28,16 @@ public class addingToCart : MonoBehaviour
 
     void Update()
     {
-        pointsController = GameObject.Find("ProductController");
+        pointsController = GameObject.Find("PointsController");
         PointsController pointsScript = pointsController.GetComponent<PointsController>();
         startButton = GameObject.Find("StartButton");
         StartControl startScript = startButton.GetComponent<StartControl>();
-
 
         if (itemsInCart > 1 && startScript.start == true && onPress == true)
         {
             totalCost *= 2;
             onPress = false;
             pointsScript.buyProducts(totalCost, totalGreen);
-
         }
     }
 

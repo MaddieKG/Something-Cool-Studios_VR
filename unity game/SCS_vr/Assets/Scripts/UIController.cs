@@ -13,7 +13,7 @@ public class UIController : MonoBehaviour {
     [SerializeField]
     private PointsData pointsData;
     private bool isCostShowing;
-    private GameObject costDisplay, startButton;
+    private GameObject costDisplay, startButton, pointsController;
     private int monRemaining, cost;
 
     // Use this for initialization
@@ -66,17 +66,19 @@ public class UIController : MonoBehaviour {
     //Sets text in cost display UI to correct values
     public void setCostText(int cost)
     {
+        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
         costText.text = "Total cost: " + cost.ToString();
-        monRemaining = pointsData.Money - cost;
+        monRemaining = pointsScript.money - cost;
         remainingMonText.text = "Remaining Money: " + monRemaining.ToString();
     }
 
     //use to update whenever changes are made → make global
     public void setPointText()
     {
-        moneyText.text = "Money: " + pointsData.Money.ToString();
-        greenText.text = "Green Points: " + pointsData.Green.ToString();
-        popText.text = "Popularity: " + pointsData.Popularity.ToString();
+        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
+        moneyText.text = "Money: " + pointsScript.money.ToString();
+        greenText.text = "Green Points: " + pointsScript.green.ToString();
+        popText.text = "Popularity: " + pointsScript.popularity.ToString();
     }
 
     public void updateTranslator(bool likes)
