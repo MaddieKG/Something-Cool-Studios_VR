@@ -15,12 +15,21 @@ public class MeatLover : MonoBehaviour {
         Debug.Log("green: " + greens);
         Debug.Log("meat: " + meat);
     }
-    /*
-    void OnEnable()
+
+    public string getName()
     {
-        transform.Rotate(0, -90, 0);
+        return cname;
     }
-    */
+
+    public string getGreens()
+    {
+        return greens;
+    }
+
+    public string getMeat()
+    {
+        return meat;
+    }
 
     void Update()
     {
