@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: b1370a2a556b35643bda3d46b094ffa9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: lettuce_bowl_v2:nurbsToPoly37
+    100004: nurbsToPoly37
+    100006: pDisc2
+    100008: group1
+    100010: lettuce_bowl_v3:group49
+    100012: lettuce_bowl_v3:pDisc1
+    100014: lettuce_bowl_v3:pDisc3
+    100016: lettuce_bowl_v3:pDisc4
+    100018: lettuce_bowl_v3:pDisc5
+    100020: lettuce_bowl_v3:pDisc6
+    100022: lettuce_bowl_v3:pDisc7
+    100024: lettuce_bowl_v3:pDisc8
+    100026: nurbsToPoly38
+    400000: //RootNode
+    400002: lettuce_bowl_v2:nurbsToPoly37
+    400004: nurbsToPoly37
+    400006: pDisc2
+    400008: group1
+    400010: lettuce_bowl_v3:group49
+    400012: lettuce_bowl_v3:pDisc1
+    400014: lettuce_bowl_v3:pDisc3
+    400016: lettuce_bowl_v3:pDisc4
+    400018: lettuce_bowl_v3:pDisc5
+    400020: lettuce_bowl_v3:pDisc6
+    400022: lettuce_bowl_v3:pDisc7
+    400024: lettuce_bowl_v3:pDisc8
+    400026: nurbsToPoly38
+    2100000: bowl_aiStandardSurface2
+    2100002: lettuce_bowl_v2_stripe1_aiStandardSurface1
+    2100004: lettuce_bowl_v2_stripe3_aiStandardSurface3
+    2100006: lettuce_bowl_v2_stripe_2aiStandardSurface2
+    2100008: lambert7
+    2100010: lambert1
+    2100012: lambert4
+    2100014: lambert6
+    2100016: lambert8
+    2100018: lambert9
+    2100020: lambert11
+    2100022: lambert10
+    2100024: lambert13
+    2100026: lambert15
+    2100028: lambert17
+    2100030: lambert14
+    2100032: lambert16
+    2100034: lambert19
+    2100036: lambert12
+    2300000: //RootNode
+    2300002: lettuce_bowl_v2:nurbsToPoly37
+    2300004: nurbsToPoly37
+    2300006: pDisc2
+    2300008: lettuce_bowl_v3:pDisc1
+    2300010: lettuce_bowl_v3:pDisc3
+    2300012: lettuce_bowl_v3:pDisc4
+    2300014: lettuce_bowl_v3:pDisc5
+    2300016: lettuce_bowl_v3:pDisc6
+    2300018: lettuce_bowl_v3:pDisc7
+    2300020: lettuce_bowl_v3:pDisc8
+    2300022: nurbsToPoly38
+    3300000: //RootNode
+    3300002: lettuce_bowl_v2:nurbsToPoly37
+    3300004: nurbsToPoly37
+    3300006: pDisc2
+    3300008: lettuce_bowl_v3:pDisc1
+    3300010: lettuce_bowl_v3:pDisc3
+    3300012: lettuce_bowl_v3:pDisc4
+    3300014: lettuce_bowl_v3:pDisc5
+    3300016: lettuce_bowl_v3:pDisc6
+    3300018: lettuce_bowl_v3:pDisc7
+    3300020: lettuce_bowl_v3:pDisc8
+    3300022: nurbsToPoly38
+    4300000: lettuce_bowl_v2:nurbsToPoly37
+    4300002: nurbsToPoly37
+    4300004: pDisc2
+    4300006: lettuce_bowl_v3:pDisc5
+    4300008: lettuce_bowl_v3:pDisc6
+    4300010: lettuce_bowl_v3:pDisc1
+    4300012: lettuce_bowl_v3:pDisc4
+    4300014: lettuce_bowl_v3:pDisc3
+    4300016: lettuce_bowl_v3:pDisc7
+    4300018: nurbsToPoly38
+    4300020: lettuce_bowl_v3:pDisc8
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
