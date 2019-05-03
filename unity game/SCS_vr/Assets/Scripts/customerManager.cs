@@ -9,6 +9,7 @@ public class customerManager : MonoBehaviour {
     public GameObject pos;
 
     public GameObject UIcontrol, cartControl;
+    private int green, meat;
 
     void Start()
     {
@@ -36,20 +37,32 @@ public class customerManager : MonoBehaviour {
     void OnTriggerEnter()
     {
         SpawnCustomer();
-        if(current.name == "courier")
-        {
-            //"meat lover"
-        }
-        else if(current.name == "shorthair")
-        {
-            //"veggie lover"
-        }
         addingToCart cartScript = cartControl.GetComponent<addingToCart>();
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();
-        /**if (cartScript.currentLettuce == current.getGreens() && cartScript.currentMeat == current.getMeat())
+        //checks what type of customer
+        if (current.name == "courier")
+        {
+            //nonorganic lover
+            NonOrganicLover nonorgStats = current.GetComponent<NonOrganicLover>();
+            green = nonorgStats.getGreens();
+            meat = nonorgStats.getMeat();
+        }
+        else if (current.name == "shorthair")
+        {
+            //organic lover
+            OrganicLover orgStats = current.GetComponent<OrganicLover>();
+            green = orgStats.getGreens();
+            meat = orgStats.getMeat();
+        }
+        //generates response
+        if (cartScript.currentLettuce == green && cartScript.currentMeat == meat)
         {
             controller.updateTranslator(true);
-        }**/
+        }
+        else
+        {
+            controller.updateTranslator(false);
+        }
     }
 }
