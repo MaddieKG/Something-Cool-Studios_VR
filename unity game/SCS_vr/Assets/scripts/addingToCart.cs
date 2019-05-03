@@ -6,8 +6,7 @@ public class addingToCart : MonoBehaviour
 {
     [SerializeField]
     public ProductData beefData, chickenData, gmoLettData, orgLettData;
-    public string currentMeat;
-    public string currentLettuce;
+    public int currentMeat, currentLettuce;
 
     private GameObject startButton, controller, pointsController;
     private bool onPress;
@@ -65,7 +64,7 @@ public class addingToCart : MonoBehaviour
                     totalGreen += beefData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentMeat = "anti";
+                    currentMeat = 0;
                     controlUI.setCostText(totalCost);
                 }
                 else if (col.gameObject.name == "chicken")
@@ -75,7 +74,7 @@ public class addingToCart : MonoBehaviour
                     totalGreen += chickenData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentMeat = "pro";
+                    currentMeat = 1;
                     controlUI.setCostText(totalCost);
                 }
                 one = true;
@@ -99,7 +98,7 @@ public class addingToCart : MonoBehaviour
                     totalGreen += gmoLettData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentLettuce = "anti";
+                    currentLettuce = 0;
                     controlUI.setCostText(totalCost);
                 }
               else if (col.gameObject.name == "orgLettuce")
@@ -109,7 +108,7 @@ public class addingToCart : MonoBehaviour
                     totalGreen += orgLettData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentLettuce = "pro";
+                    currentLettuce = 1;
                     controlUI.setCostText(totalCost);
                 }
                 two = true;

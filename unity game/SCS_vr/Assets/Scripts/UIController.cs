@@ -91,6 +91,8 @@ public class UIController : MonoBehaviour {
         {
             message.text = ":(";
         }
+        ///yield return new WaitForSeconds(3);
+        //message.text = "Waiting for input...";
     }
     
 }

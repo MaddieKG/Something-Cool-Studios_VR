@@ -30,19 +30,26 @@ public class customerManager : MonoBehaviour {
         if (Input.GetKeyDown("space"))
         {
             SpawnCustomer();
-            Debug.Log(current.name);
         }
 	}
 
     void OnTriggerEnter()
     {
         SpawnCustomer();
+        if(current.name == "courier")
+        {
+            //"meat lover"
+        }
+        else if(current.name == "shorthair")
+        {
+            //"veggie lover"
+        }
         addingToCart cartScript = cartControl.GetComponent<addingToCart>();
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();
-        if (cartScript.currentLettuce == "pro" && cartScript.currentMeat == "pro")
+        /**if (cartScript.currentLettuce == current.getGreens() && cartScript.currentMeat == current.getMeat())
         {
             controller.updateTranslator(true);
-        }
+        }**/
     }
 }
