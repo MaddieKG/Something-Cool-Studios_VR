@@ -84,8 +84,6 @@ public class UIController : MonoBehaviour {
     public void updateTranslator(string m)
     {
         message.text = m;
-        ///yield return new WaitForSeconds(3);
-        //message.text = "Waiting for input...";
     }
     
 }
