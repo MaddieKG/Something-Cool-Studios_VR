@@ -1247,8 +1247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cname: Bob
-  greens: pro
-  meat: anti
+  greens: 0
+  meat: 0
 --- !u!137 &137064245706670926
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

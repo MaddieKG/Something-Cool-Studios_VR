@@ -2869,6 +2869,7 @@ MonoBehaviour:
   - {fileID: 1228108115970210, guid: ff1cd418f8078f74ab2ebcf788e4620d, type: 2}
   current: {fileID: 0}
   pos: {fileID: 635667167}
+  message: 
   UIcontrol: {fileID: 0}
   cartControl: {fileID: 0}
 --- !u!1001 &200238892
@@ -3110,6 +3111,16 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114998069629180022, guid: f2f2bbb5257d87440b89260162442b91,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224009054713255968, guid: f2f2bbb5257d87440b89260162442b91,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 229
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2f2bbb5257d87440b89260162442b91, type: 2}
@@ -4670,6 +4681,56 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224338291254967568, guid: 9d0407f53fa2643b3b8fa8cd40849e95,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 224338291254967568, guid: 9d0407f53fa2643b3b8fa8cd40849e95,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 224338291254967568, guid: 9d0407f53fa2643b3b8fa8cd40849e95,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 224338291254967568, guid: 9d0407f53fa2643b3b8fa8cd40849e95,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -1215.0027
+      objectReference: {fileID: 0}
+    - target: {fileID: 224338291254967568, guid: 9d0407f53fa2643b3b8fa8cd40849e95,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 69.999695
+      objectReference: {fileID: 0}
+    - target: {fileID: 114804885877421790, guid: 9d0407f53fa2643b3b8fa8cd40849e95,
+        type: 2}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114804885877421790, guid: 9d0407f53fa2643b3b8fa8cd40849e95,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224338291254967568, guid: 9d0407f53fa2643b3b8fa8cd40849e95,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114804885877421790, guid: 9d0407f53fa2643b3b8fa8cd40849e95,
+        type: 2}
+      propertyPath: m_FontData.m_RichText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114804885877421790, guid: 9d0407f53fa2643b3b8fa8cd40849e95,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d0407f53fa2643b3b8fa8cd40849e95, type: 2}
@@ -10213,8 +10274,8 @@ MonoBehaviour:
   chickenData: {fileID: 11400000, guid: 21e04e86a60dbce4bb6a962e99dda84e, type: 2}
   gmoLettData: {fileID: 11400000, guid: 9b90a7fdf6c2cb94ea3cea5e2e4341f8, type: 2}
   orgLettData: {fileID: 11400000, guid: 76c27cb922ba94645aecf8968e61d485, type: 2}
-  currentMeat: 
-  currentLettuce: 
+  currentMeat: 0
+  currentLettuce: 0
   one: 0
   two: 0
   three: 0

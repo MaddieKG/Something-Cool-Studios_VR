@@ -51,9 +51,9 @@ public class UIController : MonoBehaviour {
     }
 
     //Hides cost UI whenever buying is not active
-    private void hideCost(bool inBasket)
+    public void hideCost(bool start)
     {
-        if (inBasket == true)
+        if (start == false)
         {
             costDisplay.SetActive(true);
         }
@@ -81,16 +81,9 @@ public class UIController : MonoBehaviour {
         popText.text = "Popularity: " + pointsScript.popularity.ToString();
     }
 
-    public void updateTranslator(bool likes)
+    public void updateTranslator(string m)
     {
-        if (likes == true)
-        {
-            message.text = ":)";
-        }
-        else
-        {
-            message.text = ":(";
-        }
+        message.text = m;
         ///yield return new WaitForSeconds(3);
         //message.text = "Waiting for input...";
     }

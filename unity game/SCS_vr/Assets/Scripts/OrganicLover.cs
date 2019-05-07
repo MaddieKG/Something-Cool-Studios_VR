@@ -14,9 +14,11 @@ public class OrganicLover : MonoBehaviour {
     void Start()
     {
         anim = GetComponent<Animator>();
+        /**
         Debug.Log("name: " + cname);
         Debug.Log("green: " + greens.ToString());
         Debug.Log("meat: " + meat.ToString());
+    **/
     }
 
     public string getName()

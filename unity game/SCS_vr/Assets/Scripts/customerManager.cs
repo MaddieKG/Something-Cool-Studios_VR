@@ -7,6 +7,7 @@ public class customerManager : MonoBehaviour {
     public GameObject[] allCust;
     public GameObject current;
     public GameObject pos;
+    public string message;
 
     public GameObject UIcontrol, cartControl;
     private int green, meat;
@@ -58,11 +59,21 @@ public class customerManager : MonoBehaviour {
         //generates response
         if (cartScript.currentLettuce == green && cartScript.currentMeat == meat)
         {
-            controller.updateTranslator(true);
+            message = "I love the tacos!";
+        }
+        else if (cartScript.currentLettuce == 1)
+        {
+            message = "The tacos are too expensive";
+        }
+        else if (cartScript.currentMeat == 1)
+        {
+            message = "I wish the tacos had beef";
         }
         else
         {
-            controller.updateTranslator(false);
+            message = "The tacos are not environmentally friendly!";
+
         }
+        controller.updateTranslator(message);
     }
 }
