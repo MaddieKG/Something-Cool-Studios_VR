@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6f54daf4cade44fb044a95362bc665, type: 3}
   m_Name: Chicken
   m_EditorClassIdentifier: 
-  money: 2
+  money: 0.75
   green: 1

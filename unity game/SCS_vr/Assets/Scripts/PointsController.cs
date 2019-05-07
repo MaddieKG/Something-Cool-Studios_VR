@@ -6,7 +6,7 @@ public class PointsController : MonoBehaviour {
 
     [SerializeField]
     public PointsData pointsData;
-    public int money, green, popularity;
+    //public int money, green, popularity;
 
     // Use this for initialization
     void Start () {
@@ -19,14 +19,14 @@ public class PointsController : MonoBehaviour {
         popularity = 50;**/
 	}
 
-    public void buyProducts(int cost, int green)
+    public void buyProducts(float cost, int green)
     {
         UIController controlUI = GameObject.Find("UIController").GetComponent<UIController>();
         addPoints((-1 * cost), 0, green);
         controlUI.setPointText();
     }
 
-    public void sellTaco(int tacoCost, int tacoPop)
+    public void sellTaco(float tacoCost, int tacoPop)
     {
         UIController controlUI = GameObject.Find("UIController").GetComponent<UIController>();
         pointsData.money += tacoCost;
@@ -36,7 +36,7 @@ public class PointsController : MonoBehaviour {
 
     }
 
-    public void addPoints(int m, int p, int g)
+    public void addPoints(float m, int p, int g)
     {
         pointsData.money += m;
         pointsData.green += g;

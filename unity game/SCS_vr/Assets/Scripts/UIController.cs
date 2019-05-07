@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour {
     private PointsData pointsData;
     private bool isCostShowing;
     private GameObject costDisplay, startButton, pointsController;
-    private int monRemaining, cost;
+    private float monRemaining, cost;
 
     // Use this for initialization
     void Start () {
@@ -44,7 +44,7 @@ public class UIController : MonoBehaviour {
     }
     
     //uses money to estimate total cost
-    public void setCost(int cost)
+    public void setCost(float cost)
     {
         monRemaining -= cost;
         setCostText(cost);
@@ -64,11 +64,11 @@ public class UIController : MonoBehaviour {
     }
     
     //Sets text in cost display UI to correct values
-    public void setCostText(int cost)
+    public void setCostText(float cost)
     {
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
         costText.text = "Total cost: " + cost.ToString();
-        monRemaining = pointsScript.money - cost;
+        monRemaining = pointsScript.pointsData.money - cost;
         remainingMonText.text = "Remaining Money: " + monRemaining.ToString();
     }
 
