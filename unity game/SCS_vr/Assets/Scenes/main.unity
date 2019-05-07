@@ -2666,6 +2666,21 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114399707776991682, guid: 47821fd0f71bc4414ab2b6143d96f410,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224358253099451788, guid: 47821fd0f71bc4414ab2b6143d96f410,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -72
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399707776991682, guid: 47821fd0f71bc4414ab2b6143d96f410,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47821fd0f71bc4414ab2b6143d96f410, type: 2}
   m_IsPrefabAsset: 0

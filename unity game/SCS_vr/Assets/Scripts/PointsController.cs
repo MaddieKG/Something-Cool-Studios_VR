@@ -5,18 +5,18 @@ using UnityEngine;
 public class PointsController : MonoBehaviour {
 
     [SerializeField]
-    private PointsData pointsData;
+    public PointsData pointsData;
     public int money, green, popularity;
 
     // Use this for initialization
     void Start () {
-        pointsData.money = 50;
+        pointsData.money = 20;
         pointsData.green = 50;
         pointsData.popularity = 50;
-
+        /**
         money = 50;
         green = 50;
-        popularity = 50;
+        popularity = 50;**/
 	}
 
     public void buyProducts(int cost, int green)
@@ -29,8 +29,8 @@ public class PointsController : MonoBehaviour {
     public void sellTaco(int tacoCost, int tacoPop)
     {
         UIController controlUI = GameObject.Find("UIController").GetComponent<UIController>();
-        money += tacoCost;
-        popularity += tacoPop;
+        pointsData.money += tacoCost;
+        pointsData.popularity += tacoPop;
         addPoints(tacoCost, tacoPop, 0);
         controlUI.setPointText();
 
@@ -38,9 +38,9 @@ public class PointsController : MonoBehaviour {
 
     public void addPoints(int m, int p, int g)
     {
-        money += m;
-        green += g;
-        popularity += p;
+        pointsData.money += m;
+        pointsData.green += g;
+        pointsData.popularity += p;
     }
 
 }
