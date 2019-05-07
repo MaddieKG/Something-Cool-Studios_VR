@@ -27,14 +27,9 @@ public class VeggieLover : MonoBehaviour {
         return greens;
     }
 
-    public string getMeat()
-    {
-        return meat;
-    }
-
     // Update is called once per frame
     void Update()
     {
-        anim.SetBool("TestBool", true);
+        //anim.SetBool("TestBool", true);
     }
 }
