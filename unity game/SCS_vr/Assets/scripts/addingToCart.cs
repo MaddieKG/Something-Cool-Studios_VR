@@ -17,7 +17,7 @@ public class addingToCart : MonoBehaviour
 
     void Start()
     {
-        one = false;
+        one = false; 
         two = false;
         three = false;
         onPress = true;
@@ -71,7 +71,6 @@ public class addingToCart : MonoBehaviour
                 else if (col.gameObject.name == "chicken")
                 {
                     totalCost += chickenData.Money;
-                    Debug.Log(totalCost.ToString());
                     totalGreen += chickenData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
