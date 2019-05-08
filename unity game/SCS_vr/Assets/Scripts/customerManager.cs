@@ -9,7 +9,7 @@ public class customerManager : MonoBehaviour {
     public GameObject pos;
     public string message;
 
-    public GameObject UIcontrol, cartControl;
+    public GameObject UIcontrol, cartControl, tacoDetector;
     private int green, meat;
 
     void Start()
@@ -41,7 +41,10 @@ public class customerManager : MonoBehaviour {
         addingToCart cartScript = cartControl.GetComponent<addingToCart>();
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();
-        //checks what type of customer
+        tacoDetector = GameObject.Find("counter");
+        detectTaco detectScript = tacoDetector.GetComponent<detectTaco>();
+        //get customer popularity
+        //checks type of customer
         if (current.name == "courier")
         {
             //nonorganic lover
@@ -60,20 +63,18 @@ public class customerManager : MonoBehaviour {
         if (cartScript.currentLettuce == green && cartScript.currentMeat == meat)
         {
             message = "I love the tacos!";
+            detectScript.tacoPop = 3;
         }
         else if ((cartScript.currentLettuce != green || cartScript.currentMeat != meat) && current.name == "shorthair")
         {
             message = "The tacos aren't environmentally friendly enough.";
+            detectScript.tacoPop = -5;
         }
         else if (cartScript.currentLettuce != green && cartScript.currentMeat != meat)
         {
             if (green == 0 && meat == 1)
             {
                 message = "The tacos are too expensive.";
-            }
-            else if (green == 0 && meat == 0)
-            {
-                message = "The tacos are not environmentally friendly.";
             }
         }
         
@@ -82,10 +83,12 @@ public class customerManager : MonoBehaviour {
             if (meat == 0)
             {
                 message = "I wish the tacos had beef.";
+                detectScript.tacoPop = -2;
             }
             else if (meat == 1)
             {
                 message = "I wish the tacos had chicken.";
+                detectScript.tacoPop = -1;
             }
         } 
         else

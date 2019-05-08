@@ -33,12 +33,17 @@ public class addingToCart : MonoBehaviour
         PointsController pointsScript = pointsController.GetComponent<PointsController>();
         startButton = GameObject.Find("StartButton");
         StartControl startScript = startButton.GetComponent<StartControl>();
-
+        detectTaco tacoDetector = GameObject.Find("counter").GetComponent<detectTaco>();
         if (itemsInCart > 1 && startScript.start == true && onPress == true)
         {
             //totalCost *= customers;
             onPress = false;
+            tacoDetector.tacoPrice = (totalCost * 3) + totalCost;
+            Debug.Log(tacoDetector.tacoPrice);
+            totalCost *= customers;
+            totalGreen *= customers;
             pointsScript.buyProducts(totalCost, totalGreen);
+
         }
     }
 
@@ -62,8 +67,8 @@ public class addingToCart : MonoBehaviour
                 //updating points system based on choice of meat
                 if (col.gameObject.name == "beef")
                 {
-                    totalCost += beefData.money * customers;
-                    totalGreen += beefData.Green * customers;
+                    totalCost += beefData.money;
+                    totalGreen += beefData.Green;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentMeat = 0;
@@ -71,8 +76,8 @@ public class addingToCart : MonoBehaviour
                 }
                 else if (col.gameObject.name == "chicken")
                 {
-                    totalCost += chickenData.Money * customers;
-                    totalGreen += chickenData.Green * customers;
+                    totalCost += chickenData.Money;
+                    totalGreen += chickenData.Green;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentMeat = 1;
@@ -94,8 +99,8 @@ public class addingToCart : MonoBehaviour
             //updating points system based on choice of lettuce
               if (col.gameObject.name == "gmoLettuce")
               {
-                    totalCost += gmoLettData.Money * customers;
-                    totalGreen += gmoLettData.Green * customers;
+                    totalCost += gmoLettData.Money;
+                    totalGreen += gmoLettData.Green;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentLettuce = 0;
@@ -103,8 +108,8 @@ public class addingToCart : MonoBehaviour
                 }
               else if (col.gameObject.name == "orgLettuce")
               {
-                    totalCost += orgLettData.Money * customers;
-                    totalGreen += orgLettData.Green * customers;
+                    totalCost += orgLettData.Money;
+                    totalGreen += orgLettData.Green;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentLettuce = 1;
