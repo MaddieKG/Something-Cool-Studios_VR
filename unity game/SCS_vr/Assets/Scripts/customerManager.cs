@@ -61,18 +61,36 @@ public class customerManager : MonoBehaviour {
         {
             message = "I love the tacos!";
         }
-        else if (cartScript.currentLettuce == 1)
+        else if ((cartScript.currentLettuce != green || cartScript.currentMeat != meat) && current.name == "shorthair")
         {
-            message = "The tacos are too expensive";
+            message = "The tacos aren't environmentally friendly enough.";
         }
-        else if (cartScript.currentMeat == 1)
+        else if (cartScript.currentLettuce != green && cartScript.currentMeat != meat)
         {
-            message = "I wish the tacos had beef";
+            if (green == 0 && meat == 1)
+            {
+                message = "The tacos are too expensive.";
+            }
+            else if (green == 0 && meat == 0)
+            {
+                message = "The tacos are not environmentally friendly.";
+            }
         }
+        
+        else if (cartScript.currentMeat != meat)
+        {
+            if (meat == 0)
+            {
+                message = "I wish the tacos had beef.";
+            }
+            else if (meat == 1)
+            {
+                message = "I wish the tacos had chicken.";
+            }
+        } 
         else
         {
-            message = "The tacos are not environmentally friendly!";
-
+            message = "Thank you!";
         }
         controller.updateTranslator(message);
     }

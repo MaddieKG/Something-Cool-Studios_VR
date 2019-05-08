@@ -24,7 +24,7 @@ public class addingToCart : MonoBehaviour
         totalCost = 0;
         totalGreen = 0;
         itemsInCart = 0;
-        customers = 1;
+        customers = 6;
     }
 
     void Update()
@@ -95,7 +95,6 @@ public class addingToCart : MonoBehaviour
               if (col.gameObject.name == "gmoLettuce")
               {
                     totalCost += gmoLettData.Money * customers;
-                    Debug.Log(totalCost.ToString());
                     totalGreen += gmoLettData.Green * customers;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
@@ -105,7 +104,6 @@ public class addingToCart : MonoBehaviour
               else if (col.gameObject.name == "orgLettuce")
               {
                     totalCost += orgLettData.Money * customers;
-                    Debug.Log(totalCost.ToString());
                     totalGreen += orgLettData.Green * customers;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
