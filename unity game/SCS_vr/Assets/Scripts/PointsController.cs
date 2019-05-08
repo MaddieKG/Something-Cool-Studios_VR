@@ -29,8 +29,6 @@ public class PointsController : MonoBehaviour {
     public void sellTaco(float tacoCost, int tacoPop)
     {
         UIController controlUI = GameObject.Find("UIController").GetComponent<UIController>();
-        pointsData.money += tacoCost;
-        pointsData.popularity += tacoPop;
         addPoints(tacoCost, tacoPop, 0);
         controlUI.setPointText();
 

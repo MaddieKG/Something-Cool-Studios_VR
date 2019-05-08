@@ -39,7 +39,6 @@ public class addingToCart : MonoBehaviour
             //totalCost *= customers;
             onPress = false;
             tacoDetector.tacoPrice = (totalCost * 3) + totalCost;
-            Debug.Log(tacoDetector.tacoPrice);
             totalCost *= customers;
             totalGreen *= customers;
             pointsScript.buyProducts(totalCost, totalGreen);
