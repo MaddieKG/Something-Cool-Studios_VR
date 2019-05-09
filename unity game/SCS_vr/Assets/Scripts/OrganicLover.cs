@@ -9,7 +9,7 @@ public class OrganicLover : MonoBehaviour {
     //0 for not sustainable, 1 for sustainable
     public int greens = 1;
     public int meat = 1;
-    private static Animator anim;
+    private Animator anim;
 
     void Start()
     {
@@ -39,6 +39,6 @@ public class OrganicLover : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //anim.SetBool("TestBool", true);
+        anim.SetBool("TestBool", true);
     }
 }
