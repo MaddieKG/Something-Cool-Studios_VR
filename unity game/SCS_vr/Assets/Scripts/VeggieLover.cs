@@ -7,14 +7,14 @@ public class VeggieLover : MonoBehaviour {
     public string cname = "Jim";
     public string greens = "anti";
     public string meat = "pro";
-    private Animator anim;
+    public static Animator anim;
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        Debug.Log("name: " + cname);
-        Debug.Log("green: " + greens);
-        Debug.Log("meat: " + meat);
+        //Debug.Log("name: " + cname);
+        //Debug.Log("green: " + greens);
+        //Debug.Log("meat: " + meat);
     }
 
     public string getName()

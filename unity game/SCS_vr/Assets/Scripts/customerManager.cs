@@ -5,7 +5,7 @@ using UnityEngine;
 public class customerManager : MonoBehaviour {
     //array of game objects
     public GameObject[] allCust;
-    private GameObject current;
+    public static GameObject current;
     public GameObject[] pos;
 
     public GameObject UIcontrol, cartControl;
@@ -32,32 +32,13 @@ public class customerManager : MonoBehaviour {
           //Creates instance of prefab at current spawn pt
           current = allCust[i];
           Instantiate(current, pos[p].transform.position, transform.rotation);
-          current.transform.Rotate(180, 0, 0);
+          //current.transform.Rotate(180, 0, 0);
 
-          //Moves to the next spawn point index. Will wrap if it goes out of range
+          //Moves to the next spawn point index
           p++;
         }
     }
 
-    void moveUp()
-    {
-      int p = 0;
-      for(int i = 0; i < 6; i++)
-      {
-        current = allCust[i];
-        if(p == 0)
-        {
-          Destroy(current);
-        }
-        else
-        {
-          Destroy(current);
-          Instantiate(current, pos[p].transform.position, transform.rotation);
-          current.transform.Rotate(180, 0, 0);
-          p++;
-        }
-      }
-    }
     // Update is called once per frame
     void Update ()
     {
@@ -65,11 +46,6 @@ public class customerManager : MonoBehaviour {
         {
             SpawnCustomer();
             Debug.Log("space pressed");
-        }
-        if(Input.GetKeyDown(KeyCode.Backspace))
-        {
-          Debug.Log("Backspace pressed");
-          moveUp();
         }
 	}
 
