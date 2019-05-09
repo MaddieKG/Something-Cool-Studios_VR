@@ -18,23 +18,12 @@ public class customerManager : MonoBehaviour {
 
     void SpawnCustomer()
     {
-      /*
-        int i = Random.Range(0, allCust.Length);
-        current = allCust[i];
-        Instantiate(current, pos.transform.position, transform.rotation);
-
-        current.transform.Rotate(0, 90, 0);
-        */
         //allCust size is 6
         int p = 0;
         for (int i = 0; i < 6; i++)
          {
-          //Creates instance of prefab at current spawn pt
           current = allCust[i];
           Instantiate(current, pos[p].transform.position, transform.rotation);
-          //current.transform.Rotate(180, 0, 0);
-
-          //Moves to the next spawn point index
           p++;
         }
     }
