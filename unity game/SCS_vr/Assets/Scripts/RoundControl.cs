@@ -8,18 +8,20 @@ public class RoundControl : MonoBehaviour
 {
     //please attach to a EndButton object
     public RoundData roundData;
+    public int customers;
 
     void Start()
     {
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider>().enabled = false;
+        customers = 6;
     }
 
     void Update()
     {
         StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
 
-        if (startScript.start == true)
+        if (customers == 0)
         {
             gameObject.GetComponent<MeshRenderer>().enabled = true;
             gameObject.GetComponent<BoxCollider>().enabled = true;
