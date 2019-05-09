@@ -1173,8 +1173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cname: Jim
-  greens: anti
-  meat: pro
+  greens: 1
+  meat: 1
 --- !u!137 &137113200158394466
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

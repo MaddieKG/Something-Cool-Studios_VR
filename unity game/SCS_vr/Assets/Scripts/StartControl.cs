@@ -7,24 +7,32 @@ public class StartControl : MonoBehaviour {
 
     public bool start;
     public Text buttonDisplay;
-	//object this is attached to needs a RigidBody
+
+    private GameObject UIcontrol, cartControl;
+    //object this is attached to needs a RigidBody
     //please attach to a StartButton object
 
-	void Start () {
+    void Start () {
         start = false;
         buttonDisplay.text = "Start";
     }
 
     private void OnTriggerEnter()
     {
-        start = !start;
+        UIcontrol = GameObject.Find("UIController");
+        UIController controller = UIcontrol.GetComponent<UIController>();
+        addingToCart cartScript = GameObject.Find("cart").GetComponent<addingToCart>();
+
+        start = true;
         if (start == false)
         {
             buttonDisplay.text = "Start";
+            controller.hideCost(start);
         }
-        else
+        else if (cartScript.itemsInCart > 1)
         {
-            buttonDisplay.text = "Stop";
+            buttonDisplay.text = "...";
+            controller.hideCost(start);
         }
     }
 

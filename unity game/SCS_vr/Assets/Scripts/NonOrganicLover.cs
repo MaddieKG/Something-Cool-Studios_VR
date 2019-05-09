@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VeggieLover : MonoBehaviour {
+public class NonOrganicLover : MonoBehaviour {
 
-    public string cname = "Jim";
-    public string greens = "anti";
-    public string meat = "pro";
+    
+    public string cname = "Bob";
+
+    //0 for not sustainable, 1 for sustainable
+    public int greens = 0;
+    public int meat = 0;
     private Animator anim;
 
-    void Start()
-    {
+    void Start () {
         anim = GetComponent<Animator>();
         Debug.Log("name: " + cname);
-        Debug.Log("green: " + greens);
-        Debug.Log("meat: " + meat);
+        Debug.Log("green: " + greens.ToString());
+        Debug.Log("meat: " + meat.ToString());
     }
 
     public string getName()
@@ -22,17 +24,16 @@ public class VeggieLover : MonoBehaviour {
         return cname;
     }
 
-    public string getGreens()
+    public int getGreens()
     {
         return greens;
     }
 
-    public string getMeat()
+    public int getMeat()
     {
         return meat;
     }
 
-    // Update is called once per frame
     void Update()
     {
         anim.SetBool("TestBool", true);

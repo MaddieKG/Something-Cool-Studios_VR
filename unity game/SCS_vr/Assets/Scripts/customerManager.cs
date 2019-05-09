@@ -7,8 +7,10 @@ public class customerManager : MonoBehaviour {
     public GameObject[] allCust;
     public GameObject current;
     public GameObject pos;
+    public string message;
 
-    public GameObject UIcontrol, cartControl;
+    public GameObject UIcontrol, cartControl, tacoDetector;
+    private int green, meat;
 
     void Start()
     {
@@ -30,7 +32,6 @@ public class customerManager : MonoBehaviour {
         if (Input.GetKeyDown("space"))
         {
             SpawnCustomer();
-            Debug.Log(current.name);
         }
 	}
 
@@ -40,9 +41,62 @@ public class customerManager : MonoBehaviour {
         addingToCart cartScript = cartControl.GetComponent<addingToCart>();
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();
-        if (cartScript.currentLettuce == "pro" && cartScript.currentMeat == "pro")
+        tacoDetector = GameObject.Find("counter");
+        detectTaco detectScript = tacoDetector.GetComponent<detectTaco>();
+        //get customer popularity
+        //checks type of customer
+        if (current.name == "courier")
         {
-            controller.updateTranslator(true);
+            //nonorganic lover
+            NonOrganicLover nonorgStats = current.GetComponent<NonOrganicLover>();
+            green = nonorgStats.getGreens();
+            meat = nonorgStats.getMeat();
         }
+        else if (current.name == "shorthair")
+        {
+            //organic lover
+            OrganicLover orgStats = current.GetComponent<OrganicLover>();
+            green = orgStats.getGreens();
+            meat = orgStats.getMeat();
+        }
+        //generates response
+        if (cartScript.currentLettuce == green && cartScript.currentMeat == meat)
+        {
+            message = "I love the tacos!";
+            detectScript.tacoPop = 3;
+        }
+        else if ((cartScript.currentLettuce != green || cartScript.currentMeat != meat) && current.name == "shorthair")
+        {
+            message = "The tacos aren't environmentally friendly enough.";
+            detectScript.tacoPop = -3;
+        }
+        else if (cartScript.currentLettuce != green && cartScript.currentMeat != meat)
+        {
+            if (green == 0 && meat == 1)
+            {
+                message = "The tacos are too expensive.";
+                detectScript.tacoPop = -1;
+            }
+        }
+        
+        else if (cartScript.currentMeat != meat)
+        {
+            if (meat == 0)
+            {
+                message = "I wish the tacos had beef.";
+                detectScript.tacoPop = -2;
+            }
+            else if (meat == 1)
+            {
+                message = "I wish the tacos had chicken.";
+                detectScript.tacoPop = -1;
+            }
+        } 
+        else
+        {
+            message = "Thank you!";
+            detectScript.tacoPop = 2;
+        }
+        controller.updateTranslator(message);
     }
 }
