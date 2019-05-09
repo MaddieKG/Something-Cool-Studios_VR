@@ -22,11 +22,12 @@ public class UIController : MonoBehaviour {
         startButton = GameObject.Find("StartButton");//need a StartButton object
         StartControl startScript = startButton.GetComponent<StartControl>();
         startScript.start = false;
+        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
 
         //cost display stuff
         costDisplay = GameObject.Find("CostDisplay");
         costDisplay.SetActive(true);
-        monRemaining = pointsData.Money;
+        monRemaining = pointsScript.pointsData.Money;
         cost = 0;
 
         //For translator
