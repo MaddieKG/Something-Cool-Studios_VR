@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d1da5cecba9e75848b9677bda291c1f8
+guid: f7911b46ed83bd4418204a956f7f0efd
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -35,9 +35,8 @@ ModelImporter:
     100058: Game_Spine
     100060: Game_Spine1
     100062: Game_Spine2
-    100064: mixamo:baseball_cap
-    100066: mixamo:hair06
-    100068: //RootNode
+    100064: mixamo:hair01
+    100066: //RootNode
     400000: Game_Head
     400002: Game_Hips
     400004: Game_LeftArm
@@ -70,15 +69,11 @@ ModelImporter:
     400058: Game_Spine
     400060: Game_Spine1
     400062: Game_Spine2
-    400064: mixamo:baseball_cap
-    400066: mixamo:hair06
-    400068: //RootNode
-    2300000: mixamo:baseball_cap
-    2300002: mixamo:hair06
-    3300000: mixamo:baseball_cap
-    3300002: mixamo:hair06
-    4300000: mixamo:hair06
-    4300002: mixamo:baseball_cap
+    400064: mixamo:hair01
+    400066: //RootNode
+    2300000: mixamo:hair01
+    3300000: mixamo:hair01
+    4300000: mixamo:hair01
     7400000: mixamo.com
     9500000: //RootNode
     2186277476908879412: ImportLogs
@@ -97,11 +92,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'Game_Spine1' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'Game_Spine2' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -113,35 +104,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: mixamo.com
-      takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 73
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -321,16 +284,16 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: mixamo:hair06
-      humanName: LeftEye
+    - boneName: Game_LeftHandThumb1
+      humanName: Left Thumb Proximal
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: mixamo:baseball_cap
-      humanName: RightEye
+    - boneName: Game_LeftHandThumb2
+      humanName: Left Thumb Intermediate
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -363,22 +326,6 @@ ModelImporter:
         modified: 0
     - boneName: Game_LeftHandMiddle2
       humanName: Left Middle Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Game_LeftHandThumb1
-      humanName: Left Little Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Game_LeftHandThumb2
-      humanName: Left Little Intermediate
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -434,80 +381,80 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Walking(Clone)
+    - name: Right Turn(Clone)
       parentName: 
-      position: {x: 0.01101909, y: -0.006598167, z: 0.06344953}
-      rotation: {x: -0.74337465, y: -0.022612128, z: -0.0026650336, w: 0.66848767}
+      position: {x: 0.03801267, y: -0.0074473186, z: 0.022018928}
+      rotation: {x: -0.71492016, y: 0.016883522, z: 0.062952206, w: 0.69616175}
       scale: {x: 100, y: 100, z: 100}
     - name: Game_Hips
-      parentName: Walking(Clone)
+      parentName: Right Turn(Clone)
       position: {x: -0, y: 0.000052, z: 0.005232}
-      rotation: {x: 0.69203293, y: 0.000010896462, z: 0.000010105185, w: 0.72186595}
+      rotation: {x: 0.49269494, y: 0.014107848, z: -0.03469167, w: 0.8693959}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftUpLeg
       parentName: Game_Hips
       position: {x: -0.000966, y: 0.00027599998, z: -0.000024}
-      rotation: {x: 0.7067555, y: -0.116989374, z: -0.69575685, w: -0.052273903}
+      rotation: {x: 0.7356106, y: 0.08352798, z: -0.6533266, w: -0.15831825}
       scale: {x: 1.0001, y: 1, z: 1}
     - name: Game_LeftLeg
       parentName: Game_LeftUpLeg
       position: {x: -0, y: 0.0027639999, z: 0}
-      rotation: {x: -0.08783536, y: 0.045831494, z: -0.2693123, w: 0.9579433}
+      rotation: {x: 0.0017760487, y: -0.05050332, z: -0.31582344, w: 0.94747126}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftFoot
       parentName: Game_LeftLeg
       position: {x: -0, y: 0.002133, z: 0}
-      rotation: {x: -0.20312028, y: 0.9770806, z: 0.044497933, w: 0.045559585}
+      rotation: {x: -0.78784055, y: 0.6143484, z: 0.039841503, w: 0.017205887}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_RightUpLeg
       parentName: Game_Hips
       position: {x: 0.000966, y: 0.00027599998, z: -0.000024}
-      rotation: {x: -0.67562205, y: 0.056339823, z: 0.73464566, w: -0.025620792}
+      rotation: {x: -0.68495446, y: -0.12911189, z: 0.7086928, w: 0.10918886}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_RightLeg
       parentName: Game_RightUpLeg
       position: {x: -0, y: 0.0027639999, z: 0}
-      rotation: {x: 0.024364844, y: -0.007195705, z: -0.2593783, w: 0.9654416}
+      rotation: {x: 0.015640851, y: 0.0811959, z: -0.22380547, w: 0.9711198}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_RightFoot
       parentName: Game_RightLeg
       position: {x: -0, y: 0.002133, z: 0}
-      rotation: {x: -0.58558625, y: 0.81055903, z: 0.003709258, w: -0.008306819}
+      rotation: {x: -0.7596579, y: 0.6498393, z: 0.0009272563, w: -0.02506062}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_Spine
       parentName: Game_Hips
       position: {x: -0, y: 0.00058899994, z: 0}
-      rotation: {x: -0.016943507, y: -0.0043595354, z: 0.0064395354, w: 0.9998262}
+      rotation: {x: 0.1154614, y: -0.022986803, z: -0.011899283, w: 0.9929747}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_Spine1
       parentName: Game_Spine
       position: {x: -0, y: 0.0008, z: 0}
-      rotation: {x: -0.03275778, y: -0.0076669846, z: 0.0100596575, w: 0.99938333}
+      rotation: {x: 0.23033923, y: -0.04591111, z: -0.025665253, w: 0.9716879}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftShoulder
       parentName: Game_Spine1
       position: {x: -0.000511, y: 0.0016140001, z: 0.000205}
-      rotation: {x: -0.508904, y: 0.50052965, z: 0.48066762, w: 0.509358}
+      rotation: {x: -0.5154448, y: 0.39925966, z: 0.6312989, w: 0.4199645}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftArm
       parentName: Game_LeftShoulder
       position: {x: -0, y: 0.00067100005, z: 0}
-      rotation: {x: -0.022347001, y: -0.13626073, z: 0.030298602, w: 0.98995745}
+      rotation: {x: 0.13973399, y: 0.22790803, z: 0.027846826, w: 0.96320146}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftForeArm
       parentName: Game_LeftArm
       position: {x: -0, y: 0.001309, z: 0}
-      rotation: {x: 0.0197533, y: 0.16009957, z: 0.009754156, w: 0.9868551}
+      rotation: {x: 0.008336702, y: 0.018120276, z: 0.03594592, w: 0.9991547}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftHand
       parentName: Game_LeftForeArm
       position: {x: -0, y: 0.001367, z: 0}
-      rotation: {x: -0.07063026, y: 0.60284114, z: 0.20780315, w: 0.76708}
+      rotation: {x: 0.04142913, y: 0.0072995, z: 0.26452103, w: 0.963462}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftHandIndex1
       parentName: Game_LeftHand
       position: {x: -0.000239, y: 0.000564, z: -0.000057}
-      rotation: {x: -0.08612801, y: 0.06304266, z: -0.21021706, w: 0.97181094}
+      rotation: {x: -0.09691451, y: 0.017087452, z: -0.20150818, w: 0.97453064}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftHandIndex2
       parentName: Game_LeftHandIndex1
@@ -517,7 +464,7 @@ ModelImporter:
     - name: Game_LeftHandMiddle1
       parentName: Game_LeftHand
       position: {x: 0.00021099999, y: 0.000568, z: -0.000027}
-      rotation: {x: -0.09940493, y: 0.01166319, z: -0.19368294, w: 0.9759454}
+      rotation: {x: -0.09420392, y: -0.0048517, z: -0.21299268, w: 0.9724897}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftHandMiddle2
       parentName: Game_LeftHandMiddle1
@@ -527,7 +474,7 @@ ModelImporter:
     - name: Game_LeftHandThumb1
       parentName: Game_LeftHand
       position: {x: -0.000228, y: 0.000293, z: -0.00005}
-      rotation: {x: -0.028740542, y: 0.048215277, z: -0.103847116, w: 0.99300814}
+      rotation: {x: -0.13546853, y: -0.103563204, z: 0.14750673, w: 0.9742509}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_LeftHandThumb2
       parentName: Game_LeftHandThumb1
@@ -537,27 +484,27 @@ ModelImporter:
     - name: Game_RightShoulder
       parentName: Game_Spine1
       position: {x: 0.000511, y: 0.0016140001, z: 0.000205}
-      rotation: {x: -0.49270403, y: -0.4876466, z: -0.47070011, w: 0.5457884}
+      rotation: {x: 0.5242687, y: 0.38996813, z: 0.6079166, w: -0.4511149}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_RightArm
       parentName: Game_RightShoulder
       position: {x: -0, y: 0.000677, z: 0}
-      rotation: {x: -0.05460019, y: -0.050827798, z: -0.03438619, w: 0.9966208}
+      rotation: {x: 0.14721708, y: -0.18970127, z: 0.030802205, w: 0.97025347}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_RightForeArm
       parentName: Game_RightArm
       position: {x: -0, y: 0.0013629999, z: 0}
-      rotation: {x: 0.013720132, y: -0.07920286, z: -0.020698885, w: 0.9965492}
+      rotation: {x: 0.011072883, y: -0.032967255, z: -0.032362696, w: 0.99887097}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_RightHand
       parentName: Game_RightForeArm
       position: {x: -0, y: 0.001248, z: 0}
-      rotation: {x: 0.33208513, y: 0.8982074, z: 0.19471128, w: -0.21220353}
+      rotation: {x: -0.13233279, y: -0.75438833, z: -0.12927313, w: 0.62982124}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_RightHandIndex1
       parentName: Game_RightHand
       position: {x: -0, y: 0.000597, z: -0.000173}
-      rotation: {x: 0.05771002, y: 0.6895914, z: 0.15461223, w: 0.7051441}
+      rotation: {x: 0.041344434, y: 0.6803965, z: 0.14907263, w: 0.71633005}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_RightHandIndex2
       parentName: Game_RightHandIndex1
@@ -567,7 +514,7 @@ ModelImporter:
     - name: Game_RightHandMiddle1
       parentName: Game_RightHand
       position: {x: -0, y: 0.00059, z: 0.000185}
-      rotation: {x: 0.058569588, y: 0.6781408, z: 0.15088783, w: 0.7168875}
+      rotation: {x: 0.050362006, y: 0.6776972, z: 0.15792438, w: 0.7164148}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_RightHandMiddle2
       parentName: Game_RightHandMiddle1
@@ -577,7 +524,7 @@ ModelImporter:
     - name: Game_RightHandThumb1
       parentName: Game_RightHand
       position: {x: -0.000020999998, y: 0.000378, z: -0.000219}
-      rotation: {x: -0.3108167, y: 0.85253537, z: 0.11461478, w: 0.40427712}
+      rotation: {x: -0.122297205, y: 0.97984934, z: -0.12923844, w: 0.09075293}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_RightHandThumb2
       parentName: Game_RightHandThumb1
@@ -587,26 +534,21 @@ ModelImporter:
     - name: Game_Spine2
       parentName: Game_Spine1
       position: {x: -0, y: 0.000894, z: 0}
-      rotation: {x: 0.05161223, y: 0.0010792061, z: -0.0060994234, w: 0.998648}
+      rotation: {x: 0.08558458, y: 0.025247902, z: -0.016146522, w: 0.99588007}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_Neck
       parentName: Game_Spine2
       position: {x: -0, y: 0.0014689999, z: 0}
-      rotation: {x: -0.0011827273, y: 0.0007928143, z: -0.0061432174, w: 0.99998015}
+      rotation: {x: 0.032833945, y: 0.024499597, z: -0.017373446, w: 0.9990095}
       scale: {x: 1, y: 1, z: 1}
     - name: Game_Head
       parentName: Game_Neck
       position: {x: -0, y: 0.00055, z: 0}
-      rotation: {x: 0.006121125, y: 0.99993265, z: -0.009816922, w: -0.0009630998}
+      rotation: {x: 0.1182354, y: 0.9773972, z: 0.12183433, w: -0.12598245}
       scale: {x: 1, y: 1, z: 1}
-    - name: mixamo:baseball_cap
+    - name: mixamo:hair01
       parentName: Game_Head
-      position: {x: -0, y: 0.007164, z: -0.00012299999}
-      rotation: {x: -0.0000693441, y: 0.62263966, z: 0.7825088, w: 0.000041794305}
-      scale: {x: 1, y: 1, z: 1}
-    - name: mixamo:hair06
-      parentName: Game_Head
-      position: {x: -0, y: -0.00006699999, z: -0.003151}
+      position: {x: -0, y: -0.009585, z: -0.000255}
       rotation: {x: -0.00006515486, y: 0.69274193, z: 0.72118556, w: 0.00004806465}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
