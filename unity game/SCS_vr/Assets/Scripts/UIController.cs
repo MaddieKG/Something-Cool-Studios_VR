@@ -77,9 +77,9 @@ public class UIController : MonoBehaviour {
     public void setPointText()
     {
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
-        moneyText.text = "Money: " + pointsScript.pointsData.money.ToString();
-        greenText.text = "Green Points: " + pointsScript.pointsData.green.ToString();
-        popText.text = "Popularity: " + pointsScript.pointsData.popularity.ToString();
+        moneyText.text = "Money: ";// + pointsScript.pointsData.money.ToString();
+        greenText.text = "Green: ";// + pointsScript.pointsData.green.ToString();
+        popText.text = "Popularity: ";// + pointsScript.pointsData.popularity.ToString();
     }
 
     public void updateTranslator(string m)
