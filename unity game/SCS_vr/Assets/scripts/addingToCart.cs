@@ -17,7 +17,7 @@ public class addingToCart : MonoBehaviour
 
     void Start()
     {
-        one = false; 
+        one = false;
         two = false;
         three = false;
         onPress = true;
@@ -34,7 +34,7 @@ public class addingToCart : MonoBehaviour
         startButton = GameObject.Find("StartButton");
         StartControl startScript = startButton.GetComponent<StartControl>();
         detectTaco tacoDetector = GameObject.Find("counter").GetComponent<detectTaco>();
-        if (itemsInCart > 1 && startScript.start == true && onPress == true)
+        if (itemsInCart == 2 && startScript.start == true && onPress == true)
         {
             //totalCost *= customers;
             onPress = false;
@@ -53,6 +53,8 @@ public class addingToCart : MonoBehaviour
         controller = GameObject.Find("UIController");
         UIController controlUI = controller.GetComponent<UIController>();
 
+
+        /*
         if (col.gameObject.tag == "ingredient1")
         {
             //if ingredient already choosen
@@ -116,6 +118,6 @@ public class addingToCart : MonoBehaviour
                 }
                 two = true;
             }
-        }
+        }*/
     }
 }

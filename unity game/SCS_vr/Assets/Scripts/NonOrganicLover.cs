@@ -34,8 +34,13 @@ public class NonOrganicLover : MonoBehaviour {
         return meat;
     }
 
+    public void walk()
+    {
+      anim.SetBool("TestBool", true);
+    }
+
     void Update()
     {
-        anim.SetBool("TestBool", true);
+        //anim.SetBool("TestBool", true);
     }
 }
