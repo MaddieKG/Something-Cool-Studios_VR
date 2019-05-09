@@ -68,13 +68,14 @@ public class customerManager : MonoBehaviour {
         else if ((cartScript.currentLettuce != green || cartScript.currentMeat != meat) && current.name == "shorthair")
         {
             message = "The tacos aren't environmentally friendly enough.";
-            detectScript.tacoPop = -5;
+            detectScript.tacoPop = -3;
         }
         else if (cartScript.currentLettuce != green && cartScript.currentMeat != meat)
         {
             if (green == 0 && meat == 1)
             {
                 message = "The tacos are too expensive.";
+                detectScript.tacoPop = -1;
             }
         }
         
@@ -94,6 +95,7 @@ public class customerManager : MonoBehaviour {
         else
         {
             message = "Thank you!";
+            detectScript.tacoPop = 2;
         }
         controller.updateTranslator(message);
     }

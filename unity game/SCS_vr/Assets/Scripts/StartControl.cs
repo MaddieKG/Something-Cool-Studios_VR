@@ -23,7 +23,7 @@ public class StartControl : MonoBehaviour {
         UIController controller = UIcontrol.GetComponent<UIController>();
         addingToCart cartScript = GameObject.Find("cart").GetComponent<addingToCart>();
 
-        start = !start;
+        start = true;
         if (start == false)
         {
             buttonDisplay.text = "Start";

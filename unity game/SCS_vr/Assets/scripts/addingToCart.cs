@@ -67,7 +67,7 @@ public class addingToCart : MonoBehaviour
                 if (col.gameObject.name == "beef")
                 {
                     totalCost += beefData.money;
-                    totalGreen += beefData.Green;
+                    totalGreen += beefData.green;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentMeat = 0;
@@ -75,8 +75,8 @@ public class addingToCart : MonoBehaviour
                 }
                 else if (col.gameObject.name == "chicken")
                 {
-                    totalCost += chickenData.Money;
-                    totalGreen += chickenData.Green;
+                    totalCost += chickenData.money;
+                    totalGreen += chickenData.green;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentMeat = 1;
@@ -98,8 +98,8 @@ public class addingToCart : MonoBehaviour
             //updating points system based on choice of lettuce
               if (col.gameObject.name == "gmoLettuce")
               {
-                    totalCost += gmoLettData.Money;
-                    totalGreen += gmoLettData.Green;
+                    totalCost += gmoLettData.money;
+                    totalGreen += gmoLettData.green;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentLettuce = 0;
@@ -107,8 +107,8 @@ public class addingToCart : MonoBehaviour
                 }
               else if (col.gameObject.name == "orgLettuce")
               {
-                    totalCost += orgLettData.Money;
-                    totalGreen += orgLettData.Green;
+                    totalCost += orgLettData.money;
+                    totalGreen += orgLettData.green;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentLettuce = 1;
