@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class RoundControl : MonoBehaviour
 {
-
     //please attach to a EndButton object
+    public RoundData roundData;
 
     void Start()
     {
@@ -28,6 +28,14 @@ public class RoundControl : MonoBehaviour
 
     private void OnTriggerEnter()
     {
-        SceneManager.LoadScene("main");
+        if (roundData.currentRound < roundData.rounds)
+        {
+            SceneManager.LoadScene("Rounds");
+            roundData.currentRound += 1;
+        }
+        else
+        {
+            Debug.Log("Game Over");
+        }
     }
 }

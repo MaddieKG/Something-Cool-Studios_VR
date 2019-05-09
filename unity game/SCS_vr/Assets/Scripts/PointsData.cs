@@ -5,10 +5,9 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "New PointsData", menuName = "Points Data", order = 51)]
 public class PointsData : ScriptableObject{
-    [SerializeField]
-    public float money = 50;
-    public int green = 50;
-    public int popularity = 50;
+    [SerializeField]  public float money = 20;
+    [SerializeField]  public int green = 50;
+    [SerializeField]  public int popularity = 50;
 
     
 
