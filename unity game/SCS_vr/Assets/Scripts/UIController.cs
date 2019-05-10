@@ -19,9 +19,6 @@ public class UIController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //Allows for initialization
-        startButton = GameObject.Find("StartButton");//need a StartButton object
-        StartControl startScript = startButton.GetComponent<StartControl>();
-        startScript.start = false;
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
 
         //cost display stuff
