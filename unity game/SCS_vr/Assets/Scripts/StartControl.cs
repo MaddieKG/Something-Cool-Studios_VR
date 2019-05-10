@@ -9,7 +9,6 @@ public class StartControl : MonoBehaviour {
     public Text buttonDisplay;
 
     private GameObject UIcontrol, cartControl;
-    //object this is attached to needs a RigidBody
     //please attach to a StartButton object
 
     void Start () {
@@ -29,7 +28,7 @@ public class StartControl : MonoBehaviour {
             buttonDisplay.text = "Start";
             controller.hideCost(start);
         }
-        else if (cartScript.itemsInCart > 1)
+        else if (cartScript.itemsInCart == 2)
         {
             buttonDisplay.text = "...";
             controller.hideCost(start);
