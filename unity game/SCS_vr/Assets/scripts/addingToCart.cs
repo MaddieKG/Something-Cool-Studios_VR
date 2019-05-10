@@ -53,6 +53,7 @@ public class addingToCart : MonoBehaviour
     {
         ProductController proControl = gameObject.GetComponent<ProductController>();
 
+
         controller = GameObject.Find("UIController");
         UIController controlUI = controller.GetComponent<UIController>();
 
