@@ -10,11 +10,13 @@ public class PointsController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        /*
         pointsData.money = 20;
         pointsData.green = 50;
         pointsData.popularity = 50;
-        */
+        /**
+        money = 50;
+        green = 50;
+        popularity = 50;**/
 	}
 
     public void buyProducts(float cost, int green)
