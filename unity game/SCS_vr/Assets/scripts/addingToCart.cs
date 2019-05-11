@@ -9,7 +9,7 @@ public class addingToCart : MonoBehaviour
     public int currentMeat, currentLettuce;
     
     private bool onPress;
-    private bool ing1In, ing2In, ing3In;
+    private bool ing1In, ing2In, ing3In, conflict;
     public Vector3 cartPos;
     public int totalGreen, itemsInCart, customers;
     public float totalCost;
@@ -20,6 +20,7 @@ public class addingToCart : MonoBehaviour
         ing1In = false; 
         ing2In = false;
         ing3In = false;
+        conflict = false;
         onPress = true;
         totalCost = 0;
         totalGreen = 0;
@@ -49,15 +50,67 @@ public class addingToCart : MonoBehaviour
     {
         if (col.gameObject.tag == "ingredient1" && ing1In == false) {
             Debug.Log("ingredient 1 in");
+            ing1In = true;
+            ing1Name = col.gameObject.name;
         }
         if (col.gameObject.tag == "ingredient2" && ing2In == false)
         {
             Debug.Log("ingredient 2 in");
+            ing2In = true;
+            ing2Name = col.gameObject.name;
         }
         if (ing1In == true && ing2In == true)
         {
             Debug.Log("Both ingredient in");
+            conflict = true;
         }
+        itemsInCart += 1;
+        addData(col.gameObject.name, 1);
+        Debug.Log("Total cost: " + totalCost);
+    }
+
+    private void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.tag == "ingredient1" && ing1In == true)
+        {
+            Debug.Log("ingredient 1 out");
+            ing1In = false;
+            ing1Name = null;
+        }
+        if (col.gameObject.tag == "ingredient2" && ing2In == true)
+        {
+            Debug.Log("ingredient 2 out");
+            ing2In = false;
+            ing2Name = null;
+        }
+        itemsInCart -= 1;
+        addData(col.gameObject.name, -1);
+    }
+
+    private void addData(string name, int multiplier)
+    {
+        UIController controlUI = GameObject.Find("UIController").GetComponent<UIController>();
+        if (name == "beef")
+        {
+            totalCost += multiplier * beefData.money;
+            totalGreen += multiplier * beefData.green;
+        }
+        else if (name == "chicken")
+        {
+            totalCost += multiplier * chickenData.money;
+            totalGreen += multiplier * chickenData.green;
+        }
+        else if (name == "gmoLettuce")
+        {
+            totalCost += multiplier * gmoLettData.money;
+            totalGreen += multiplier * gmoLettData.green;
+        }
+        else if (name == "orgLettuce")
+        {
+            totalCost += multiplier * orgLettData.money;
+            totalGreen += multiplier * orgLettData.green;
+        }
+        controlUI.setCostText(totalCost);
     }
     /**
     void OnCollisionEnter(Collision col)
