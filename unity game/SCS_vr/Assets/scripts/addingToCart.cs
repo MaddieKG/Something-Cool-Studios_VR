@@ -7,19 +7,19 @@ public class addingToCart : MonoBehaviour
     [SerializeField]
     public ProductData beefData, chickenData, gmoLettData, orgLettData;
     public int currentMeat, currentLettuce;
-
-    private GameObject startButton, controller, pointsController;
+    
     private bool onPress;
-    public bool one, two, three;
+    private bool ing1In, ing2In, ing3In;
     public Vector3 cartPos;
     public int totalGreen, itemsInCart, customers;
     public float totalCost;
+    private string ing1Name, ing2Name;
 
     void Start()
     {
-        one = false; 
-        two = false;
-        three = false;
+        ing1In = false; 
+        ing2In = false;
+        ing3In = false;
         onPress = true;
         totalCost = 0;
         totalGreen = 0;
@@ -29,12 +29,11 @@ public class addingToCart : MonoBehaviour
 
     void Update()
     {
-        pointsController = GameObject.Find("PointsController");
-        PointsController pointsScript = pointsController.GetComponent<PointsController>();
-        startButton = GameObject.Find("StartButton");
-        StartControl startScript = startButton.GetComponent<StartControl>();
+        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
+        StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
         detectTaco tacoDetector = GameObject.Find("counter").GetComponent<detectTaco>();
-        if (itemsInCart > 1 && startScript.start == true && onPress == true)
+
+        if (itemsInCart == 2 && startScript.start == true && onPress == true)
         {
             //totalCost *= customers;
             onPress = false;
@@ -46,6 +45,21 @@ public class addingToCart : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "ingredient1" && ing1In == false) {
+            Debug.Log("ingredient 1 in");
+        }
+        if (col.gameObject.tag == "ingredient2" && ing2In == false)
+        {
+            Debug.Log("ingredient 2 in");
+        }
+        if (ing1In == true && ing2In == true)
+        {
+            Debug.Log("Both ingredient in");
+        }
+    }
+    /**
     void OnCollisionEnter(Collision col)
     {
         ProductController proControl = gameObject.GetComponent<ProductController>();
@@ -118,5 +132,5 @@ public class addingToCart : MonoBehaviour
                 two = true;
             }
         }
-    }
+    }*/
 }
