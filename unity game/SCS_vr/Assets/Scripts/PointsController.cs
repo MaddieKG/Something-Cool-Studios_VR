@@ -40,5 +40,4 @@ public class PointsController : MonoBehaviour {
         pointsData.green += g;
         pointsData.popularity += p;
     }
-
 }
