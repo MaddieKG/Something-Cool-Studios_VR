@@ -9,7 +9,7 @@ public class addingToCart : MonoBehaviour
     public int currentMeat, currentLettuce;
     
     private bool onPress;
-    private bool ing1In, ing2In, ing3In, conflict;
+    private bool ing1In, ing2In, ing3In;
     public Vector3 cartPos;
     public int totalGreen, itemsInCart, customers;
     public float totalCost;
@@ -20,7 +20,6 @@ public class addingToCart : MonoBehaviour
         ing1In = false; 
         ing2In = false;
         ing3In = false;
-        conflict = false;
         onPress = true;
         totalCost = 0;
         totalGreen = 0;
@@ -34,9 +33,10 @@ public class addingToCart : MonoBehaviour
         StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
         detectTaco tacoDetector = GameObject.Find("counter").GetComponent<detectTaco>();
 
-        if (itemsInCart == 2 && startScript.start == true && onPress == true && conflict == false)
+        if (itemsInCart == 2 && startScript.start == true && onPress == true)
         {
             //totalCost *= customers;
+            setIngredient(ing1Name, ing2Name);
             onPress = false;
             tacoDetector.tacoPrice = (totalCost * 3) + totalCost;
             totalCost *= customers;
@@ -45,48 +45,42 @@ public class addingToCart : MonoBehaviour
             startScript.ready = true;
         }
     }
-    
 
-    void OnTriggerEnter(Collider col)
+    private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "ingredient1" && ing1In == false) {
-            Debug.Log("ingredient 1 in");
+        itemsInCart += 1;
+        addData(col.gameObject.name, 1);
+    }
+
+    private void OnTriggerStay(Collider col)
+    {
+        if (col.gameObject.tag == "ingredient1" && ing1In == false)
+        {
             ing1In = true;
             ing1Name = col.gameObject.name;
+            itemsInCart += 1;
+            Debug.Log("stay" + itemsInCart);
         }
         if (col.gameObject.tag == "ingredient2" && ing2In == false)
         {
-            Debug.Log("ingredient 2 in");
             ing2In = true;
             ing2Name = col.gameObject.name;
+            itemsInCart += 1;
+            Debug.Log("stay" + itemsInCart);
         }
-        if (ing1In == true && ing2In == true)
-        {
-            Debug.Log("Both ingredient in");
-            conflict = true;
-        }
-        itemsInCart += 1;
-        addData(col.gameObject.name, 1);
-        Debug.Log("Total cost: " + totalCost);
     }
 
-    void OnTriggerExit(Collider col)
+    private void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag == "ingredient1" && ing1In == true)
         {
-            Debug.Log("ingredient 1 out");
             ing1In = false;
             ing1Name = null;
         }
         if (col.gameObject.tag == "ingredient2" && ing2In == true)
         {
-            Debug.Log("ingredient 2 out");
             ing2In = false;
             ing2Name = null;
-        }
-        else
-        {
-            conflict = false;
         }
         itemsInCart -= 1;
         addData(col.gameObject.name, -1);
@@ -116,6 +110,26 @@ public class addingToCart : MonoBehaviour
             totalGreen += multiplier * orgLettData.green;
         }
         controlUI.setCostText(totalCost);
+    }
+
+    private void setIngredient(string meat, string lettuce)
+    {
+        if (meat == "beef")
+        {
+            currentMeat = 0;
+        }
+        else 
+        {
+            currentMeat = 1;
+        }
+        if (lettuce == "gmoLettuce")
+        {
+            currentLettuce = 0;
+        }
+        else
+        {
+            currentLettuce = 1;
+        }
     }
     /**
     void OnCollisionEnter(Collision col)

@@ -20,7 +20,7 @@ public class StartControl : MonoBehaviour {
     {
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();
-        addingToCart cartScript = GameObject.Find("cart").GetComponent<addingToCart>();
+        //addingToCart cartScript = GameObject.Find("cart").GetComponent<addingToCart>();
 
         start = true;
         if (start == false)
