@@ -5,7 +5,7 @@ using UnityEngine;
 public class customerManager : MonoBehaviour {
     //array of game objects
     public GameObject[] allCust;
-    public GameObject currentCust;
+    public GameObject current;
     public GameObject[] position;
     public string message;
 

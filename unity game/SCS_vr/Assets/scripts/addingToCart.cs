@@ -13,7 +13,7 @@ public class addingToCart : MonoBehaviour
     private bool onPress;
     public bool one, two, three;
     public Vector3 cartPos;
-    public int totalCost, totalGreen, itemsInCart;
+    public float totalCost, totalGreen, itemsInCart;
 
     void Start()
     {
@@ -39,7 +39,7 @@ public class addingToCart : MonoBehaviour
         StartControl startScript = startButton.GetComponent<StartControl>();
         detectTaco tacoDetector = GameObject.Find("counter").GetComponent<detectTaco>();
 
-        
+
         if (itemsInCart > 1 && startScript.start == true && onPress == true)
         {
             totalCost *= 2;
