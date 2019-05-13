@@ -13,14 +13,14 @@ public class MoneySlider : MonoBehaviour {
 	void Start () {
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
         value = pointsScript.pointsData.money;
-        valueText.text = "$" + value.ToString();
+        valueText.text = "$" + value.ToString("0.##");
         slider.value = value;
 	}
 	
 	void Update () {
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
         value = pointsScript.pointsData.money;
-        valueText.text = "$" + value.ToString();
+        valueText.text = "$" + value.ToString("0.##");
         slider.value = value/100;
     }
 }

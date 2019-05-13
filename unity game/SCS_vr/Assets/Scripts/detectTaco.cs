@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class detectTaco : MonoBehaviour
 {
     public float tacoPrice;
@@ -15,6 +16,7 @@ public class detectTaco : MonoBehaviour
 				yield return new WaitForSeconds(3);
                 ///call something
 				Destroy(col.gameObject);
+                Debug.Log(tacoPrice);
                 pointsScript.sellTaco(tacoPrice, tacoPop);
 			}
 	}

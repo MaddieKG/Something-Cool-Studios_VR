@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StartControl : MonoBehaviour {
 
-    public bool start;
+    public bool start, ready;
     public Text buttonDisplay;
 
     private GameObject UIcontrol, cartControl;
@@ -21,7 +21,8 @@ public class StartControl : MonoBehaviour {
     {
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();
-        addingToCart cartScript = GameObject.Find("cart").GetComponent<addingToCart>();
+        //addingToCart cartScript = GameObject.Find("cart").GetComponent<addingToCart>();
+
 
         start = true;
         if (start == false)
@@ -29,7 +30,7 @@ public class StartControl : MonoBehaviour {
             buttonDisplay.text = "Start";
             controller.hideCost(start);
         }
-        else if (cartScript.itemsInCart > 1)
+        else if (ready == true)
         {
             buttonDisplay.text = "...";
             controller.hideCost(start);
