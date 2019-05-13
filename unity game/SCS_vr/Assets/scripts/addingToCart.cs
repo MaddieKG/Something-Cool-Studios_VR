@@ -6,25 +6,25 @@ public class addingToCart : MonoBehaviour
 {
     [SerializeField]
     public ProductData beefData, chickenData, gmoLettData, orgLettData;
+
     public int currentMeat, currentLettuce;
-    
+
     private bool onPress, conflict;
     private bool ing1In, ing2In, ing3In;
     public Vector3 cartPos;
-    public int totalGreen, itemsInCart, customers;
     public float totalCost;
+
     private string ing1Name, ing2Name;
 
     void Start()
     {
-        ing1In = false; 
+        ing1In = false;
         ing2In = false;
         ing3In = false;
         onPress = true;
         totalCost = 0;
         totalGreen = 0;
         itemsInCart = 0;
-        customers = 6;
     }
 
     void Update()
@@ -130,7 +130,7 @@ public class addingToCart : MonoBehaviour
         {
             currentMeat = 0;
         }
-        else 
+        else
         {
             currentMeat = 1;
         }
@@ -164,8 +164,8 @@ public class addingToCart : MonoBehaviour
                 //updating points system based on choice of meat
                 if (col.gameObject.name == "beef")
                 {
-                    totalCost += beefData.money;
-                    totalGreen += beefData.green;
+                    totalCost += beefData.Money * 2;
+                    totalGreen += beefData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentMeat = 0;
@@ -173,8 +173,9 @@ public class addingToCart : MonoBehaviour
                 }
                 else if (col.gameObject.name == "chicken")
                 {
-                    totalCost += chickenData.money;
-                    totalGreen += chickenData.green;
+                    totalCost += chickenData.Money;
+                    Debug.Log(totalCost.ToString());
+                    totalGreen += chickenData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentMeat = 1;
@@ -196,8 +197,9 @@ public class addingToCart : MonoBehaviour
             //updating points system based on choice of lettuce
               if (col.gameObject.name == "gmoLettuce")
               {
-                    totalCost += gmoLettData.money;
-                    totalGreen += gmoLettData.green;
+                    totalCost += gmoLettData.Money * 2;
+                    Debug.Log(totalCost.ToString());
+                    totalGreen += gmoLettData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentLettuce = 0;
@@ -205,8 +207,9 @@ public class addingToCart : MonoBehaviour
                 }
               else if (col.gameObject.name == "orgLettuce")
               {
-                    totalCost += orgLettData.money;
-                    totalGreen += orgLettData.green;
+                    totalCost += orgLettData.Money * 2;
+                    Debug.Log(totalCost.ToString());
+                    totalGreen += orgLettData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
                     currentLettuce = 1;
