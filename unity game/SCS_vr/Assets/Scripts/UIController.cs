@@ -65,7 +65,7 @@ public class UIController : MonoBehaviour {
     public void setCostText(float cost)
     {
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
-        costText.text = "Total cost: " + cost.ToString();
+        costText.text = "Total cost: " + cost.ToString("0.##");
         monRemaining = pointsScript.pointsData.money - cost;
         remainingMonText.text = "Remaining Money: " + monRemaining.ToString();
     }
