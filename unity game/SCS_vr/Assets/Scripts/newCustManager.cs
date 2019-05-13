@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class customerManager : MonoBehaviour {
+public class newCustManager : MonoBehaviour
+{
     //array of game objects
     public GameObject[] allCust;
-    public GameObject current;
-    public GameObject position;
+    private GameObject current;
+    private GameObject position;
     public GameObject[] posArray;
     public string message;
 
@@ -21,30 +22,23 @@ public class customerManager : MonoBehaviour {
 
     void SpawnCustomer()
     {
-      /*
-        int i = Random.Range(0, allCust.Length);
-        current = allCust[i];
-        Instantiate(current, pos.transform.position, transform.rotation);
-
-        current.transform.Rotate(0, 90, 0);
-        */
-
         //number of customers = 6
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 6; i++)
         {
             current = allCust[i];
-            position = posArray[i];  
+            position = posArray[i];
             Instantiate(current, position.transform.position, transform.rotation);
         }
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (Input.GetKeyDown("space"))
         {
             SpawnCustomer();
         }
-	}
+    }
 
     void OnTriggerEnter()
     {
@@ -52,7 +46,7 @@ public class customerManager : MonoBehaviour {
         addingToCart cartScript = cartControl.GetComponent<addingToCart>();
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();
-        tacoDetector = GameObject.Find("counter");
+        tacoDetector = GameObject.Find("plate");
         detectTaco detectScript = tacoDetector.GetComponent<detectTaco>();
         //get customer popularity
         //checks type of customer
