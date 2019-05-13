@@ -6,14 +6,15 @@ public class addingToCart : MonoBehaviour
 {
     [SerializeField]
     public ProductData beefData, chickenData, gmoLettData, orgLettData;
-    public string currentMeat;
-    public string currentLettuce;
+    public int currentMeat;
+    public int currentLettuce;
 
     private GameObject startButton, controller, proController;
     private bool onPress;
     public bool one, two, three;
     public Vector3 cartPos;
-    public float totalCost, totalGreen, itemsInCart;
+    public float totalCost;
+    public int totalGreen, itemsInCart;
 
     void Start()
     {
@@ -33,8 +34,8 @@ public class addingToCart : MonoBehaviour
 
     void Update()
     {
-        proController = GameObject.Find("ProductController");
-        ProductController proControl = proController.GetComponent<ProductController>();
+        proController = GameObject.Find("PointsController");
+        PointsController proControl = proController.GetComponent<PointsController>();
         startButton = GameObject.Find("StartButton");
         StartControl startScript = startButton.GetComponent<StartControl>();
         detectTaco tacoDetector = GameObject.Find("counter").GetComponent<detectTaco>();
@@ -73,7 +74,7 @@ public class addingToCart : MonoBehaviour
                     totalGreen += beefData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentMeat = "anti";
+                    currentMeat = 0;
                     controlUI.setCostText(totalCost);
                 }
                 else if (col.gameObject.name == "chicken")
@@ -83,7 +84,7 @@ public class addingToCart : MonoBehaviour
                     totalGreen += chickenData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentMeat = "pro";
+                    currentMeat = 1;
                     controlUI.setCostText(totalCost);
                 }
                 one = true;
@@ -107,7 +108,7 @@ public class addingToCart : MonoBehaviour
                     totalGreen += gmoLettData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentLettuce = "anti";
+                    currentLettuce = 0;
                     controlUI.setCostText(totalCost);
                 }
               else if (col.gameObject.name == "orgLettuce")
@@ -117,7 +118,7 @@ public class addingToCart : MonoBehaviour
                     totalGreen += orgLettData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentLettuce = "pro";
+                    currentLettuce = 1;
                     controlUI.setCostText(totalCost);
                 }
                 two = true;
