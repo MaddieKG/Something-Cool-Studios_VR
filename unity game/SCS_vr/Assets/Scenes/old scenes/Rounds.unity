@@ -13461,9 +13461,6 @@ MonoBehaviour:
   current: {fileID: 0}
   pos: {fileID: 1515996398}
   message: 
-  UIcontrol: {fileID: 0}
-  cartControl: {fileID: 0}
-  tacoDetector: {fileID: 0}
 --- !u!114 &1376514031
 MonoBehaviour:
   m_ObjectHideFlags: 0
