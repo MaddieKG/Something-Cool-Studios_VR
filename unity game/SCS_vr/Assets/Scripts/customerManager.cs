@@ -5,8 +5,8 @@ using UnityEngine;
 public class customerManager : MonoBehaviour {
     //array of game objects
     public GameObject[] allCust;
-    public GameObject current;
-    public GameObject pos;
+    public GameObject currentCust;
+    public GameObject[] position;
     public string message;
 
     public GameObject UIcontrol, cartControl, tacoDetector;
@@ -20,11 +20,20 @@ public class customerManager : MonoBehaviour {
 
     void SpawnCustomer()
     {
+      /*
         int i = Random.Range(0, allCust.Length);
         current = allCust[i];
         Instantiate(current, pos.transform.position, transform.rotation);
 
         current.transform.Rotate(0, 90, 0);
+        */
+
+        //number of customers = 6
+        for (int i = 0; i < 2; i++)
+        {
+          currentCust = allCust[i];
+          Instantiate(current, pos[i].transform.position, transform.rotation);
+        }
     }
 
     // Update is called once per frame
@@ -78,7 +87,7 @@ public class customerManager : MonoBehaviour {
                 detectScript.tacoPop = -1;
             }
         }
-        
+
         else if (cartScript.currentMeat != meat)
         {
             if (meat == 0)
@@ -91,7 +100,7 @@ public class customerManager : MonoBehaviour {
                 message = "I wish the tacos had chicken.";
                 detectScript.tacoPop = -1;
             }
-        } 
+        }
         else
         {
             message = "Thank you!";
