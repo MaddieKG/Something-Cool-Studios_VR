@@ -121,7 +121,7 @@ public class addingToCart : MonoBehaviour
             totalCost += multiplier * orgLettData.money;
             totalGreen += multiplier * orgLettData.green;
         }
-        controlUI.setCostText(totalCost);
+        controlUI.setCostText(totalCost * customers);
     }
 
     private void setIngredient(string meat, string lettuce)
