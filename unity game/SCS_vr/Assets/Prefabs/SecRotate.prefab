@@ -339,6 +339,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4874135216558778}
   - component: {fileID: 95268792422848416}
+  - component: {fileID: 114686103105208112}
+  - component: {fileID: 114573471773328936}
   m_Layer: 0
   m_Name: security
   m_TagString: Untagged
@@ -1245,7 +1247,7 @@ Animator:
   m_GameObject: {fileID: 1590115071585006}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ac4a8f19bf3a0804888de0ecf90d7c63, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e39e7e14dabe1494bb8c9acc7478d1e8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1254,6 +1256,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114573471773328936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590115071585006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af5f4529a6eb2849ace42130a11042b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114686103105208112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590115071585006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0476e84ab586d504abed4224b1f195fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cname: Paul
+  greens: 0
+  meat: 0
 --- !u!137 &137332135109781250
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

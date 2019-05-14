@@ -170,6 +170,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4735402411211476}
   - component: {fileID: 95794190080859096}
+  - component: {fileID: 114994331315080720}
+  - component: {fileID: 114847784204501078}
   m_Layer: 0
   m_Name: shorthair
   m_TagString: Untagged
@@ -1168,7 +1170,7 @@ Animator:
   m_GameObject: {fileID: 1296755581487116}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 478a646465fc63b459a5b20bce42bb77, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e39e7e14dabe1494bb8c9acc7478d1e8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1177,6 +1179,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114847784204501078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296755581487116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af5f4529a6eb2849ace42130a11042b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114994331315080720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296755581487116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f42c7992b77044696cd667582b603c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cname: Jim
+  greens: 1
+  meat: 1
 --- !u!137 &137491461225608196
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
