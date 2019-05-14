@@ -1596,7 +1596,8 @@ Prefab:
       propertyPath: newsText
       value: 
       objectReference: {fileID: 70190137}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114705606817467340, guid: 27d64e36d2dbff24ca246b43ab53ba23, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 27d64e36d2dbff24ca246b43ab53ba23, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &134525524
@@ -15879,6 +15880,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1602608992}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1609229951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1785582987281772, guid: 27d64e36d2dbff24ca246b43ab53ba23,
+    type: 2}
+  m_PrefabInternal: {fileID: 128469542}
+--- !u!114 &1609229952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1609229951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85cbc2a0512def45a262b047513beb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newsText: {fileID: 70190137}
+  costText: {fileID: 2085482194}
+  remainingMonText: {fileID: 4152414}
+  moneyText: {fileID: 779491561}
+  popText: {fileID: 493729211}
+  greenText: {fileID: 1840548468}
+  message: {fileID: 1556306918}
+  pointsData: {fileID: 11400000, guid: 4f1a7410bc53d7b4b938db60dd6c9cb2, type: 2}
 --- !u!4 &1609328243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 470440, guid: 8ed1fa325ca228645ad26dd6eff14768,
