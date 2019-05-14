@@ -50,17 +50,45 @@ public class newCustManager : MonoBehaviour
         detectTaco detectScript = tacoDetector.GetComponent<detectTaco>();
         //get customer popularity
         //checks type of customer
-        if (current.name == "courier")
+        if (current.name == "courier" || current.name == "courierRotate")
         {
             //nonorganic lover
             NonOrganicLover nonorgStats = current.GetComponent<NonOrganicLover>();
             green = nonorgStats.getGreens();
             meat = nonorgStats.getMeat();
         }
-        else if (current.name == "shorthair")
+        else if (current.name == "shorthair" || current.name == "SHRotate")
         {
             //organic lover
             OrganicLover orgStats = current.GetComponent<OrganicLover>();
+            green = orgStats.getGreens();
+            meat = orgStats.getMeat();
+        }
+        else if (current.name == "baldsuit" || current.name == "BSRotate")
+        {
+            //chicken lover
+            ChickenLover orgStats = current.GetComponent<ChickenLover>();
+            green = orgStats.getGreens();
+            meat = orgStats.getMeat();
+        }
+        else if (current.name == "security" || current.name == "SecRotate")
+        {
+            //Generic cust (random preferences)
+            GenericCust orgStats = current.GetComponent<GenericCust>();
+            green = orgStats.getGreens();
+            meat = orgStats.getMeat();
+        }
+        else if (current.name == "pony" || current.name == "ponyRotate")
+        {
+            //Generic cust (random preferences)
+            GenericCust orgStats = current.GetComponent<GenericCust>();
+            green = orgStats.getGreens();
+            meat = orgStats.getMeat();
+        }
+        else if (current.name == "longhair" || current.name == "LHRotate")
+        {
+            //cheap lover
+            CheapLover orgStats = current.GetComponent<CheapLover>();
             green = orgStats.getGreens();
             meat = orgStats.getMeat();
         }
