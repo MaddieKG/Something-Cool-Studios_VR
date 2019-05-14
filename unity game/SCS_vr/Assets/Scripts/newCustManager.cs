@@ -29,18 +29,50 @@ public class newCustManager : MonoBehaviour
             current = allCust[i];
             position = posArray[i];
             Instantiate(current, position.transform.position, transform.rotation);
-
         }
     }
 
     void OnTriggerEnter()
     {
+      StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
+      if (startScript.ready == true)
+      {
         SpawnCustomer();
+        foreach(GameObject cust in allCust)
+        {
+          Debug.Log(cust.gameObject.tag);
+          if(cust.gameObject.tag == "chicken")
+          {
+            ChickenLover chickl = current.GetComponent<ChickenLover>();
+            chickl.startIdile();
+          }
+          else if(cust.gameObject.tag == "nonorganic")
+          {
+            NonOrganicLover nl = current.GetComponent<NonOrganicLover>();
+            nl.startIdile();
+          }
+          else if(cust.gameObject.tag == "cheap")
+          {
+            CheapLover cheapl = current.GetComponent<CheapLover>();
+            cheapl.startIdile();
+          }
+          else if(cust.gameObject.tag == "generic")
+          {
+            GenericCust gl = current.GetComponent<GenericCust>();
+            gl.startIdile();
+          }
+          else if(cust.gameObject.tag == "organic")
+          {
+            OrganicLover ol = current.GetComponent<OrganicLover>();
+            ol.startIdile();
+          }
+        }
         addingToCart cartScript = cartControl.GetComponent<addingToCart>();
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();
         tacoDetector = GameObject.Find("plate");
         detectTaco detectScript = tacoDetector.GetComponent<detectTaco>();
+      }
         //get customer popularity
         //checks type of customer
         /*

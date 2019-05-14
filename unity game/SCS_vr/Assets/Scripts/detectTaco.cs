@@ -7,17 +7,19 @@ public class detectTaco : MonoBehaviour
 {
     public float tacoPrice;
     public int tacoPop;
+    public bool onPlate = false;
 
     IEnumerator OnCollisionEnter(Collision col)
 	{
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
         if (col.gameObject.name == "taco(Clone)")
 			{
-				yield return new WaitForSeconds(3);
+        onPlate = true;
+				yield return new WaitForSeconds(1);
                 ///call something
 				Destroy(col.gameObject);
-                Debug.Log(tacoPrice);
-                pointsScript.sellTaco(tacoPrice, tacoPop);
+        Debug.Log(tacoPrice);
+        pointsScript.sellTaco(tacoPrice, tacoPop);
 			}
 	}
 }

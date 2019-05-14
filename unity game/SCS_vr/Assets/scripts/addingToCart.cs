@@ -25,13 +25,14 @@ public class addingToCart : MonoBehaviour
         totalCost = 0;
         totalGreen = 0;
         itemsInCart = 0;
+        customers = 6;
     }
 
     void Update()
     {
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
         StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
-        detectTaco tacoDetector = GameObject.Find("counter").GetComponent<detectTaco>();
+        detectTaco tacoDetector = GameObject.Find("plate").GetComponent<detectTaco>();
 
         if (ing1In == true && ing2In == true && conflict == false && startScript.start == true && onPress == true)
         {
@@ -43,6 +44,7 @@ public class addingToCart : MonoBehaviour
             totalGreen *= customers;
             pointsScript.buyProducts(totalCost, totalGreen);
             startScript.ready = true;
+            Debug.Log("ingredient bought");
         }
     }
 
@@ -53,6 +55,7 @@ public class addingToCart : MonoBehaviour
 
     private void OnTriggerStay(Collider col)
     {
+      if(col.gameObject.tag == "ingredient1" || col.gameObject.tag == "ingredient2"){
         if (col.gameObject.tag == "ingredient1" && ing1In == false)
         {
             ing1In = true;
@@ -72,6 +75,8 @@ public class addingToCart : MonoBehaviour
                 Debug.Log("conflict = " + conflict);
             }
         }
+      }
+
     }
 
     private void OnTriggerExit(Collider col)
@@ -93,6 +98,7 @@ public class addingToCart : MonoBehaviour
                 conflict = false;
             }
         }
+        Debug.Log("on exit conflict = " + conflict);
         addData(col.gameObject.name, -1);
     }
 

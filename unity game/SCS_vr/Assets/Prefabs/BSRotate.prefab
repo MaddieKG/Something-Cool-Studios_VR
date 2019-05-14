@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 65227421157527066}
   m_Layer: 0
   m_Name: baldsuit
-  m_TagString: Untagged
+  m_TagString: chicken
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1291,6 +1291,8 @@ MonoBehaviour:
   cname: Bob
   greens: 0
   meat: 1
+  recievedTaco: {fileID: 0}
+  tacoInfo: {fileID: 0}
 --- !u!137 &137809517247640294
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

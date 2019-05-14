@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NonOrganicLover : MonoBehaviour {
 
-    
+
     public string cname = "Bob";
 
     //0 for not sustainable, 1 for sustainable
@@ -14,9 +14,11 @@ public class NonOrganicLover : MonoBehaviour {
 
     void Start () {
         anim = GetComponent<Animator>();
+        /*
         Debug.Log("name: " + cname);
         Debug.Log("green: " + greens.ToString());
         Debug.Log("meat: " + meat.ToString());
+        */
     }
 
     public string getName()
@@ -33,11 +35,15 @@ public class NonOrganicLover : MonoBehaviour {
     {
         return meat;
     }
+    public void startIdile()
+    {
+      anim.SetBool("walk", false);
+    }
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "orderPos")
         {
-            Debug.Log("start ordering");
+            //Debug.Log("start ordering");
             anim.SetBool("talkStage", true);
         }
     }

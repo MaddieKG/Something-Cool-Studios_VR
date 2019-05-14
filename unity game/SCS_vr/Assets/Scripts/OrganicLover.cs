@@ -35,11 +35,15 @@ public class OrganicLover : MonoBehaviour {
     {
         return meat;
     }
+    public void startIdile()
+    {
+      anim.SetBool("walk", false);
+    }
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "orderPos")
         {
-            Debug.Log("start ordering");
+            //Debug.Log("start ordering");
             anim.SetBool("talkStage", true);
         }
     }
@@ -48,6 +52,6 @@ public class OrganicLover : MonoBehaviour {
     void Update()
     {
         anim.SetBool("TestBool", true);
-    
+
     */
 }

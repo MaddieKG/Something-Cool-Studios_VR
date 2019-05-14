@@ -14,13 +14,16 @@ public class ChickenLover : MonoBehaviour
     private Animator anim;
     bool ordering = false;
     public GameObject recievedTaco;
+    public GameObject tacoInfo;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        /*
         Debug.Log("name: " + cname);
         Debug.Log("green: " + greens.ToString());
         Debug.Log("meat: " + meat.ToString());
+        */
     }
 
     public string getName()
@@ -37,6 +40,10 @@ public class ChickenLover : MonoBehaviour
     {
         return meat;
     }
+    public void startIdile()
+    {
+      anim.SetBool("walk", false);
+    }
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "orderPos")
@@ -48,6 +55,21 @@ public class ChickenLover : MonoBehaviour
     void Update()
     {
         recievedTaco = GameObject.Find("plate");
+        tacoInfo = GameObject.Find("cart");
         detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
+        addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
+        if(detectTaco.onPlate == true)
+        {
+          Debug.Log("taco on plate");
+          //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
+          if(addingToCart.currentMeat == 1)
+          {
+            anim.SetBool("gotTacoHappy", true);
+          }
+          else
+          {
+            anim.SetBool("gotTacoSad", true);
+          }
+        }
     }
 }

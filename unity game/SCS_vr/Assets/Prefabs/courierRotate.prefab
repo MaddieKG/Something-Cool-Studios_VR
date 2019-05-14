@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 114935251580491436}
   m_Layer: 0
   m_Name: courier
-  m_TagString: Untagged
+  m_TagString: nonorganic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
