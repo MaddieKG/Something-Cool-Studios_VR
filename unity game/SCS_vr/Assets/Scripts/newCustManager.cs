@@ -103,7 +103,7 @@ public class newCustManager : MonoBehaviour
             message = "The tacos aren't environmentally friendly enough.";
             detectScript.tacoPop = -3;
         }
-        else if (cartScript.currentLettuce != green && cartScript.currentMeat != meat)
+        else if ((cartScript.currentLettuce != green && cartScript.currentMeat != meat) || current.name == "longhair")
         {
             if (green == 0 && meat == 1)
             {
@@ -124,6 +124,11 @@ public class newCustManager : MonoBehaviour
                 message = "I wish the tacos had chicken.";
                 detectScript.tacoPop = -1;
             }
+        }
+        else if(current.name == "security" || current.name == "pony")
+        {
+            message = "Thank you!";
+            detectScript.tacoPop = 2;
         }
         else
         {
