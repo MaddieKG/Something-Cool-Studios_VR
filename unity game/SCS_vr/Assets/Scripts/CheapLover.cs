@@ -35,9 +35,18 @@ public class CheapLover : MonoBehaviour
     {
         return meat;
     }
-
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name == "orderPos")
+        {
+            Debug.Log("start ordering");
+            anim.SetBool("talkStage", true);
+        }
+    }
+    /*
     void Update()
     {
         anim.SetBool("TestBool", true);
     }
+    */
 }

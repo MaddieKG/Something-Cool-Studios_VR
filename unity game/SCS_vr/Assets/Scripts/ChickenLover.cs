@@ -12,6 +12,8 @@ public class ChickenLover : MonoBehaviour
     public int greens = 0;
     public int meat = 1;
     private Animator anim;
+    bool ordering = false;
+    public GameObject recievedTaco;
 
     void Start()
     {
@@ -35,9 +37,17 @@ public class ChickenLover : MonoBehaviour
     {
         return meat;
     }
-
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name == "orderPos")
+        {
+            ordering = true;
+            anim.SetBool("talkStage", true);
+        }
+    }
     void Update()
     {
-        anim.SetBool("TestBool", true);
+        recievedTaco = GameObject.Find("plate");
+        detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
     }
 }

@@ -35,10 +35,19 @@ public class OrganicLover : MonoBehaviour {
     {
         return meat;
     }
-
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name == "orderPos")
+        {
+            Debug.Log("start ordering");
+            anim.SetBool("talkStage", true);
+        }
+    }
+    /*
     // Update is called once per frame
     void Update()
     {
         anim.SetBool("TestBool", true);
-    }
+    
+    */
 }
