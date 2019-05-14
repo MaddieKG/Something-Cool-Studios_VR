@@ -13,7 +13,7 @@ public class addingToCart : MonoBehaviour
     private bool ing1In, ing2In, ing3In;
     public Vector3 cartPos;
     public float totalCost;
-
+    private int totalGreen, itemsInCart, customers;
     private string ing1Name, ing2Name;
 
     void Start()
@@ -90,9 +90,7 @@ public class addingToCart : MonoBehaviour
         {
             if (col.gameObject.name != ing1Name && col.gameObject.name != ing2Name)
             {
-                Debug.Log(col.gameObject.name);
                 conflict = false;
-                Debug.Log("conflict = " + conflict);
             }
         }
         addData(col.gameObject.name, -1);
@@ -121,6 +119,7 @@ public class addingToCart : MonoBehaviour
             totalCost += multiplier * orgLettData.money;
             totalGreen += multiplier * orgLettData.green;
         }
+        Debug.Log(totalCost);
         controlUI.setCostText(totalCost * customers);
     }
 
