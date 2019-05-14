@@ -22,13 +22,13 @@ public class TutorialUIController : MonoBehaviour
     {
         //Allows for initialization
         startButton = GameObject.Find("StartButton");//need a StartButton object
-        StartControl startScript = startButton.GetComponent<StartControl>();
+        tutorialStartControl startScript = startButton.GetComponent<tutorialStartControl>();
         startScript.start = false;
-        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
+        tutorialPointsController pointsScript = GameObject.Find("PointsController").GetComponent<tutorialPointsController>();
 
         //cost display stuff
         costDisplay = GameObject.Find("CostDisplay");
-        //costDisplay.SetActive(true);
+        costDisplay.SetActive(false);
         monRemaining = pointsScript.pointsData.Money;
         cost = 0;
 
@@ -69,7 +69,7 @@ public class TutorialUIController : MonoBehaviour
     //Sets text in cost display UI to correct values
     public void setCostText(float cost)
     {
-        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
+        tutorialPointsController pointsScript = GameObject.Find("PointsController").GetComponent<tutorialPointsController>();
         costText.text = "Total cost: " + cost.ToString("0.##");
         monRemaining = pointsScript.pointsData.money - cost;
         remainingMonText.text = "Remaining Money: " + monRemaining.ToString();

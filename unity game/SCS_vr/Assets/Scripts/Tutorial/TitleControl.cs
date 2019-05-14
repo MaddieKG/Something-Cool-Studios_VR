@@ -14,24 +14,27 @@ public class TitleControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        TutorialUIController UIcontrol = GameObject.Find("UIController").GetComponent<TutorialUIController>();
+
         startData.start = false;
-        titleCanvas = GameObject.Find("TitleDisplay");
+        titleCanvas = GameObject.Find("TitleDisplay");/*
         pointsDisplay = GameObject.Find("PointsScreen");
         costDisplay = GameObject.Find("CostDisplay");
         newsDisplay = GameObject.Find("NewsDisplay");
         translator = GameObject.Find("Translator");
         screen = GameObject.Find("titlescreen");
-        sliders = GameObject.Find("Sliders");
+        sliders = GameObject.Find("Sliders");*/
 
         //s1 = GameObject.Find("s1").GetComponent<Text>();
 
         titleCanvas.SetActive(true);
-        screen.SetActive(true);
+        screen.SetActive(true);/*
         pointsDisplay.SetActive(false);
         costDisplay.SetActive(false);
         newsDisplay.SetActive(false);
         translator.SetActive(false);
-        sliders.SetActive(false);
+        sliders.SetActive(false);*/
 
         //UI setup
         GameObject.Find("s1").GetComponent<Text>().enabled = false;
@@ -53,14 +56,15 @@ public class TitleControl : MonoBehaviour {
     {
         if (col.gameObject.name == "RightHandAnchor" || col.gameObject.name == "LeftHandAnchor")
         {
+
             gameObject.SetActive(false);
             screen.SetActive(false);
-            titleCanvas.SetActive(false);
+            titleCanvas.SetActive(false);/*
             pointsDisplay.SetActive(true);
             costDisplay.SetActive(true);
             newsDisplay.SetActive(true);
             translator.SetActive(true);
-            sliders.SetActive(true);
+            sliders.SetActive(true);*/
             tutorialStart = true;
 
             GameObject.Find("s1").GetComponent<Text>().enabled = true;
