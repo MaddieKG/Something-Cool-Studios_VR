@@ -25,6 +25,7 @@ public class addingToCart : MonoBehaviour
         totalCost = 0;
         totalGreen = 0;
         itemsInCart = 0;
+        customers = 6;
     }
 
     void Update()
@@ -98,28 +99,35 @@ public class addingToCart : MonoBehaviour
 
     private void addData(string name, int multiplier)
     {
+        Debug.Log(name);
         UIController controlUI = GameObject.Find("UIController").GetComponent<UIController>();
         if (name == "beef")
         {
             totalCost += multiplier * beefData.money;
             totalGreen += multiplier * beefData.green;
+            Debug.Log("check beef ");
         }
         else if (name == "chicken")
         {
             totalCost += multiplier * chickenData.money;
             totalGreen += multiplier * chickenData.green;
+            Debug.Log("check chicken");
         }
         else if (name == "gmoLettuce")
         {
             totalCost += multiplier * gmoLettData.money;
             totalGreen += multiplier * gmoLettData.green;
+            Debug.Log("check gmo");
+            Debug.Log(name + totalCost);
         }
         else if (name == "orgLettuce")
         {
             totalCost += multiplier * orgLettData.money;
             totalGreen += multiplier * orgLettData.green;
+            Debug.Log("check org");
         }
-        Debug.Log(totalCost);
+
+        Debug.Log("done : " + totalCost);
         controlUI.setCostText(totalCost * customers);
     }
 
