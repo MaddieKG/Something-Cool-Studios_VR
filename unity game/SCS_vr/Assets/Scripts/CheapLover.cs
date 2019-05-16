@@ -11,7 +11,7 @@ public class CheapLover : MonoBehaviour
     //0 for not sustainable, 1 for sustainable
     public int greens = 0;
     public int meat = 1;
-    private Animator anim;
+    public Animator anim;
 
     void Start()
     {

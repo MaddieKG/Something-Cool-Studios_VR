@@ -371,9 +371,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4312290021921416}
   - component: {fileID: 95113858650515942}
-  - component: {fileID: 114494109262414004}
   - component: {fileID: 114047634491196610}
   - component: {fileID: 65227421157527066}
+  - component: {fileID: 114584664926487624}
   m_Layer: 0
   m_Name: baldsuit
   m_TagString: chicken
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 4748412518725102}
   m_Layer: 0
   m_Name: BSRotate
-  m_TagString: Untagged
+  m_TagString: chicken
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1277,7 +1277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af5f4529a6eb2849ace42130a11042b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114494109262414004
+--- !u!114 &114584664926487624
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1288,9 +1288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a177e9e4abfb71a4aa9c72582dac2e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cname: Bob
+  cname: Andy
   greens: 0
   meat: 1
+  anim: {fileID: 0}
   recievedTaco: {fileID: 0}
   tacoInfo: {fileID: 0}
 --- !u!137 &137809517247640294

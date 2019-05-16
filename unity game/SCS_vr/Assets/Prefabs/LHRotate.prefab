@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 4974929118802728}
   m_Layer: 0
   m_Name: LHRotate
-  m_TagString: Untagged
+  m_TagString: cheap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1193,6 +1193,7 @@ MonoBehaviour:
   cname: Bob
   greens: 0
   meat: 1
+  anim: {fileID: 0}
 --- !u!114 &114687285324063302
 MonoBehaviour:
   m_ObjectHideFlags: 1

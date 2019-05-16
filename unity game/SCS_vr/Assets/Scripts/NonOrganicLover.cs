@@ -10,7 +10,7 @@ public class NonOrganicLover : MonoBehaviour {
     //0 for not sustainable, 1 for sustainable
     public int greens = 0;
     public int meat = 0;
-    private Animator anim;
+    public Animator anim;
 
     void Start () {
         anim = GetComponent<Animator>();

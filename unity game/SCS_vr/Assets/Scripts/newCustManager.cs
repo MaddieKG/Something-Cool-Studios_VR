@@ -5,10 +5,8 @@ using UnityEngine;
 public class newCustManager : MonoBehaviour
 {
     //array of game objects
-    public GameObject[] allCust;
-    private GameObject current;
-    private GameObject position;
-    public GameObject[] posArray;
+    public GameObject[] allCust, posArray;
+    private GameObject current, position, cust;
     public string message;
     //private Animator anim;
 
@@ -38,41 +36,53 @@ public class newCustManager : MonoBehaviour
       if (startScript.ready == true)
       {
         SpawnCustomer();
-        foreach(GameObject cust in allCust)
+      }
+        for(int j = 0; j < 6; j++)
         {
-          Debug.Log(cust.gameObject.tag);
-          if(cust.gameObject.tag == "chicken")
-          {
-            ChickenLover chickl = current.GetComponent<ChickenLover>();
-            chickl.startIdile();
-          }
-          else if(cust.gameObject.tag == "nonorganic")
-          {
-            NonOrganicLover nl = current.GetComponent<NonOrganicLover>();
-            nl.startIdile();
-          }
-          else if(cust.gameObject.tag == "cheap")
-          {
-            CheapLover cheapl = current.GetComponent<CheapLover>();
-            cheapl.startIdile();
-          }
-          else if(cust.gameObject.tag == "generic")
-          {
-            GenericCust gl = current.GetComponent<GenericCust>();
-            gl.startIdile();
-          }
-          else if(cust.gameObject.tag == "organic")
-          {
-            OrganicLover ol = current.GetComponent<OrganicLover>();
-            ol.startIdile();
-          }
+            cust = allCust[j];
+            Debug.Log(cust.gameObject.tag);
+            if (cust.gameObject.tag == "chicken")
+            {
+                //cust = GameObject.Find("BSRotate");
+                ChickenLover chickl = cust.GetComponent<ChickenLover>();
+                chickl.startIdile();
+            }
+            else if (cust.gameObject.tag == "nonorganic")
+            {
+                //cust = GameObject.Find("courierRotate");
+                NonOrganicLover nl = cust.GetComponent<NonOrganicLover>();
+                nl.startIdile();
+            }
+            else if (cust.gameObject.tag == "cheap")
+            {
+                //cust = GameObject.Find("LHRotate");
+                CheapLover cheapl = cust.GetComponent<CheapLover>();
+                cheapl.startIdile();
+            }
+            else if (cust.gameObject.tag == "generic1")
+            {
+               // cust = GameObject.Find("ponyRotate");
+                GenericCust g1 = cust.GetComponent<GenericCust>();
+                g1.startIdile();
+            }
+            else if (cust.gameObject.tag == "generic2")
+            {
+                //cust = GameObject.Find("SecRotate");
+                GenericCust g2 = cust.GetComponent<GenericCust>();
+                g2.startIdile();
+            }
+            else if (cust.gameObject.tag == "organic")
+            {
+                //cust = GameObject.Find("SHRotate");
+                OrganicLover ol = cust.GetComponent<OrganicLover>();
+                ol.startIdile();
+            }
         }
         addingToCart cartScript = cartControl.GetComponent<addingToCart>();
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();
         tacoDetector = GameObject.Find("plate");
         detectTaco detectScript = tacoDetector.GetComponent<detectTaco>();
-      }
         //get customer popularity
         //checks type of customer
         /*

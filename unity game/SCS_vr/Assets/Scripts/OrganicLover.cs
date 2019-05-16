@@ -9,7 +9,7 @@ public class OrganicLover : MonoBehaviour {
     //0 for not sustainable, 1 for sustainable
     public int greens = 1;
     public int meat = 1;
-    private Animator anim;
+    public Animator anim;
 
     void Start()
     {

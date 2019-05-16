@@ -11,7 +11,7 @@ public class GenericCust : MonoBehaviour
     //0 for not sustainable, 1 for sustainable
     public int greens;
     public int meat;
-    private Animator anim;
+    public Animator anim;
 
     void Start()
     {

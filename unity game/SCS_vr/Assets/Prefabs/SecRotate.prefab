@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 4945373061852458}
   m_Layer: 0
   m_Name: SecRotate
-  m_TagString: Untagged
+  m_TagString: generic2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 114573471773328936}
   m_Layer: 0
   m_Name: security
-  m_TagString: generic
+  m_TagString: generic2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1281,6 +1281,7 @@ MonoBehaviour:
   cname: Paul
   greens: 0
   meat: 0
+  anim: {fileID: 0}
 --- !u!137 &137332135109781250
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

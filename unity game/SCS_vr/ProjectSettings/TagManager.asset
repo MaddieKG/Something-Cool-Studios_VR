@@ -10,8 +10,9 @@ TagManager:
   - chicken
   - nonorganic
   - cheap
-  - generic
   - organic
+  - generic1
+  - generic2
   layers:
   - Default
   - TransparentFX

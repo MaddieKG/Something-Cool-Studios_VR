@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 4474063186956412}
   m_Layer: 0
   m_Name: SHRotate
-  m_TagString: Untagged
+  m_TagString: organic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1204,6 +1204,7 @@ MonoBehaviour:
   cname: Jim
   greens: 1
   meat: 1
+  anim: {fileID: 0}
 --- !u!137 &137491461225608196
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
