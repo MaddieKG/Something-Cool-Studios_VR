@@ -8,6 +8,10 @@ public class spawningTaco : MonoBehaviour
     public GameObject Taco;
     void OnTriggerEnter()
     {
-        Instantiate(Taco, Spawnpoint.position, Spawnpoint.rotation);
+        StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
+        if (startScript.ready == true)
+        {
+            Instantiate(Taco, Spawnpoint.position, Spawnpoint.rotation);
+        }
     }
 }

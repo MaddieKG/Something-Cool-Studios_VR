@@ -35,7 +35,7 @@ public class ProductController : MonoBehaviour {
         }**/
     }
 
-    public void buyProducts(int cost, int green)
+    /**public void buyProducts(int cost, int green)
     {
         controller = GameObject.Find("UIController");
         UIController controlUI = controller.GetComponent<UIController>();
@@ -43,5 +43,5 @@ public class ProductController : MonoBehaviour {
         pointsData.green += green;
         controlUI.setPointText();
         Debug.Log("Bought!");
-    }
+    }**/
 }

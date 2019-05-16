@@ -13,8 +13,8 @@ public class UIController : MonoBehaviour {
     [SerializeField]
     private PointsData pointsData;
     private bool isCostShowing;
-    private GameObject costDisplay, startButton;
-    private int monRemaining, cost;
+    private GameObject costDisplay, startButton, pointsController;
+    private float monRemaining, cost;
 
     // Use this for initialization
     void Start () {
@@ -22,11 +22,12 @@ public class UIController : MonoBehaviour {
         startButton = GameObject.Find("StartButton");//need a StartButton object
         StartControl startScript = startButton.GetComponent<StartControl>();
         startScript.start = false;
+        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
 
         //cost display stuff
         costDisplay = GameObject.Find("CostDisplay");
         costDisplay.SetActive(true);
-        monRemaining = pointsData.Money;
+        monRemaining = pointsScript.pointsData.Money;
         cost = 0;
 
         //For translator
@@ -44,16 +45,16 @@ public class UIController : MonoBehaviour {
     }
     
     //uses money to estimate total cost
-    public void setCost(int cost)
+    public void setCost(float cost)
     {
         monRemaining -= cost;
         setCostText(cost);
     }
 
     //Hides cost UI whenever buying is not active
-    private void hideCost(bool inBasket)
+    public void hideCost(bool start)
     {
-        if (inBasket == true)
+        if (start == false)
         {
             costDisplay.SetActive(true);
         }
@@ -64,31 +65,26 @@ public class UIController : MonoBehaviour {
     }
     
     //Sets text in cost display UI to correct values
-    public void setCostText(int cost)
+    public void setCostText(float cost)
     {
-        costText.text = "Total cost: " + cost.ToString();
-        monRemaining = pointsData.Money - cost;
+        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
+        costText.text = "Total cost: " + cost.ToString("0.##");
+        monRemaining = pointsScript.pointsData.money - cost;
         remainingMonText.text = "Remaining Money: " + monRemaining.ToString();
     }
 
     //use to update whenever changes are made → make global
     public void setPointText()
     {
-        moneyText.text = "Money: " + pointsData.Money.ToString();
-        greenText.text = "Green Points: " + pointsData.Green.ToString();
-        popText.text = "Popularity: " + pointsData.Popularity.ToString();
+        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
+        moneyText.text = "Money: ";// + pointsScript.pointsData.money.ToString();
+        greenText.text = "Green: ";// + pointsScript.pointsData.green.ToString();
+        popText.text = "Popularity: ";// + pointsScript.pointsData.popularity.ToString();
     }
 
-    public void updateTranslator(bool likes)
+    public void updateTranslator(string m)
     {
-        if (likes == true)
-        {
-            message.text = ":)";
-        }
-        else
-        {
-            message.text = ":(";
-        }
+        message.text = m;
     }
     
 }

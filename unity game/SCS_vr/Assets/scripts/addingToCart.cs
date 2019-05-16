@@ -6,48 +6,151 @@ public class addingToCart : MonoBehaviour
 {
     [SerializeField]
     public ProductData beefData, chickenData, gmoLettData, orgLettData;
-    public string currentMeat;
-    public string currentLettuce;
 
-    private GameObject startButton, controller, proController;
-    private bool onPress;
-    public bool one, two, three;
+    public int currentMeat, currentLettuce;
+
+    private bool onPress, conflict;
+    private bool ing1In, ing2In, ing3In;
     public Vector3 cartPos;
-    public int totalCost, totalGreen, itemsInCart;
+    public float totalCost;
+    private int totalGreen, itemsInCart, customers;
+    private string ing1Name, ing2Name;
 
     void Start()
     {
-        controller = GameObject.Find("UIController");
-        UIController controlUI = controller.GetComponent<UIController>();
-        proController = GameObject.Find("ProductController");
-        ProductController proControl = proController.GetComponent<ProductController>();
-
-        one = false;
-        two = false;
-        three = false;
+        ing1In = false;
+        ing2In = false;
+        ing3In = false;
         onPress = true;
         totalCost = 0;
         totalGreen = 0;
         itemsInCart = 0;
+        customers = 6;
     }
 
     void Update()
     {
-        proController = GameObject.Find("ProductController");
-        ProductController proControl = proController.GetComponent<ProductController>();
-        startButton = GameObject.Find("StartButton");
-        StartControl startScript = startButton.GetComponent<StartControl>();
+        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
+        StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
+        detectTaco tacoDetector = GameObject.Find("counter").GetComponent<detectTaco>();
 
-
-        if (itemsInCart > 1 && startScript.start == true && onPress == true)
+        if (ing1In == true && ing2In == true && conflict == false && startScript.start == true && onPress == true)
         {
-            totalCost *= 2;
+            //totalCost *= customers;
+            setIngredient(ing1Name, ing2Name);
             onPress = false;
-            proControl.buyProducts(totalCost, totalGreen);
-
+            tacoDetector.tacoPrice = (totalCost * 3) + totalCost;
+            totalCost *= customers;
+            totalGreen *= customers;
+            pointsScript.buyProducts(totalCost, totalGreen);
+            startScript.ready = true;
         }
     }
 
+    private void OnTriggerEnter(Collider col)
+    {
+        addData(col.gameObject.name, 1);
+    }
+
+    private void OnTriggerStay(Collider col)
+    {
+        if (col.gameObject.tag == "ingredient1" && ing1In == false)
+        {
+            ing1In = true;
+            ing1Name = col.gameObject.name;
+        }
+        if (col.gameObject.tag == "ingredient2" && ing2In == false)
+        {
+            ing2In = true;
+            ing2Name = col.gameObject.name;
+        }
+        if (col.gameObject.name != "RightHandAnchor" && col.gameObject.name != "LeftHandAnchor")
+        {
+            if (col.gameObject.name != ing1Name && col.gameObject.name != ing2Name)
+            {
+                Debug.Log(col.gameObject.name);
+                conflict = true;
+                Debug.Log("conflict = " + conflict);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "ingredient1" && ing1In == true)
+        {
+            ing1In = false;
+            ing1Name = null;
+        }
+        if (col.gameObject.tag == "ingredient2" && ing2In == true)
+        {
+            ing2In = false;
+            ing2Name = null;
+        }
+        if (col.gameObject.name != "RightHandAnchor" && col.gameObject.name != "LeftHandAnchor")
+        {
+            if (col.gameObject.name != ing1Name && col.gameObject.name != ing2Name)
+            {
+                conflict = false;
+            }
+        }
+        addData(col.gameObject.name, -1);
+    }
+
+    private void addData(string name, int multiplier)
+    {
+        Debug.Log(name);
+        UIController controlUI = GameObject.Find("UIController").GetComponent<UIController>();
+        if (name == "beef")
+        {
+            totalCost += multiplier * beefData.money;
+            totalGreen += multiplier * beefData.green;
+            Debug.Log("check beef ");
+        }
+        else if (name == "chicken")
+        {
+            totalCost += multiplier * chickenData.money;
+            totalGreen += multiplier * chickenData.green;
+            Debug.Log("check chicken");
+        }
+        else if (name == "gmoLettuce")
+        {
+            totalCost += multiplier * gmoLettData.money;
+            totalGreen += multiplier * gmoLettData.green;
+            Debug.Log("check gmo");
+            Debug.Log(name + totalCost);
+        }
+        else if (name == "orgLettuce")
+        {
+            totalCost += multiplier * orgLettData.money;
+            totalGreen += multiplier * orgLettData.green;
+            Debug.Log("check org");
+        }
+
+        Debug.Log("done : " + totalCost);
+        controlUI.setCostText(totalCost * customers);
+    }
+
+    private void setIngredient(string meat, string lettuce)
+    {
+        if (meat == "beef")
+        {
+            currentMeat = 0;
+        }
+        else
+        {
+            currentMeat = 1;
+        }
+        if (lettuce == "gmoLettuce")
+        {
+            currentLettuce = 0;
+        }
+        else
+        {
+            currentLettuce = 1;
+        }
+    }
+    /**
     void OnCollisionEnter(Collision col)
     {
         ProductController proControl = gameObject.GetComponent<ProductController>();
@@ -72,7 +175,7 @@ public class addingToCart : MonoBehaviour
                     totalGreen += beefData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentMeat = "anti";
+                    currentMeat = 0;
                     controlUI.setCostText(totalCost);
                 }
                 else if (col.gameObject.name == "chicken")
@@ -82,7 +185,7 @@ public class addingToCart : MonoBehaviour
                     totalGreen += chickenData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentMeat = "pro";
+                    currentMeat = 1;
                     controlUI.setCostText(totalCost);
                 }
                 one = true;
@@ -106,7 +209,7 @@ public class addingToCart : MonoBehaviour
                     totalGreen += gmoLettData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentLettuce = "anti";
+                    currentLettuce = 0;
                     controlUI.setCostText(totalCost);
                 }
               else if (col.gameObject.name == "orgLettuce")
@@ -116,11 +219,11 @@ public class addingToCart : MonoBehaviour
                     totalGreen += orgLettData.Green * 2;
                     itemsInCart += 1;
                     Destroy(col.gameObject);
-                    currentLettuce = "pro";
+                    currentLettuce = 1;
                     controlUI.setCostText(totalCost);
                 }
                 two = true;
             }
         }
-    }
+    }*/
 }

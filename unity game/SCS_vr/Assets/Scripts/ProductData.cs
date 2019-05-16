@@ -6,9 +6,10 @@ using UnityEngine;
 public class ProductData : ScriptableObject {
 
     [SerializeField]
-    public int money, green;
+    public float money; 
+    public int green;
 
-    public int Money
+    public float Money
     {
         get
         {

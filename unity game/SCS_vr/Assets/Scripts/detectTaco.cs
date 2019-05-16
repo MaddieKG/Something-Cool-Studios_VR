@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class detectTaco : MonoBehaviour
 {
-	IEnumerator OnCollisionEnter(Collision col)
+    public float tacoPrice;
+    public int tacoPop;
+
+    IEnumerator OnCollisionEnter(Collision col)
 	{
-			if (col.gameObject.name == "taco(Clone)")
+        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
+        if (col.gameObject.name == "taco(Clone)")
 			{
 				yield return new WaitForSeconds(3);
-        ///call something
+                ///call something
 				Destroy(col.gameObject);
-				//check customer preference and update points
+                Debug.Log(tacoPrice);
+                pointsScript.sellTaco(tacoPrice, tacoPop);
 			}
 	}
 }
