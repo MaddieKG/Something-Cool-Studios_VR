@@ -19,6 +19,7 @@ public class tutorialDetectTaco : MonoBehaviour
             ///call something
             Destroy(col.gameObject);
             titleControl.setS3(false);
+            titleControl.setStart(true);
             pointsScript.sellTaco(tacoPrice, tacoPop);
         }
     }

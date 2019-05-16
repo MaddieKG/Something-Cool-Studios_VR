@@ -7,7 +7,7 @@ public class TitleControl : MonoBehaviour {
     //attached to tutorial start button
 
     [SerializeField]
-    private StartData startData;
+    public StartData startData;
     private GameObject titleCanvas;
     private GameObject pointsDisplay, costDisplay, newsDisplay, translator, screen, sliders;
     private Text s1, s2, s3;
@@ -17,8 +17,7 @@ public class TitleControl : MonoBehaviour {
 	void Start () {
 
         TutorialUIController UIcontrol = GameObject.Find("UIController").GetComponent<TutorialUIController>();
-
-        startData.start = false;
+        setStart(false);
         screen = GameObject.Find("titlescreen");
         titleCanvas = GameObject.Find("TitleDisplay");
         pointsDisplay = GameObject.Find("PointsScreen");
@@ -30,7 +29,6 @@ public class TitleControl : MonoBehaviour {
         //s1 = GameObject.Find("s1").GetComponent<Text>();
 
         titleCanvas.SetActive(true);
-        screen.SetActive(true);
         pointsDisplay.SetActive(false);
         UIcontrol.hideCost(true);
         newsDisplay.SetActive(false);
@@ -38,14 +36,9 @@ public class TitleControl : MonoBehaviour {
         sliders.SetActive(false);
 
         //UI setup
-        GameObject.Find("s1").GetComponent<Text>().enabled = false;
-        GameObject.Find("s2").GetComponent<Text>().enabled = false;
-        GameObject.Find("s3").GetComponent<Text>().enabled = false;
-
-        //screen setup
-        GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = false;
-        GameObject.Find("step2").GetComponent<MeshRenderer>().enabled = false;
-        GameObject.Find("step3").GetComponent<MeshRenderer>().enabled = false;
+        setS1(false);
+        setS2(false);
+        setS3(false);
     }
 	
 	// Update is called once per frame
@@ -69,52 +62,33 @@ public class TitleControl : MonoBehaviour {
             sliders.SetActive(true);
             tutorialStart = true;
 
-            GameObject.Find("s1").GetComponent<Text>().enabled = true;
-            GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = true;
+            setS1(true);
 
         }
     }
 
     public void setS1(bool set)
     {
-        if (set == true)
-        {
-            GameObject.Find("s1").GetComponent<Text>().enabled = true;
-            GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = true;
-        }
-        else
-        {
-            GameObject.Find("s1").GetComponent<Text>().enabled = false;
-            GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = false;
-        }
+            GameObject.Find("s1").GetComponent<Text>().enabled = set;
+            GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = set;
+        
     }
 
     public void setS2(bool set)
-    {   
-        if (set == true)
-        {
-            GameObject.Find("s2").GetComponent<Text>().enabled = true;
-            GameObject.Find("step2").GetComponent<MeshRenderer>().enabled = true;
-        }
-        else
-        {
-            GameObject.Find("s2").GetComponent<Text>().enabled = false;
-            GameObject.Find("step2").GetComponent<MeshRenderer>().enabled = false;
-        }
+    {
+        GameObject.Find("s2").GetComponent<Text>().enabled = set;
+        GameObject.Find("step2").GetComponent<MeshRenderer>().enabled = set;
     }
 
     public void setS3(bool set)
     {
-        if (set == true)
-        {
-            GameObject.Find("s3").GetComponent<Text>().enabled = true;
-            GameObject.Find("step3").GetComponent<MeshRenderer>().enabled = true;
-        }
-        else
-        {
-            GameObject.Find("s3").GetComponent<Text>().enabled = false;
-            GameObject.Find("step3").GetComponent<MeshRenderer>().enabled = false;
-        }
+            GameObject.Find("s3").GetComponent<Text>().enabled = set;
+            GameObject.Find("step3").GetComponent<MeshRenderer>().enabled = set;
     }
 
+    public void setStart(bool status)
+    {
+        Debug.Log(status);
+        startData.start = status;
+    }
 }
