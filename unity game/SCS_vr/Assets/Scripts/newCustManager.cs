@@ -6,7 +6,7 @@ public class newCustManager : MonoBehaviour
 {
     //array of game objects
     public GameObject[] allCust, posArray;
-    private GameObject current, position, cust;
+    public GameObject current, position, cust;
     public string message;
     //private Animator anim;
 
@@ -40,12 +40,17 @@ public class newCustManager : MonoBehaviour
         for(int j = 0; j < 6; j++)
         {
             cust = allCust[j];
-            Debug.Log(cust.gameObject.tag);
+            Debug.Log(cust.gameObject.name);
+            /*
             if (cust.gameObject.tag == "chicken")
             {
                 //cust = GameObject.Find("BSRotate");
-                ChickenLover chickl = cust.GetComponent<ChickenLover>();
+                    //Debug.Log("chicken lover tag");
+                ChickenLover chickl = GameObject.Find("BSRotate(Clone)").GetComponent<ChickenLover>();
+                Debug.Log("chicken lover tag");
+                Debug.Log("getting meat " + chickl.getMeat());
                 chickl.startIdile();
+
             }
             else if (cust.gameObject.tag == "nonorganic")
             {
@@ -77,6 +82,8 @@ public class newCustManager : MonoBehaviour
                 OrganicLover ol = cust.GetComponent<OrganicLover>();
                 ol.startIdile();
             }
+            */
+
         }
         addingToCart cartScript = cartControl.GetComponent<addingToCart>();
         UIcontrol = GameObject.Find("UIController");

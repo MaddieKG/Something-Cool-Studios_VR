@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 95092251014296644}
   - component: {fileID: 114133567676744422}
   - component: {fileID: 114935251580491436}
+  - component: {fileID: 65413468408309490}
   m_Layer: 0
   m_Name: courier
   m_TagString: nonorganic
@@ -1235,6 +1236,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1396648323784722}
   m_Mesh: {fileID: 4300000, guid: c806f00da7a022a4a9167d71b0bb8836, type: 3}
+--- !u!65 &65413468408309490
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1060767068871552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95092251014296644
 Animator:
   serializedVersion: 3
@@ -1268,6 +1281,8 @@ MonoBehaviour:
   greens: 0
   meat: 0
   anim: {fileID: 0}
+  recievedTaco: {fileID: 0}
+  tacoInfo: {fileID: 0}
 --- !u!114 &114935251580491436
 MonoBehaviour:
   m_ObjectHideFlags: 1

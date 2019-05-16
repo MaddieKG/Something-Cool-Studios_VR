@@ -6906,6 +6906,9 @@ MonoBehaviour:
   - {fileID: 1060460667}
   - {fileID: 1046240916}
   - {fileID: 34232804}
+  current: {fileID: 0}
+  position: {fileID: 0}
+  cust: {fileID: 0}
   message: 
   UIcontrol: {fileID: 0}
   cartControl: {fileID: 0}

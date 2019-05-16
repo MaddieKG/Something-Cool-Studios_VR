@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: 95147191584182870}
   - component: {fileID: 114156431732045012}
   - component: {fileID: 114687285324063302}
+  - component: {fileID: 65432266630359014}
   m_Layer: 0
   m_Name: longhair
   m_TagString: cheap
@@ -1161,6 +1162,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803407779086790}
   m_Mesh: {fileID: 4300000, guid: 7ff5d0b025ad4954c8518338128fb018, type: 3}
+--- !u!65 &65432266630359014
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965323335334120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95147191584182870
 Animator:
   serializedVersion: 3
@@ -1194,6 +1207,8 @@ MonoBehaviour:
   greens: 0
   meat: 1
   anim: {fileID: 0}
+  recievedTaco: {fileID: 0}
+  tacoInfo: {fileID: 0}
 --- !u!114 &114687285324063302
 MonoBehaviour:
   m_ObjectHideFlags: 1

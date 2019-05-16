@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 95794190080859096}
   - component: {fileID: 114994331315080720}
   - component: {fileID: 114847784204501078}
+  - component: {fileID: 65264461281551286}
   m_Layer: 0
   m_Name: shorthair
   m_TagString: organic
@@ -1161,6 +1162,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629715730445690}
   m_Mesh: {fileID: 4300000, guid: 478a646465fc63b459a5b20bce42bb77, type: 3}
+--- !u!65 &65264461281551286
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296755581487116}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95794190080859096
 Animator:
   serializedVersion: 3
@@ -1205,6 +1218,8 @@ MonoBehaviour:
   greens: 1
   meat: 1
   anim: {fileID: 0}
+  recievedTaco: {fileID: 0}
+  tacoInfo: {fileID: 0}
 --- !u!137 &137491461225608196
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

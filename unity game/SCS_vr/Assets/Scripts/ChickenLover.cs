@@ -12,13 +12,13 @@ public class ChickenLover : MonoBehaviour
     public int greens = 0;
     public int meat = 1;
     public Animator anim;
-    bool ordering = false;
+    private bool ordering = false;
     public GameObject recievedTaco;
     public GameObject tacoInfo;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
         /*
         Debug.Log("name: " + cname);
         Debug.Log("green: " + greens.ToString());
@@ -40,10 +40,20 @@ public class ChickenLover : MonoBehaviour
     {
         return meat;
     }
+    /*
     public void startIdile()
     {
-      anim.SetBool("walk", false);
+      Debug.Log("chicken idile");
+      anim.SetBool("walkBool", false);
+      Debug.Log("walking anim");
     }
+    public void startWalk()
+    {
+      Debug.Log("chicken walk");
+      anim.SetBool("walkBool", true);
+      Debug.Log("walking anim");
+    }
+    */
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "orderPos")
@@ -62,13 +72,20 @@ public class ChickenLover : MonoBehaviour
         {
           Debug.Log("taco on plate");
           //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
-          if(addingToCart.currentMeat == 1)
+          if(ordering == true)
           {
-            anim.SetBool("gotTacoHappy", true);
+            if(addingToCart.currentMeat == 1)
+            {
+              anim.SetBool("gotTacoHappy", true);
+            }
+            else
+            {
+              anim.SetBool("gotTacoSad", true);
+            }
           }
           else
           {
-            anim.SetBool("gotTacoSad", true);
+            anim.SetBool("walkBool", true);
           }
         }
     }

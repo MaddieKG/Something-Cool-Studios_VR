@@ -12,6 +12,9 @@ public class CheapLover : MonoBehaviour
     public int greens = 0;
     public int meat = 1;
     public Animator anim;
+    private bool ordering = false;
+    public GameObject recievedTaco;
+    public GameObject tacoInfo;
 
     void Start()
     {
@@ -37,22 +40,46 @@ public class CheapLover : MonoBehaviour
     {
         return meat;
     }
+    /*
     public void startIdile()
     {
       anim.SetBool("walk", false);
     }
+    */
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "orderPos")
         {
-            //Debug.Log("start ordering");
+            ordering = true;
             anim.SetBool("talkStage", true);
         }
     }
-    /*
     void Update()
     {
-        anim.SetBool("TestBool", true);
+        recievedTaco = GameObject.Find("plate");
+        tacoInfo = GameObject.Find("cart");
+        detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
+        addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
+        if(detectTaco.onPlate == true)
+        {
+          Debug.Log("taco on plate");
+          //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
+          if(ordering == true)
+          {
+            if(addingToCart.currentMeat == 1)
+            {
+              anim.SetBool("gotTacoHappy", true);
+            }
+            else
+            {
+              anim.SetBool("gotTacoSad", true);
+            }
+          }
+          else
+          {
+
+            anim.SetBool("walkBool", true);
+          }
+        }
     }
-    */
 }

@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: 95052892529698248}
   - component: {fileID: 114337401679872912}
   - component: {fileID: 114143854476513264}
+  - component: {fileID: 65568146240333006}
   m_Layer: 0
   m_Name: pony
   m_TagString: generic1
@@ -1161,6 +1162,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1500845772846122}
   m_Mesh: {fileID: 4300000, guid: 84e62c6d3afbc2c47a898e869be0a25b, type: 3}
+--- !u!65 &65568146240333006
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1942094911328020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95052892529698248
 Animator:
   serializedVersion: 3
@@ -1205,6 +1218,8 @@ MonoBehaviour:
   greens: 0
   meat: 0
   anim: {fileID: 0}
+  recievedTaco: {fileID: 0}
+  tacoInfo: {fileID: 0}
 --- !u!137 &137721746463187238
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
