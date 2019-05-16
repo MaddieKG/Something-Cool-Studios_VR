@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TitleControl : MonoBehaviour {
+    //attached to tutorial start button
 
     [SerializeField]
     private StartData startData;
@@ -18,23 +19,23 @@ public class TitleControl : MonoBehaviour {
         TutorialUIController UIcontrol = GameObject.Find("UIController").GetComponent<TutorialUIController>();
 
         startData.start = false;
-        titleCanvas = GameObject.Find("TitleDisplay");/*
+        screen = GameObject.Find("titlescreen");
+        titleCanvas = GameObject.Find("TitleDisplay");
         pointsDisplay = GameObject.Find("PointsScreen");
-        costDisplay = GameObject.Find("CostDisplay");
+        //costDisplay = GameObject.Find("CostDisplay");
         newsDisplay = GameObject.Find("NewsDisplay");
         translator = GameObject.Find("Translator");
-        screen = GameObject.Find("titlescreen");
-        sliders = GameObject.Find("Sliders");*/
+        sliders = GameObject.Find("Sliders");
 
         //s1 = GameObject.Find("s1").GetComponent<Text>();
 
         titleCanvas.SetActive(true);
-        screen.SetActive(true);/*
+        screen.SetActive(true);
         pointsDisplay.SetActive(false);
-        costDisplay.SetActive(false);
+        UIcontrol.hideCost(true);
         newsDisplay.SetActive(false);
         translator.SetActive(false);
-        sliders.SetActive(false);*/
+        sliders.SetActive(false);
 
         //UI setup
         GameObject.Find("s1").GetComponent<Text>().enabled = false;
@@ -54,23 +55,66 @@ public class TitleControl : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
+        TutorialUIController UIcontrol = GameObject.Find("UIController").GetComponent<TutorialUIController>();
         if (col.gameObject.name == "RightHandAnchor" || col.gameObject.name == "LeftHandAnchor")
         {
-
-            gameObject.SetActive(false);
+            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            //gameObject.SetActive(false);
             screen.SetActive(false);
-            titleCanvas.SetActive(false);/*
+            titleCanvas.SetActive(false);
             pointsDisplay.SetActive(true);
-            costDisplay.SetActive(true);
+            UIcontrol.hideCost(false);
             newsDisplay.SetActive(true);
             translator.SetActive(true);
-            sliders.SetActive(true);*/
+            sliders.SetActive(true);
             tutorialStart = true;
 
             GameObject.Find("s1").GetComponent<Text>().enabled = true;
             GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = true;
+
         }
     }
 
+    public void setS1(bool set)
+    {
+        if (set == true)
+        {
+            GameObject.Find("s1").GetComponent<Text>().enabled = true;
+            GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = true;
+        }
+        else
+        {
+            GameObject.Find("s1").GetComponent<Text>().enabled = false;
+            GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
+
+    public void setS2(bool set)
+    {   
+        if (set == true)
+        {
+            GameObject.Find("s2").GetComponent<Text>().enabled = true;
+            GameObject.Find("step2").GetComponent<MeshRenderer>().enabled = true;
+        }
+        else
+        {
+            GameObject.Find("s2").GetComponent<Text>().enabled = false;
+            GameObject.Find("step2").GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
+
+    public void setS3(bool set)
+    {
+        if (set == true)
+        {
+            GameObject.Find("s3").GetComponent<Text>().enabled = true;
+            GameObject.Find("step3").GetComponent<MeshRenderer>().enabled = true;
+        }
+        else
+        {
+            GameObject.Find("s3").GetComponent<Text>().enabled = false;
+            GameObject.Find("step3").GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
 
 }

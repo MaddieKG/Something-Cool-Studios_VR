@@ -32,18 +32,21 @@ public class tutorialAddingToCart : MonoBehaviour
     {
         tutorialPointsController pointsScript = GameObject.Find("PointsController").GetComponent<tutorialPointsController>();
         tutorialStartControl startScript = GameObject.Find("StartButton").GetComponent<tutorialStartControl>();
-        detectTaco tacoDetector = GameObject.Find("counter").GetComponent<detectTaco>();
+        detectTaco tacoDetector = GameObject.Find("plate").GetComponent<detectTaco>();
+        TitleControl titleControl = GameObject.Find("start").GetComponent<TitleControl>();
 
         if (ing1In == true && ing2In == true && conflict == false && startScript.start == true && onPress == true)
         {
             //totalCost *= customers;
             setIngredient(ing1Name, ing2Name);
             onPress = false;
-            tacoDetector.tacoPrice = (totalCost * 3) + totalCost;
+            //tacoDetector.tacoPrice = (totalCost * 3) + totalCost;
             totalCost *= customers;
             totalGreen *= customers;
             pointsScript.buyProducts(totalCost, totalGreen);
             startScript.ready = true;
+            titleControl.setS2(true);
+            titleControl.setS1(false);
         }
     }
 
@@ -70,9 +73,7 @@ public class tutorialAddingToCart : MonoBehaviour
             {
                 if (col.gameObject.name != ing1Name && col.gameObject.name != ing2Name)
                 {
-                    Debug.Log(col.gameObject.name);
                     conflict = true;
-                    Debug.Log("conflict = " + conflict);
                 }
             }
         }
@@ -103,35 +104,29 @@ public class tutorialAddingToCart : MonoBehaviour
 
     private void addData(string name, int multiplier)
     {
-        Debug.Log(name);
         TutorialUIController controlUI = GameObject.Find("UIController").GetComponent<TutorialUIController>();
         if (name == "beef")
         {
             totalCost += multiplier * beefData.money;
             totalGreen += multiplier * beefData.green;
-            Debug.Log("check beef ");
         }
         else if (name == "chicken")
         {
             totalCost += multiplier * chickenData.money;
             totalGreen += multiplier * chickenData.green;
-            Debug.Log("check chicken");
         }
         else if (name == "gmoLettuce")
         {
             totalCost += multiplier * gmoLettData.money;
             totalGreen += multiplier * gmoLettData.green;
-            Debug.Log("check gmo");
             Debug.Log(name + totalCost);
         }
         else if (name == "orgLettuce")
         {
             totalCost += multiplier * orgLettData.money;
             totalGreen += multiplier * orgLettData.green;
-            Debug.Log("check org");
         }
-
-        Debug.Log("done : " + totalCost);
+        
         controlUI.setCostText(totalCost * customers);
     }
 

@@ -28,7 +28,7 @@ public class TutorialUIController : MonoBehaviour
 
         //cost display stuff
         costDisplay = GameObject.Find("CostDisplay");
-        costDisplay.SetActive(false);
+        //hideCost(true);
         monRemaining = pointsScript.pointsData.Money;
         cost = 0;
 
@@ -56,13 +56,14 @@ public class TutorialUIController : MonoBehaviour
     //Hides cost UI whenever buying is not active
     public void hideCost(bool start)
     {
+        costDisplay = GameObject.Find("CostDisplay");
         if (start == false)
         {
-            costDisplay.SetActive(true);
+            costDisplay.GetComponent<Canvas>().enabled = true;
         }
         else
         {
-            costDisplay.SetActive(false);
+            costDisplay.GetComponent<Canvas>().enabled = false;
         }
     }
 
