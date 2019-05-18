@@ -12,6 +12,7 @@ public class tutorialDetectTaco : MonoBehaviour
     {
         tutorialPointsController pointsScript = GameObject.Find("PointsController").GetComponent<tutorialPointsController>();
         TitleControl titleControl = GameObject.Find("start").GetComponent<TitleControl>();
+        TutorialUIController tutorialUI = GameObject.Find("UIController").GetComponent<TutorialUIController>();
 
         if (col.gameObject.name == "taco(Clone)")
         {
@@ -21,6 +22,7 @@ public class tutorialDetectTaco : MonoBehaviour
             titleControl.setS3(false);
             titleControl.setStart(true);
             pointsScript.sellTaco(tacoPrice, tacoPop);
+            tutorialUI.updateTranslator("Tutorial Complete!");
         }
     }
 }

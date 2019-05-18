@@ -73,7 +73,7 @@ public class tutorialCustomerManager : MonoBehaviour
                 meat = orgStats.getMeat();
             }
             //generates response
-            message = "Thanks";//getResponse(meat, green);
+            message = "Serve one taco";//getResponse(meat, green);
             controller.updateTranslator(message);
         }
     }

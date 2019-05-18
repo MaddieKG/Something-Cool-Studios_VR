@@ -20,6 +20,7 @@ public class TipsControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         TitleControl titleControl = GameObject.Find("start").GetComponent<TitleControl>();
+        TutorialUIController controller = GameObject.Find("UIController").GetComponent<TutorialUIController>();
         if (titleControl.getS1Status() == true)
         {
             setTip1(true);
@@ -29,6 +30,7 @@ public class TipsControl : MonoBehaviour {
             setTip1(false);
             setTip2(true);
             setTip3(true);
+            controller.updateTranslator("Serve one taco");
         }
         else if (titleControl.getS3Status() == true)
         {
