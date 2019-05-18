@@ -11,7 +11,7 @@ public class TitleControl : MonoBehaviour {
     private GameObject titleCanvas;
     private GameObject pointsDisplay, costDisplay, newsDisplay, translator, screen, sliders;
     private Text s1, s2, s3;
-    private bool tutorialStart;
+    private bool tutorialStart, s1Status, s2Status, s3Status;
 
 	// Use this for initialization
 	void Start () {
@@ -69,8 +69,9 @@ public class TitleControl : MonoBehaviour {
 
     public void setS1(bool set)
     {
-            GameObject.Find("s1").GetComponent<Text>().enabled = set;
-            GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = set;
+        GameObject.Find("s1").GetComponent<Text>().enabled = set;
+        GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = set;
+        s1Status = set;
         
     }
 
@@ -78,17 +79,33 @@ public class TitleControl : MonoBehaviour {
     {
         GameObject.Find("s2").GetComponent<Text>().enabled = set;
         GameObject.Find("step2").GetComponent<MeshRenderer>().enabled = set;
+        s2Status = set;
     }
 
     public void setS3(bool set)
     {
-            GameObject.Find("s3").GetComponent<Text>().enabled = set;
-            GameObject.Find("step3").GetComponent<MeshRenderer>().enabled = set;
+        GameObject.Find("s3").GetComponent<Text>().enabled = set;
+        GameObject.Find("step3").GetComponent<MeshRenderer>().enabled = set;
+        s3Status = set;
     }
 
     public void setStart(bool status)
     {
-        Debug.Log(status);
         startData.start = status;
+    }
+
+    public bool getS1Status()
+    {
+        return s1Status;
+    }
+
+    public bool getS2Status()
+    {
+        return s2Status;
+    }
+
+    public bool getS3Status()
+    {
+        return s3Status;
     }
 }
