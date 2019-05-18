@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class customerManager : MonoBehaviour {
+public class tutorialCustomerManager : MonoBehaviour
+{
     //array of game objects
     public GameObject[] allCust;
     public GameObject current;
@@ -14,37 +15,41 @@ public class customerManager : MonoBehaviour {
 
     void SpawnCustomer()
     {
-      /*
-        int i = Random.Range(0, allCust.Length);
-        current = allCust[i];
-        Instantiate(current, pos.transform.position, transform.rotation);
+        /*
+          int i = Random.Range(0, allCust.Length);
+          current = allCust[i];
+          Instantiate(current, pos.transform.position, transform.rotation);
 
-        current.transform.Rotate(0, 90, 0);
-        */
+          current.transform.Rotate(0, 90, 0);
+          */
 
         //number of customers = 6
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 1; i++)
         {
             current = allCust[i];
+            Debug.Log("index: " + i);
             position = posArray[i];
             Instantiate(current, position.transform.position, transform.rotation);
         }
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (Input.GetKeyDown("space"))
         {
             SpawnCustomer();
         }
-	}
+    }
 
     void OnTriggerEnter()
     {
-        StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
+        tutorialStartControl startScript = GameObject.Find("StartButton").GetComponent<tutorialStartControl>();
+        TitleControl titleControl = GameObject.Find("start").GetComponent<TitleControl>();
+        TutorialUIController controller = GameObject.Find("UIController").GetComponent<TutorialUIController>();
 
-        UIController controller = GameObject.Find("UIController").GetComponent<UIController>();
-        Debug.Log("trigger pushed");
+        titleControl.setS2(false);
+        titleControl.setS3(true);
 
         if (startScript.ready == true)
         {
@@ -68,15 +73,15 @@ public class customerManager : MonoBehaviour {
                 meat = orgStats.getMeat();
             }
             //generates response
-            message = getResponse(meat, green);
+            message = "Serve one taco";//getResponse(meat, green);
             controller.updateTranslator(message);
         }
     }
-
+    /*
     private string getResponse(int m, int g)
     {
-        addingToCart cartScript = GameObject.Find("cart").GetComponent<addingToCart>();
-        detectTaco detectScript = GameObject.Find("counter").GetComponent<detectTaco>();
+        tutorialAddingToCart cartScript = GameObject.Find("cart").GetComponent<tutorialAddingToCart>();
+        tutorialDetectTaco detectScript = GameObject.Find("counter").GetComponent<tutorialDetectTaco>();
         string response = null;
 
         if (cartScript.currentLettuce == green && cartScript.currentMeat == meat)
@@ -97,8 +102,8 @@ public class customerManager : MonoBehaviour {
                 response = "The tacos are too expensive.";
                 detectScript.tacoPop = -1;
             }
-        }*/
-
+        }
+        
         else if (cartScript.currentMeat != meat)
         {
             if (meat == 0)
@@ -118,5 +123,5 @@ public class customerManager : MonoBehaviour {
             detectScript.tacoPop = 2;
         }
         return response;
-    }
+    }*/
 }

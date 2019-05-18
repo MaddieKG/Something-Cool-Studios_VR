@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class addingToCart : MonoBehaviour
+public class tutorialAddingToCart : MonoBehaviour
 {
     [SerializeField]
     public ProductData beefData, chickenData, gmoLettData, orgLettData;
@@ -30,20 +30,23 @@ public class addingToCart : MonoBehaviour
 
     void Update()
     {
-        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
-        StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
-        detectTaco tacoDetector = GameObject.Find("counter").GetComponent<detectTaco>();
+        tutorialPointsController pointsScript = GameObject.Find("PointsController").GetComponent<tutorialPointsController>();
+        tutorialStartControl startScript = GameObject.Find("StartButton").GetComponent<tutorialStartControl>();
+        detectTaco tacoDetector = GameObject.Find("plate").GetComponent<detectTaco>();
+        TitleControl titleControl = GameObject.Find("start").GetComponent<TitleControl>();
 
         if (ing1In == true && ing2In == true && conflict == false && startScript.start == true && onPress == true)
         {
             //totalCost *= customers;
             setIngredient(ing1Name, ing2Name);
             onPress = false;
-            tacoDetector.tacoPrice = (totalCost * 3) + totalCost;
+            //tacoDetector.tacoPrice = (totalCost * 3) + totalCost;
             totalCost *= customers;
             totalGreen *= customers;
             pointsScript.buyProducts(totalCost, totalGreen);
             startScript.ready = true;
+            titleControl.setS2(true);
+            titleControl.setS1(false);
         }
     }
 
@@ -70,13 +73,11 @@ public class addingToCart : MonoBehaviour
             {
                 if (col.gameObject.name != ing1Name && col.gameObject.name != ing2Name)
                 {
-                    Debug.Log(col.gameObject.name);
                     conflict = true;
-                    Debug.Log("conflict = " + conflict);
                 }
             }
         }
-        
+
     }
 
     private void OnTriggerExit(Collider col)
@@ -103,35 +104,29 @@ public class addingToCart : MonoBehaviour
 
     private void addData(string name, int multiplier)
     {
-        Debug.Log(name);
-        UIController controlUI = GameObject.Find("UIController").GetComponent<UIController>();
+        TutorialUIController controlUI = GameObject.Find("UIController").GetComponent<TutorialUIController>();
         if (name == "beef")
         {
             totalCost += multiplier * beefData.money;
             totalGreen += multiplier * beefData.green;
-            Debug.Log("check beef ");
         }
         else if (name == "chicken")
         {
             totalCost += multiplier * chickenData.money;
             totalGreen += multiplier * chickenData.green;
-            Debug.Log("check chicken");
         }
         else if (name == "gmoLettuce")
         {
             totalCost += multiplier * gmoLettData.money;
             totalGreen += multiplier * gmoLettData.green;
-            Debug.Log("check gmo");
             Debug.Log(name + totalCost);
         }
         else if (name == "orgLettuce")
         {
             totalCost += multiplier * orgLettData.money;
             totalGreen += multiplier * orgLettData.green;
-            Debug.Log("check org");
         }
-
-        Debug.Log("done : " + totalCost);
+        
         controlUI.setCostText(totalCost * customers);
     }
 
@@ -154,80 +149,4 @@ public class addingToCart : MonoBehaviour
             currentLettuce = 1;
         }
     }
-    /**
-    void OnCollisionEnter(Collision col)
-    {
-        ProductController proControl = gameObject.GetComponent<ProductController>();
-
-        controller = GameObject.Find("UIController");
-        UIController controlUI = controller.GetComponent<UIController>();
-
-        if (col.gameObject.tag == "ingredient1")
-        {
-            //if ingredient already choosen
-            if (one == true)
-            {
-                col.gameObject.transform.position = new Vector3(-1,1,-2);
-            }
-            //picking meat to put in taco
-            else if (one == false)
-            {
-                //updating points system based on choice of meat
-                if (col.gameObject.name == "beef")
-                {
-                    totalCost += beefData.Money * 2;
-                    totalGreen += beefData.Green * 2;
-                    itemsInCart += 1;
-                    Destroy(col.gameObject);
-                    currentMeat = 0;
-                    controlUI.setCostText(totalCost);
-                }
-                else if (col.gameObject.name == "chicken")
-                {
-                    totalCost += chickenData.Money;
-                    Debug.Log(totalCost.ToString());
-                    totalGreen += chickenData.Green * 2;
-                    itemsInCart += 1;
-                    Destroy(col.gameObject);
-                    currentMeat = 1;
-                    controlUI.setCostText(totalCost);
-                }
-                one = true;
-            }
-        }
-        else if (col.gameObject.tag == "ingredient2")
-        {
-          //if ingredient already chosen
-          if(two == true)
-          {
-            col.gameObject.transform.position = new Vector3(-1,1,-2);
-          }
-          //choosing which lettuce to put in taco
-          else if (two == false)
-          {
-            //updating points system based on choice of lettuce
-              if (col.gameObject.name == "gmoLettuce")
-              {
-                    totalCost += gmoLettData.Money * 2;
-                    Debug.Log(totalCost.ToString());
-                    totalGreen += gmoLettData.Green * 2;
-                    itemsInCart += 1;
-                    Destroy(col.gameObject);
-                    currentLettuce = 0;
-                    controlUI.setCostText(totalCost);
-                }
-              else if (col.gameObject.name == "orgLettuce")
-              {
-                    totalCost += orgLettData.Money * 2;
-                    Debug.Log(totalCost.ToString());
-                    totalGreen += orgLettData.Green * 2;
-                    itemsInCart += 1;
-                    Destroy(col.gameObject);
-                    currentLettuce = 1;
-                    controlUI.setCostText(totalCost);
-                }
-                two = true;
-            }
-        }
-    }*/
 }

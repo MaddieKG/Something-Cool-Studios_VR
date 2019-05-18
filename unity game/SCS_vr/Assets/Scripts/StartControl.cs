@@ -14,7 +14,7 @@ public class StartControl : MonoBehaviour {
 
     void Start () {
         start = false;
-        buttonDisplay.text = "Start";
+        buttonDisplay.text = "Buy";
     }
 
     private void OnTriggerEnter()
@@ -27,7 +27,7 @@ public class StartControl : MonoBehaviour {
         start = true;
         if (start == false)
         {
-            buttonDisplay.text = "Start";
+            buttonDisplay.text = "Buy";
             controller.hideCost(start);
         }
         else if (ready == true)

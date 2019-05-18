@@ -8,9 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3363cb10600142a4197c3b5c4196f7bc, type: 3}
-  m_Name: PointsData
+  m_Script: {fileID: 11500000, guid: f4fa222d8482bf04abeceb11765f1bcc, type: 3}
+  m_Name: StartData
   m_EditorClassIdentifier: 
-  money: 20
-  green: 50
-  popularity: 50
+  start: 0

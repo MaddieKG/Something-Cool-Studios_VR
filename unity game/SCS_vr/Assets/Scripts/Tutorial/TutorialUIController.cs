@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIController : MonoBehaviour {
+public class TutorialUIController : MonoBehaviour
+{
 
     public Text newsText;
     public Text costText, remainingMonText;
@@ -17,16 +18,17 @@ public class UIController : MonoBehaviour {
     private float monRemaining, cost;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         //Allows for initialization
         startButton = GameObject.Find("StartButton");//need a StartButton object
-        StartControl startScript = startButton.GetComponent<StartControl>();
+        tutorialStartControl startScript = startButton.GetComponent<tutorialStartControl>();
         startScript.start = false;
-        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
+        tutorialPointsController pointsScript = GameObject.Find("PointsController").GetComponent<tutorialPointsController>();
 
         //cost display stuff
         costDisplay = GameObject.Find("CostDisplay");
-        //costDisplay.SetActive(true);
+        //hideCost(true);
         monRemaining = pointsScript.pointsData.Money;
         cost = 0;
 
@@ -43,7 +45,7 @@ public class UIController : MonoBehaviour {
     {
         newsText.text = "Sell some tacos!";
     }
-    
+
     //uses money to estimate total cost
     public void setCost(float cost)
     {
@@ -54,20 +56,21 @@ public class UIController : MonoBehaviour {
     //Hides cost UI whenever buying is not active
     public void hideCost(bool start)
     {
+        costDisplay = GameObject.Find("CostDisplay");
         if (start == false)
         {
-            costDisplay.SetActive(true);
+            costDisplay.GetComponent<Canvas>().enabled = true;
         }
         else
         {
-            costDisplay.SetActive(false);
+            costDisplay.GetComponent<Canvas>().enabled = false;
         }
     }
-    
+
     //Sets text in cost display UI to correct values
     public void setCostText(float cost)
     {
-        PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
+        tutorialPointsController pointsScript = GameObject.Find("PointsController").GetComponent<tutorialPointsController>();
         costText.text = "Total cost: " + cost.ToString("0.##");
         monRemaining = pointsScript.pointsData.money - cost;
         remainingMonText.text = "Remaining Money: " + monRemaining.ToString();
@@ -86,5 +89,5 @@ public class UIController : MonoBehaviour {
     {
         message.text = m;
     }
-    
+
 }
