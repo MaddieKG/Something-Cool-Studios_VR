@@ -18,6 +18,7 @@ public class TitleControl : MonoBehaviour {
 
         TutorialUIController UIcontrol = GameObject.Find("UIController").GetComponent<TutorialUIController>();
         setStart(false);
+
         screen = GameObject.Find("titlescreen");
         titleCanvas = GameObject.Find("TitleDisplay");
         pointsDisplay = GameObject.Find("PointsScreen");
@@ -27,7 +28,6 @@ public class TitleControl : MonoBehaviour {
         sliders = GameObject.Find("Sliders");
 
         //s1 = GameObject.Find("s1").GetComponent<Text>();
-
         titleCanvas.SetActive(true);
         pointsDisplay.SetActive(false);
         UIcontrol.hideCost(true);
@@ -108,4 +108,5 @@ public class TitleControl : MonoBehaviour {
     {
         return s3Status;
     }
+
 }

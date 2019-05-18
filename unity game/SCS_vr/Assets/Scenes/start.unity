@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 50555448}
   - component: {fileID: 50555447}
   m_Layer: 5
-  m_Name: Tip1UI
+  m_Name: Tip2UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2995,7 +2995,7 @@ GameObject:
   - component: {fileID: 225489919}
   - component: {fileID: 225489918}
   m_Layer: 5
-  m_Name: t1
+  m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5903,6 +5903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 428362276}
+  - component: {fileID: 428362277}
   m_Layer: 0
   m_Name: Tips
   m_TagString: Untagged
@@ -5920,12 +5921,23 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1079739817}
   - {fileID: 2020443269}
+  - {fileID: 1079739817}
   - {fileID: 2002611543}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &428362277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 428362275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e1cd46f2a0bcf4185f7e6457fd8cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &436707931 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: c9db151eee3bca2418bfe6e7b8a2d482,
@@ -6444,7 +6456,7 @@ GameObject:
   - component: {fileID: 514681016}
   - component: {fileID: 514681015}
   m_Layer: 5
-  m_Name: t2
+  m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8801,7 +8813,7 @@ GameObject:
   - component: {fileID: 744485807}
   - component: {fileID: 744485806}
   m_Layer: 0
-  m_Name: tip2
+  m_Name: tip3Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10991,7 +11003,7 @@ GameObject:
   - component: {fileID: 928462149}
   - component: {fileID: 928462148}
   m_Layer: 5
-  m_Name: Tip2UI
+  m_Name: Tip1UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12606,7 +12618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1079739817}
   m_Layer: 0
-  m_Name: Tip1
+  m_Name: Tip2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12625,7 +12637,7 @@ Transform:
   - {fileID: 1418097177}
   - {fileID: 50555446}
   m_Father: {fileID: 428362276}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1080202566
 Prefab:
@@ -16309,7 +16321,7 @@ GameObject:
   - component: {fileID: 1418097179}
   - component: {fileID: 1418097178}
   m_Layer: 0
-  m_Name: tip1
+  m_Name: tip2Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18798,7 +18810,7 @@ GameObject:
   - component: {fileID: 1690722970}
   - component: {fileID: 1690722969}
   m_Layer: 0
-  m_Name: tip2
+  m_Name: tip1Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22469,7 +22481,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2002611542}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -0.107, y: 1.376, z: -1.317}
+  m_LocalPosition: {x: -0.026, y: 1.376, z: -1.317}
   m_LocalScale: {x: 0.29261, y: 0.16806999, z: 0.00477}
   m_Children:
   - {fileID: 744485805}
@@ -22704,7 +22716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2020443269}
   m_Layer: 0
-  m_Name: Tip2
+  m_Name: Tip1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22723,7 +22735,7 @@ Transform:
   - {fileID: 1690722968}
   - {fileID: 928462147}
   m_Father: {fileID: 428362276}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -46.901, z: 0}
 --- !u!4 &2021265049 stripped
 Transform:
