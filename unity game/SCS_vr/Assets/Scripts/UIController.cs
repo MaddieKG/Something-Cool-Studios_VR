@@ -34,14 +34,14 @@ public class UIController : MonoBehaviour {
         message.text = "Waiting for input...";
 
         //sets all text
-        setObjective();
+        setObjective("");
         setCostText(cost);
         setPointText();
     }
 
-    private void setObjective()
+    public void setObjective(string obj)
     {
-        newsText.text = "Sell some tacos!";
+        newsText.text = obj;//"Sell some tacos!";
     }
     
     //uses money to estimate total cost
