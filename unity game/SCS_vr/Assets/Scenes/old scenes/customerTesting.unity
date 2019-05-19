@@ -4679,7 +4679,7 @@ Transform:
   m_GameObject: {fileID: 432711526}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 2.91, y: 0.526, z: -10.206}
-  m_LocalScale: {x: 1.0000005, y: 1.3244604, z: 1.0000005}
+  m_LocalScale: {x: 1.0000005, y: 1.3244604, z: 1.4823008}
   m_Children: []
   m_Father: {fileID: 698616181}
   m_RootOrder: 20
@@ -6895,17 +6895,9 @@ MonoBehaviour:
   allCust:
   - {fileID: 1957300421075868, guid: 04e34495e6817d54695a657d29103aa0, type: 2}
   - {fileID: 1455938874722436, guid: d15ea24f682c7a948a11ab1f5635f730, type: 2}
-  - {fileID: 1981541661503522, guid: bab3ee1ba2155444cb8582648f39bbbf, type: 2}
-  - {fileID: 1551963201962710, guid: 1f7400a376e8ca94f86e3d8b33783a4c, type: 2}
-  - {fileID: 1392861916762424, guid: 65ae95a30a31cfa49ba58e16a5340fb5, type: 2}
-  - {fileID: 1800362346496508, guid: 799346ff27a2446409823f9a977c807c, type: 2}
   posArray:
   - {fileID: 635667167}
   - {fileID: 67261911}
-  - {fileID: 1374634839}
-  - {fileID: 1060460667}
-  - {fileID: 1046240916}
-  - {fileID: 34232804}
   current: {fileID: 0}
   position: {fileID: 0}
   cust: {fileID: 0}
@@ -13148,6 +13140,7 @@ MonoBehaviour:
   tacoPrice: 0
   tacoPop: 0
   onPlate: 0
+  moveUp: 0
 --- !u!65 &1283147702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13155,7 +13148,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1283147700}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

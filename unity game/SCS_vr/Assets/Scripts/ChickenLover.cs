@@ -40,20 +40,7 @@ public class ChickenLover : MonoBehaviour
     {
         return meat;
     }
-    /*
-    public void startIdile()
-    {
-      Debug.Log("chicken idile");
-      anim.SetBool("walkBool", false);
-      Debug.Log("walking anim");
-    }
-    public void startWalk()
-    {
-      Debug.Log("chicken walk");
-      anim.SetBool("walkBool", true);
-      Debug.Log("walking anim");
-    }
-    */
+
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "orderPos")
@@ -62,15 +49,25 @@ public class ChickenLover : MonoBehaviour
             anim.SetBool("talkStage", true);
         }
     }
+    private IEnumerator waitWalking()
+    {
+      anim.SetBool("walkBool", true);
+      yield return new WaitForSeconds(4);
+      anim.SetBool("walkBool", false);
+    }
     void Update()
     {
         recievedTaco = GameObject.Find("plate");
         tacoInfo = GameObject.Find("cart");
         detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
         addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
+        Debug.Log("ChickenLover on plate: " + detectTaco.onPlate);
         if(detectTaco.onPlate == true)
         {
-          Debug.Log("taco on plate");
+          detectTaco.setTacoFalse();
+          Debug.Log("ChickenLover on plate: " + detectTaco.onPlate);
+          detectTaco.moveUpTrue();
+          Debug.Log(detectTaco.onPlate);
           //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
           if(ordering == true)
           {
@@ -83,10 +80,11 @@ public class ChickenLover : MonoBehaviour
               anim.SetBool("gotTacoSad", true);
             }
           }
-          else
-          {
-            anim.SetBool("walkBool", true);
-          }
+        }
+        else if(detectTaco.moveUp == true)
+        {
+          StartCoroutine(waitWalking());
+          detectTaco.moveUpFalse();
         }
     }
 }

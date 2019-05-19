@@ -38,12 +38,7 @@ public class OrganicLover : MonoBehaviour {
     {
         return meat;
     }
-    /*
-    public void startIdile()
-    {
-      anim.SetBool("walk", false);
-    }
-    */
+
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "orderPos")
@@ -51,6 +46,12 @@ public class OrganicLover : MonoBehaviour {
             ordering = true;
             anim.SetBool("talkStage", true);
         }
+    }
+    private IEnumerator waitWalking()
+    {
+      anim.SetBool("walkBool", true);
+      yield return new WaitForSeconds(4);
+      anim.SetBool("walkBool", false);
     }
     void Update()
     {
@@ -61,6 +62,9 @@ public class OrganicLover : MonoBehaviour {
         if(detectTaco.onPlate == true)
         {
           Debug.Log("taco on plate");
+          detectTaco.setTacoFalse();
+          detectTaco.moveUpTrue();
+          Debug.Log(detectTaco.onPlate);
           //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
           if(ordering == true)
           {
@@ -73,10 +77,10 @@ public class OrganicLover : MonoBehaviour {
               anim.SetBool("gotTacoSad", true);
             }
           }
-          else
-          {
-            anim.SetBool("walkBool", true);
-          }
+        }
+        else if(detectTaco.moveUp == true)
+        {
+          StartCoroutine(waitWalking());
         }
     }
 }

@@ -38,12 +38,7 @@ public class NonOrganicLover : MonoBehaviour {
     {
         return meat;
     }
-    /*
-    public void startIdile()
-    {
-      anim.SetBool("walk", false);
-    }
-    */
+
     void OnTriggerEnter(Collider col)
     {
       Debug.Log(ordering);
@@ -55,15 +50,26 @@ public class NonOrganicLover : MonoBehaviour {
             anim.SetBool("talkStage", true);
         }
     }
+    private IEnumerator waitWalking()
+    {
+      yield return new WaitForSeconds(4);
+      anim.SetBool("walkBool", true);
+      yield return new WaitForSeconds(1);
+      anim.SetBool("walkBool", false);
+    }
     void Update()
     {
         recievedTaco = GameObject.Find("plate");
         tacoInfo = GameObject.Find("cart");
         detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
         addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
+        Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
         if(detectTaco.onPlate == true)
         {
-          Debug.Log("taco on plate");
+          detectTaco.setTacoFalse();
+          Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
+          detectTaco.moveUpTrue();
+          Debug.Log(detectTaco.onPlate);
           //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
           if(ordering == true)
           {
@@ -76,10 +82,10 @@ public class NonOrganicLover : MonoBehaviour {
               anim.SetBool("gotTacoSad", true);
             }
           }
-          else
-          {
-            anim.SetBool("walkBool", true);
-          }
+        }
+        else if(detectTaco.moveUp == true)
+        {
+          StartCoroutine(waitWalking());
         }
     }
 }

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 136809750980888612}
   - component: {fileID: 114058239660854302}
   - component: {fileID: 54564622556708980}
+  - component: {fileID: 114808631067274530}
   m_Layer: 0
   m_Name: taco
   m_TagString: Untagged
@@ -117,6 +118,21 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!114 &114808631067274530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1174968495461962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a136efa6096f34b8d68757906e503b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tacoPrice: 0
+  tacoPop: 0
+  onPlate: 0
+  moveUp: 0
 --- !u!136 &136809750980888612
 CapsuleCollider:
   m_ObjectHideFlags: 1

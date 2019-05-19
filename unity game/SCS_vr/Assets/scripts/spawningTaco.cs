@@ -12,7 +12,7 @@ public class spawningTaco : MonoBehaviour
         StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
         if (startScript.ready == true)
         {
-          Debug.Log("taco spawned");
+            Debug.Log("taco spawned");
             Instantiate(Taco, Spawnpoint.position, Spawnpoint.rotation);
         }
     }
