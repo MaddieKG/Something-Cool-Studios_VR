@@ -17,7 +17,7 @@ public class StartControl : MonoBehaviour {
         buttonDisplay.text = "Buy";
     }
 
-    private void OnTriggerEnter()
+    public void OnTriggerEnter()
     {
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();

@@ -564,9 +564,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4354494864916674}
   - component: {fileID: 95147191584182870}
+  - component: {fileID: 114927736663247088}
+  - component: {fileID: 65525829768617352}
+  - component: {fileID: 114801863301340850}
   m_Layer: 0
   m_Name: longhair
-  m_TagString: Untagged
+  m_TagString: cheap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1159,6 +1162,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803407779086790}
   m_Mesh: {fileID: 4300000, guid: 7ff5d0b025ad4954c8518338128fb018, type: 3}
+--- !u!65 &65525829768617352
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965323335334120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95147191584182870
 Animator:
   serializedVersion: 3
@@ -1168,7 +1183,7 @@ Animator:
   m_GameObject: {fileID: 1965323335334120}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7ff5d0b025ad4954c8518338128fb018, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e39e7e14dabe1494bb8c9acc7478d1e8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1177,6 +1192,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114801863301340850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965323335334120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2bc9cb2a9a64d4385cd654fea01813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cname: Mary
+  greens: 0
+  meat: 1
+--- !u!114 &114927736663247088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965323335334120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af5f4529a6eb2849ace42130a11042b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137504301169604168
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

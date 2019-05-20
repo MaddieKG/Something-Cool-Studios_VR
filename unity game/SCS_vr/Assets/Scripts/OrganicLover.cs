@@ -10,15 +10,18 @@ public class OrganicLover : MonoBehaviour {
     public int greens = 1;
     public int meat = 1;
     private Animator anim;
+    private bool ordering = false;
+    public GameObject recievedTaco;
+    public GameObject tacoInfo;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-        /**
+        anim = gameObject.GetComponent<Animator>();
+        /*
         Debug.Log("name: " + cname);
         Debug.Log("green: " + greens.ToString());
         Debug.Log("meat: " + meat.ToString());
-    **/
+        */
     }
 
     public string getName()
@@ -36,9 +39,50 @@ public class OrganicLover : MonoBehaviour {
         return meat;
     }
 
-    // Update is called once per frame
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name == "orderPos")
+        {
+            ordering = true;
+            anim.SetBool("talkStage", true);
+        }
+    }
+    private IEnumerator waitWalking()
+    {
+      anim.SetBool("walkBool", true);
+      yield return new WaitForSeconds(4);
+      anim.SetBool("walkBool", false);
+    }
     void Update()
     {
-        anim.SetBool("TestBool", true);
+        recievedTaco = GameObject.Find("plate");
+        tacoInfo = GameObject.Find("cart");
+        detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
+        addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
+        Debug.Log("OrganicLover on plate: " + detectTaco.onPlate);
+        if(detectTaco.onPlate == true)
+        {
+          detectTaco.setTacoFalse();
+          Debug.Log("OrganicLover on plate: " + detectTaco.onPlate);
+          detectTaco.moveUpTrue();
+          Debug.Log(detectTaco.onPlate);
+          //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
+          if(ordering == true)
+          {
+            if(addingToCart.currentMeat == 1)
+            {
+              anim.SetBool("gotTacoHappy", true);
+            }
+            else
+            {
+              anim.SetBool("gotTacoSad", true);
+            }
+          }
+        }
+        else if(detectTaco.moveUp == true)
+        {
+          StartCoroutine(waitWalking());
+          detectTaco.moveUpFalse();
+        }
     }
 }

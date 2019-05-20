@@ -1,15 +1,14 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class newCustManager : MonoBehaviour
 {
     //array of game objects
-    public GameObject[] allCust;
-    private GameObject current;
-    private GameObject position;
-    public GameObject[] posArray;
+    public GameObject[] allCust, posArray;
+    public GameObject current, position, cust;
     public string message;
+    //private Animator anim;
 
     public GameObject UIcontrol, cartControl, tacoDetector;
     private int green, meat;
@@ -23,7 +22,7 @@ public class newCustManager : MonoBehaviour
     void SpawnCustomer()
     {
         //number of customers = 6
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 2; i++)
         {
             current = allCust[i];
             position = posArray[i];
@@ -31,18 +30,61 @@ public class newCustManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown("space"))
-        {
-            SpawnCustomer();
-        }
-    }
-
     void OnTriggerEnter()
     {
+      StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
+      if (startScript.ready == true)
+      {
         SpawnCustomer();
+      }
+        for(int j = 0; j < 2; j++)
+        {
+            cust = allCust[j];
+            Debug.Log(cust.gameObject.name);
+            /*
+            if (cust.gameObject.tag == "chicken")
+            {
+                //cust = GameObject.Find("BSRotate");
+                    //Debug.Log("chicken lover tag");
+                ChickenLover chickl = GameObject.Find("BSRotate(Clone)").GetComponent<ChickenLover>();
+                Debug.Log("chicken lover tag");
+                Debug.Log("getting meat " + chickl.getMeat());
+                chickl.startIdile();
+
+            }
+            else if (cust.gameObject.tag == "nonorganic")
+            {
+                //cust = GameObject.Find("courierRotate");
+                NonOrganicLover nl = cust.GetComponent<NonOrganicLover>();
+                nl.startIdile();
+            }
+            else if (cust.gameObject.tag == "cheap")
+            {
+                //cust = GameObject.Find("LHRotate");
+                CheapLover cheapl = cust.GetComponent<CheapLover>();
+                cheapl.startIdile();
+            }
+            else if (cust.gameObject.tag == "generic1")
+            {
+               // cust = GameObject.Find("ponyRotate");
+                GenericCust g1 = cust.GetComponent<GenericCust>();
+                g1.startIdile();
+            }
+            else if (cust.gameObject.tag == "generic2")
+            {
+                //cust = GameObject.Find("SecRotate");
+                GenericCust g2 = cust.GetComponent<GenericCust>();
+                g2.startIdile();
+            }
+            else if (cust.gameObject.tag == "organic")
+            {
+                //cust = GameObject.Find("SHRotate");
+                OrganicLover ol = cust.GetComponent<OrganicLover>();
+                ol.startIdile();
+            }
+            */
+
+        }
         addingToCart cartScript = cartControl.GetComponent<addingToCart>();
         UIcontrol = GameObject.Find("UIController");
         UIController controller = UIcontrol.GetComponent<UIController>();
@@ -50,6 +92,7 @@ public class newCustManager : MonoBehaviour
         detectTaco detectScript = tacoDetector.GetComponent<detectTaco>();
         //get customer popularity
         //checks type of customer
+        /*
         if (current.name == "courier" || current.name == "courierRotate")
         {
             //nonorganic lover
@@ -136,5 +179,6 @@ public class newCustManager : MonoBehaviour
             detectScript.tacoPop = 2;
         }
         controller.updateTranslator(message);
+        */
     }
 }

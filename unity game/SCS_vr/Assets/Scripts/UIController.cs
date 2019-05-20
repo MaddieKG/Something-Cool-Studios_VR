@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,7 +26,7 @@ public class UIController : MonoBehaviour {
 
         //cost display stuff
         costDisplay = GameObject.Find("CostDisplay");
-        //costDisplay.SetActive(true);
+        costDisplay.SetActive(true);
         monRemaining = pointsScript.pointsData.Money;
         cost = 0;
 
@@ -43,7 +43,7 @@ public class UIController : MonoBehaviour {
     {
         newsText.text = "Sell some tacos!";
     }
-    
+
     //uses money to estimate total cost
     public void setCost(float cost)
     {
@@ -63,7 +63,7 @@ public class UIController : MonoBehaviour {
             costDisplay.SetActive(false);
         }
     }
-    
+
     //Sets text in cost display UI to correct values
     public void setCostText(float cost)
     {
@@ -86,5 +86,5 @@ public class UIController : MonoBehaviour {
     {
         message.text = m;
     }
-    
+
 }
