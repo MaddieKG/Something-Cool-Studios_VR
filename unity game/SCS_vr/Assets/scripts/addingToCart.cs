@@ -32,7 +32,7 @@ public class addingToCart : MonoBehaviour
     {
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
         StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
-        detectTaco tacoDetector = GameObject.Find("counter").GetComponent<detectTaco>();
+        detectTaco tacoDetector = GameObject.Find("plate").GetComponent<detectTaco>();
 
         if (ing1In == true && ing2In == true && conflict == false && startScript.start == true && onPress == true)
         {
