@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NonOrganicLover : MonoBehaviour {
+public class NonOrganicLover : MonoBehaviour
+{
 
 
     public string cname = "Bob";
@@ -12,13 +13,15 @@ public class NonOrganicLover : MonoBehaviour {
     public int meat = 0;
     public Animator anim;
     public bool ordering = false;
-    public GameObject recievedTaco;
-    public GameObject tacoInfo;
+    public GameObject recievedTaco, tacoDetector, tacoInfo, UIcontrol;
+    public string message;
 
-    void Start () {
+    void Start()
+    {
         anim = gameObject.GetComponent<Animator>();
         recievedTaco = GameObject.Find("plate");
         tacoInfo = GameObject.Find("cart");
+        UIcontrol = GameObject.Find("UIController");
         /*
         Debug.Log("name: " + cname);
         Debug.Log("green: " + greens.ToString());
@@ -46,7 +49,7 @@ public class NonOrganicLover : MonoBehaviour {
         if (col.gameObject.name == "orderPos")
         {
             ordering = true;
-            anim.SetBool("walkBool",false);
+            anim.SetBool("walkBool", false);
             anim.SetBool("talkStage", true);
         }
 
@@ -63,16 +66,27 @@ public class NonOrganicLover : MonoBehaviour {
     {
         detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
         addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
-        if (ordering == true && detectTaco.onPlate == true) {
+        tacoDetector = GameObject.Find("plate");
+        detectTaco detectScript = tacoDetector.GetComponent<detectTaco>();
+        UIcontrol = GameObject.Find("UIController");
+        UIController controller = UIcontrol.GetComponent<UIController>();
+        if (ordering == true && detectTaco.onPlate == true)
+        {
 
             //Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
 
             if (addingToCart.currentLettuce == 0)
             {
+                message = "I love the tacos!";
+                controller.updateTranslator(message);
+                detectScript.tacoPop = 3;
                 anim.SetBool("gotTacoHappy", true);
             }
             else
             {
+                message = "I wish the tacos were less organic.";
+                controller.updateTranslator(message);
+                detectScript.tacoPop = -1;
                 anim.SetBool("gotTacoSad", true);
             }
             ordering = false;
@@ -85,32 +99,32 @@ public class NonOrganicLover : MonoBehaviour {
         }
     }
 
-        /*
-        if(detectTaco.onPlate == true)
+    /*
+    if(detectTaco.onPlate == true)
+    {
+      detectTaco.setTacoFalse();
+      Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
+      detectTaco.moveUpTrue();
+      Debug.Log(detectTaco.onPlate);
+      //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
+      if(ordering == true)
+      {
+        if(addingToCart.currentMeat == 1)
         {
-          detectTaco.setTacoFalse();
-          Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
-          detectTaco.moveUpTrue();
-          Debug.Log(detectTaco.onPlate);
-          //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
-          if(ordering == true)
-          {
-            if(addingToCart.currentMeat == 1)
-            {
-              anim.SetBool("gotTacoHappy", true);
-                    Debug.Log(anim.GetCurrentAnimatorStateInfo().TagHash);
-            }
-            else
-            {
-                anim.SetBool("gotTacoSad", true);
+          anim.SetBool("gotTacoHappy", true);
+                Debug.Log(anim.GetCurrentAnimatorStateInfo().TagHash);
+        }
+        else
+        {
+            anim.SetBool("gotTacoSad", true);
 
-                    Debug.Log(anim.GetCurrentAnimatorStateInfo().TagHash);
-            }
-          }
+                Debug.Log(anim.GetCurrentAnimatorStateInfo().TagHash);
         }
-        else if(detectTaco.moveUp == true)
-        {
-          StartCoroutine(waitWalking());
-        }
-    }*/
+      }
+    }
+    else if(detectTaco.moveUp == true)
+    {
+      StartCoroutine(waitWalking());
+    }
+}*/
 }

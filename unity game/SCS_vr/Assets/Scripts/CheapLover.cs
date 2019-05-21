@@ -13,14 +13,15 @@ public class CheapLover : MonoBehaviour
     public int meat = 0;
     public Animator anim;
     public bool ordering = false;
-    public GameObject recievedTaco;
-    public GameObject tacoInfo;
+    public GameObject recievedTaco, tacoDetector, tacoInfo, UIcontrol;
+    public string message;
 
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         recievedTaco = GameObject.Find("plate");
         tacoInfo = GameObject.Find("cart");
+        UIcontrol = GameObject.Find("UIController");
         /*
         Debug.Log("name: " + cname);
         Debug.Log("green: " + greens.ToString());
@@ -65,17 +66,27 @@ public class CheapLover : MonoBehaviour
     {
         detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
         addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
+        tacoDetector = GameObject.Find("plate");
+        detectTaco detectScript = tacoDetector.GetComponent<detectTaco>();
+        UIcontrol = GameObject.Find("UIController");
+        UIController controller = UIcontrol.GetComponent<UIController>();
         if (ordering == true && detectTaco.onPlate == true)
         {
 
             //Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
 
-            if (addingToCart.currentLettuce == 0 && addingToCart.currentMeat == 1)
+            if (addingToCart.currentMeat == 1 && addingToCart.currentLettuce == 0)
             {
+                message = "I love the tacos!";
+                controller.updateTranslator(message);
+                detectScript.tacoPop = 3;
                 anim.SetBool("gotTacoHappy", true);
             }
             else
             {
+                message = "I wish the tacos were cheaper.";
+                controller.updateTranslator(message);
+                detectScript.tacoPop = -1;
                 anim.SetBool("gotTacoSad", true);
             }
             ordering = false;
