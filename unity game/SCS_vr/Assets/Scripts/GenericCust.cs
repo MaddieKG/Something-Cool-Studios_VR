@@ -77,7 +77,7 @@ public class GenericCust : MonoBehaviour
 
             //if (addingToCart.currentMeat == 1)
             //{
-                message = "I love the tacos!";
+                message = "Tacos are my favorite food!";
                 controller.updateTranslator(message);
                 detectScript.tacoPop = 3;
                 anim.SetBool("gotTacoHappy", true);
