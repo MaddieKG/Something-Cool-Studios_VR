@@ -41,7 +41,7 @@ public class tutorialEnd : MonoBehaviour {
         {
             if (gameObject.GetComponent<MeshRenderer>().enabled == true)
             {
-                SceneManager.LoadScene("mondays_newtruck");
+                SceneManager.LoadScene("round_1");
             }
         }
     }

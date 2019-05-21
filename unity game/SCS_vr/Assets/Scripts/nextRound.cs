@@ -11,7 +11,7 @@ public class nextRound : MonoBehaviour
         //Debug.Log("sink: " + col.gameObject.name);
         if (col.gameObject.name == "RightHandAnchor" || col.gameObject.name == "LeftHandAnchor")
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 }
