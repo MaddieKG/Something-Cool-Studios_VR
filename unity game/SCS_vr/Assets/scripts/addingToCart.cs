@@ -5,16 +5,16 @@ using UnityEngine;
 public class addingToCart : MonoBehaviour
 {
     [SerializeField]
-    public ProductData beefData, chickenData, gmoLettData, orgLettData;
+    public ProductData beefData, chickenData, gmoLettData, orgLettData, picoData, guacData;
 
-    public int currentMeat, currentLettuce;
+    public int currentMeat, currentLettuce, currentTopping;
 
     private bool onPress, conflict;
     private bool ing1In, ing2In, ing3In;
     public Vector3 cartPos;
     public float totalCost;
     private int totalGreen, itemsInCart, customers;
-    private string ing1Name, ing2Name;
+    private string ing1Name, ing2Name, ing3Name;
 
     void Start()
     {
@@ -34,10 +34,11 @@ public class addingToCart : MonoBehaviour
         StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
         detectTaco tacoDetector = GameObject.Find("plate").GetComponent<detectTaco>();
 
-        if (ing1In == true && ing2In == true && conflict == false && startScript.start == true && onPress == true)
+        if (ing1In == true && ing2In == true && ing3In == true && conflict == false && startScript.start == true && onPress == true)
         {
             //totalCost *= customers;
-            setIngredient(ing1Name, ing2Name);
+            setIngredient(ing1Name, ing2Name, ing3Name);
+            Debug.Log(currentTopping);
             onPress = false;
             tacoDetector.tacoPrice = (totalCost * 3) + totalCost;
             totalCost *= customers;
@@ -54,7 +55,7 @@ public class addingToCart : MonoBehaviour
 
     private void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.tag == "ingredient1" || col.gameObject.tag == "ingredient2")
+        if (col.gameObject.tag == "ingredient1" || col.gameObject.tag == "ingredient2" || col.gameObject.tag == "ingredient3")
         {
             if (col.gameObject.tag == "ingredient1" && ing1In == false)
             {
@@ -66,9 +67,14 @@ public class addingToCart : MonoBehaviour
                 ing2In = true;
                 ing2Name = col.gameObject.name;
             }
+            if (col.gameObject.tag == "ingredient3" && ing3In == false)
+            {
+                ing3In = true;
+                ing3Name = col.gameObject.name;
+            }
             if (col.gameObject.name != "RightHandAnchor" && col.gameObject.name != "LeftHandAnchor")
             {
-                if (col.gameObject.name != ing1Name && col.gameObject.name != ing2Name)
+                if (col.gameObject.name != ing1Name && col.gameObject.name != ing2Name && col.gameObject.name != ing3Name)
                 {
                     Debug.Log(col.gameObject.name);
                     conflict = true;
@@ -91,9 +97,14 @@ public class addingToCart : MonoBehaviour
             ing2In = false;
             ing2Name = null;
         }
+        if (col.gameObject.tag == "ingredient3" && ing3In == true)
+        {
+            ing3In = false;
+            ing3Name = null;
+        }
         if (col.gameObject.name != "RightHandAnchor" && col.gameObject.name != "LeftHandAnchor")
         {
-            if (col.gameObject.name != ing1Name && col.gameObject.name != ing2Name)
+            if (col.gameObject.name != ing1Name && col.gameObject.name != ing2Name && col.gameObject.name != ing3Name)
             {
                 conflict = false;
             }
@@ -103,39 +114,51 @@ public class addingToCart : MonoBehaviour
 
     private void addData(string name, int multiplier)
     {
-        Debug.Log(name);
+        //Debug.Log(name);
         UIController controlUI = GameObject.Find("UIController").GetComponent<UIController>();
         if (name == "beef")
         {
             totalCost += multiplier * beefData.money;
             totalGreen += multiplier * beefData.green;
-            Debug.Log("check beef ");
+            //Debug.Log("check beef ");
         }
         else if (name == "chicken")
         {
             totalCost += multiplier * chickenData.money;
             totalGreen += multiplier * chickenData.green;
-            Debug.Log("check chicken");
+            //Debug.Log("check chicken");
         }
         else if (name == "gmoLettuce")
         {
             totalCost += multiplier * gmoLettData.money;
             totalGreen += multiplier * gmoLettData.green;
-            Debug.Log("check gmo");
-            Debug.Log(name + totalCost);
+            //Debug.Log("check gmo");
+            //Debug.Log(name + totalCost);
         }
         else if (name == "orgLettuce")
         {
             totalCost += multiplier * orgLettData.money;
             totalGreen += multiplier * orgLettData.green;
-            Debug.Log("check org");
+            //Debug.Log("check org");
+        }
+        else if (name == "pico")
+        {
+            totalCost += multiplier * picoData.money;
+            totalGreen += multiplier * picoData.green;
+            //Debug.Log("pico picked");
+        }
+        else if (name == "guac")
+        {
+            totalCost += multiplier * guacData.money;
+            totalGreen += multiplier * guacData.green;
+            //Debug.Log("guac picked");
         }
 
-        Debug.Log("done : " + totalCost);
+        //Debug.Log("done : " + totalCost);
         controlUI.setCostText(totalCost * customers);
     }
 
-    private void setIngredient(string meat, string lettuce)
+    private void setIngredient(string meat, string lettuce, string topping)
     {
         if (meat == "beef")
         {
@@ -152,6 +175,14 @@ public class addingToCart : MonoBehaviour
         else
         {
             currentLettuce = 1;
+        }
+        if (topping == "pico")
+        {
+            currentTopping = 0;
+        }
+        else
+        {
+            currentTopping = 1;
         }
     }
     /**
