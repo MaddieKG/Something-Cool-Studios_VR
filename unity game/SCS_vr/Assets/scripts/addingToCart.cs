@@ -52,6 +52,7 @@ public class addingToCart : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         addData(col.gameObject.name, 1);
+        Debug.Log(col.gameObject.name);
     }
 
     private void OnTriggerStay(Collider col)
@@ -87,6 +88,7 @@ public class addingToCart : MonoBehaviour
 
     private void OnTriggerExit(Collider col)
     {
+        Debug.Log(col.gameObject.name);
         if (col.gameObject.tag == "ingredient1" && ing1In == true)
         {
             ing1In = false;
