@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 4945373061852458}
   m_Layer: 0
   m_Name: SecRotate
-  m_TagString: Untagged
+  m_TagString: generic2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -339,9 +339,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4874135216558778}
   - component: {fileID: 95268792422848416}
+  - component: {fileID: 114686103105208112}
+  - component: {fileID: 114573471773328936}
+  - component: {fileID: 65673883416284702}
   m_Layer: 0
   m_Name: security
-  m_TagString: Untagged
+  m_TagString: generic2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1236,6 +1239,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1125736156933498}
   m_Mesh: {fileID: 4300002, guid: ac4a8f19bf3a0804888de0ecf90d7c63, type: 3}
+--- !u!65 &65673883416284702
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590115071585006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95268792422848416
 Animator:
   serializedVersion: 3
@@ -1245,7 +1260,7 @@ Animator:
   m_GameObject: {fileID: 1590115071585006}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ac4a8f19bf3a0804888de0ecf90d7c63, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e39e7e14dabe1494bb8c9acc7478d1e8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1254,6 +1269,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114573471773328936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590115071585006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af5f4529a6eb2849ace42130a11042b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114686103105208112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590115071585006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0476e84ab586d504abed4224b1f195fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cname: Paul
+  greens: 0
+  meat: 0
+  anim: {fileID: 0}
+  recievedTaco: {fileID: 0}
+  tacoInfo: {fileID: 0}
 --- !u!137 &137332135109781250
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

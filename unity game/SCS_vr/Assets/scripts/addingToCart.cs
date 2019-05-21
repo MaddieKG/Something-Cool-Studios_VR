@@ -45,6 +45,7 @@ public class addingToCart : MonoBehaviour
             totalGreen *= customers;
             pointsScript.buyProducts(totalCost, totalGreen);
             startScript.ready = true;
+            Debug.Log("ingredient bought");
         }
     }
 
@@ -82,8 +83,7 @@ public class addingToCart : MonoBehaviour
                 }
             }
         }
-        
-    }
+      }
 
     private void OnTriggerExit(Collider col)
     {
@@ -109,6 +109,7 @@ public class addingToCart : MonoBehaviour
                 conflict = false;
             }
         }
+        Debug.Log("on exit conflict = " + conflict);
         addData(col.gameObject.name, -1);
     }
 

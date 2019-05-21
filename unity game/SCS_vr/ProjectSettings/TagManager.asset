@@ -7,6 +7,12 @@ TagManager:
   - ingredient1
   - ingredient2
   - ingredient3
+  - chicken
+  - nonorganic
+  - cheap
+  - organic
+  - generic1
+  - generic2
   - taco
   layers:
   - Default
