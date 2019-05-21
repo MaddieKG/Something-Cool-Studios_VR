@@ -26,7 +26,7 @@ public class UIController : MonoBehaviour {
 
         //cost display stuff
         costDisplay = GameObject.Find("CostDisplay");
-        costDisplay.SetActive(true);
+        //costDisplay.SetActive(true);
         monRemaining = pointsScript.pointsData.Money;
         cost = 0;
 

@@ -23,7 +23,7 @@ public class customerManager : MonoBehaviour {
         */
 
         //number of customers = 6
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 6; i++)
         {
             current = allCust[i];
             position = posArray[i];
@@ -44,10 +44,11 @@ public class customerManager : MonoBehaviour {
         StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
 
         UIController controller = GameObject.Find("UIController").GetComponent<UIController>();
-
+        Debug.Log("trigger pushed");
 
         if (startScript.ready == true)
         {
+            Debug.Log("customer spawned");
             SpawnCustomer();
             //get customer popularity
             //checks type of customer

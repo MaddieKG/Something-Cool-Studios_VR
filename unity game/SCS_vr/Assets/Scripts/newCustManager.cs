@@ -37,8 +37,7 @@ public class newCustManager : MonoBehaviour
       {
         SpawnCustomer();
       }
-        for(int j = 0; j < 6; j++)
-        {
+        for(int j = 0; j < 6; j++) {
             cust = allCust[j];
             Debug.Log(cust.gameObject.name);
 
