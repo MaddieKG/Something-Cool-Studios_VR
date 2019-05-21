@@ -50,6 +50,7 @@ public class newCustManager : MonoBehaviour
         detectTaco detectScript = tacoDetector.GetComponent<detectTaco>();
         //get customer popularity
         //checks type of customer
+        /*
         if (current.name == "courier" || current.name == "courierRotate")
         {
             //nonorganic lover
@@ -136,5 +137,6 @@ public class newCustManager : MonoBehaviour
             detectScript.tacoPop = 2;
         }
         controller.updateTranslator(message);
+        */
     }
 }
