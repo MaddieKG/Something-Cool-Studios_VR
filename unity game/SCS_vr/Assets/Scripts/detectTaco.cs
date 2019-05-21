@@ -14,7 +14,7 @@ public class detectTaco : MonoBehaviour
     IEnumerator OnCollisionEnter(Collision col)
 	{
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
-        if (col.gameObject.name == "taco(Clone)")
+        if (col.gameObject.tag == "taco")
 	    {
             onPlate = true;
             Debug.Log("on plate :" + onPlate);
