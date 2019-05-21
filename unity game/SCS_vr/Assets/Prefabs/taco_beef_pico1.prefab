@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 23816876066813218}
   - component: {fileID: 114378553007242218}
   - component: {fileID: 54235942519446390}
-  - component: {fileID: 65768652441026168}
   - component: {fileID: 95363033808524894}
+  - component: {fileID: 64712858124973404}
   m_Layer: 0
   m_Name: taco_beef_pico1
   m_TagString: taco
@@ -60,7 +60,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 35cbb6f155e54c74785fe4e8d14666ab, type: 3}
+  - {fileID: 2100000, guid: 043337942e52b754e967bfc443061457, type: 2}
   - {fileID: 2100028, guid: 35cbb6f155e54c74785fe4e8d14666ab, type: 3}
   - {fileID: 2100004, guid: 35cbb6f155e54c74785fe4e8d14666ab, type: 3}
   - {fileID: 2100006, guid: 35cbb6f155e54c74785fe4e8d14666ab, type: 3}
@@ -113,8 +113,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65768652441026168
-BoxCollider:
+--- !u!64 &64712858124973404
+MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -122,9 +122,11 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.21756004, y: 0.13388076, z: 0.03242901}
-  m_Center: {x: 0, y: 0.0000000037252903, z: -0.000012817793}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300006, guid: 35cbb6f155e54c74785fe4e8d14666ab, type: 3}
 --- !u!95 &95363033808524894
 Animator:
   serializedVersion: 3

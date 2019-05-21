@@ -38,7 +38,6 @@ public class addingToCart : MonoBehaviour
         {
             //totalCost *= customers;
             setIngredient(ing1Name, ing2Name, ing3Name);
-            Debug.Log(currentTopping);
             onPress = false;
             tacoDetector.tacoPrice = (totalCost * 3) + totalCost;
             totalCost *= customers;

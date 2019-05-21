@@ -940,7 +940,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1296755581487116}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -949,7 +949,7 @@ Transform:
   - {fileID: 4997027132794998}
   m_Father: {fileID: 4474063186956412}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -180, y: 90, z: -90}
+  m_LocalEulerAnglesHint: {x: -180, y: 90, z: -180}
 --- !u!4 &4748837830748640
 Transform:
   m_ObjectHideFlags: 1
@@ -1218,8 +1218,12 @@ MonoBehaviour:
   greens: 1
   meat: 1
   anim: {fileID: 0}
+  ordering: 0
   recievedTaco: {fileID: 0}
+  tacoDetector: {fileID: 0}
   tacoInfo: {fileID: 0}
+  UIcontrol: {fileID: 0}
+  message: 
 --- !u!137 &137491461225608196
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -904,7 +904,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1060767068871552}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -913,7 +913,7 @@ Transform:
   - {fileID: 4909497024081140}
   m_Father: {fileID: 4690561302350782}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -180, y: 90, z: -90}
+  m_LocalEulerAnglesHint: {x: -180, y: 90, z: -180}
 --- !u!4 &4613100673091082
 Transform:
   m_ObjectHideFlags: 1
@@ -1283,7 +1283,10 @@ MonoBehaviour:
   anim: {fileID: 0}
   ordering: 0
   recievedTaco: {fileID: 0}
+  tacoDetector: {fileID: 0}
   tacoInfo: {fileID: 0}
+  UIcontrol: {fileID: 0}
+  message: 
 --- !u!114 &114935251580491436
 MonoBehaviour:
   m_ObjectHideFlags: 1
