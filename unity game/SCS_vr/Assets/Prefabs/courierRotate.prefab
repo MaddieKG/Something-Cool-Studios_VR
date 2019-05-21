@@ -49,10 +49,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4490600784150024}
-  - component: {fileID: 95092251014296644}
-  - component: {fileID: 114133567676744422}
-  - component: {fileID: 114935251580491436}
   - component: {fileID: 65413468408309490}
+  - component: {fileID: 114133567676744422}
+  - component: {fileID: 95092251014296644}
+  - component: {fileID: 114935251580491436}
   m_Layer: 0
   m_Name: courier
   m_TagString: nonorganic
@@ -1281,6 +1281,7 @@ MonoBehaviour:
   greens: 0
   meat: 0
   anim: {fileID: 0}
+  ordering: 0
   recievedTaco: {fileID: 0}
   tacoInfo: {fileID: 0}
 --- !u!114 &114935251580491436

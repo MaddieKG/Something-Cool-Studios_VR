@@ -52,9 +52,9 @@ public class NonOrganicLover : MonoBehaviour {
     }
     private IEnumerator waitWalking()
     {
-      yield return new WaitForSeconds(4);
+      yield return new WaitForSeconds(5);
       anim.SetBool("walkBool", true);
-      yield return new WaitForSeconds(1);
+      yield return new WaitForSeconds(4);
       anim.SetBool("walkBool", false);
     }
     void Update()
@@ -75,11 +75,13 @@ public class NonOrganicLover : MonoBehaviour {
             {
                 anim.SetBool("gotTacoSad", true);
             }
+            ordering = false;
             detectTaco.moveUpTrue();
         }
-        if (detectTaco.moveUp == true)
+        else if (detectTaco.moveUp == true)
         {
             StartCoroutine(waitWalking());
+            detectTaco.moveUpFalse();
         }
     }
 

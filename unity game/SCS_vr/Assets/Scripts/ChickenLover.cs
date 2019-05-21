@@ -18,6 +18,8 @@ public class ChickenLover : MonoBehaviour
 
     void Start()
     {
+        recievedTaco = GameObject.Find("plate");
+        tacoInfo = GameObject.Find("cart");
         anim = gameObject.GetComponent<Animator>();
         /*
         Debug.Log("name: " + cname);
@@ -46,29 +48,25 @@ public class ChickenLover : MonoBehaviour
         if (col.gameObject.name == "orderPos")
         {
             ordering = true;
+            anim.SetBool("walkBool", false);
             anim.SetBool("talkStage", true);
         }
     }
     private IEnumerator waitWalking()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
       anim.SetBool("walkBool", true);
       yield return new WaitForSeconds(4);
       anim.SetBool("walkBool", false);
     }
     void Update()
     {
-        recievedTaco = GameObject.Find("plate");
-        tacoInfo = GameObject.Find("cart");
         detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
         addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
-        if(detectTaco.onPlate == true)
+        if (ordering == true && detectTaco.onPlate == true)
         {
-            detectTaco.setTacoFalse();
-            detectTaco.moveUpTrue();
+            Debug.Log("customer served");
             //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
-            if(ordering == true)
-            {
                 if(addingToCart.currentMeat == 1)
                 {
                     anim.SetBool("gotTacoHappy", true);
@@ -77,13 +75,14 @@ public class ChickenLover : MonoBehaviour
                 {
                     anim.SetBool("gotTacoSad", true);
                 }
-                ordering = false;
-            }
+            ordering = false;
+            detectTaco.moveUpTrue();
         }
         else if(detectTaco.moveUp == true)
         {
             StartCoroutine(waitWalking());
             detectTaco.moveUpFalse();
+            Debug.Log("customer leaving");
         }
     }
 }

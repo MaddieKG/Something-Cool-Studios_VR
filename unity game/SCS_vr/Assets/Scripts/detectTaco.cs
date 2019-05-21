@@ -15,10 +15,11 @@ public class detectTaco : MonoBehaviour
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
         if (col.gameObject.name == "taco(Clone)")
 	    {
-            setTacoTrue();
+            onPlate = true;
             Debug.Log("on plate :" + onPlate);
 	    	yield return new WaitForSeconds(1);
-			Destroy(col.gameObject);
+            onPlate = false;
+            Destroy(col.gameObject);
             //Debug.Log(tacoPrice);
             pointsScript.sellTaco(tacoPrice, tacoPop);
 
