@@ -10,7 +10,7 @@ public class detectTaco : MonoBehaviour
     public bool onPlate = false;
     public bool moveUp = false;
     public int counter = 0;
-    public GameObject chanceCustomer, chanceCustPos;
+    public GameObject chanceCustomer, chanceCustPos, nextSceneButton, nextScenePos;
 
     IEnumerator OnCollisionEnter(Collision col)
 	{
@@ -28,6 +28,10 @@ public class detectTaco : MonoBehaviour
             if (counter == 5)
             {
                 Instantiate(chanceCustomer, chanceCustPos.transform.position, transform.rotation);
+            }
+            else if (counter == 6)
+            {
+                Instantiate(nextSceneButton, nextScenePos.transform.position, transform.rotation);
             }
 
 		}
