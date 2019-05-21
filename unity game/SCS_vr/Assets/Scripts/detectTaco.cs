@@ -25,7 +25,7 @@ public class detectTaco : MonoBehaviour
             Destroy(col.gameObject);
             //Debug.Log(tacoPrice);
             pointsScript.sellTaco(tacoPrice, tacoPop);
-            if (counter == 6)
+            if (counter == 5)
             {
                 Instantiate(chanceCustomer, chanceCustPos.transform.position, transform.rotation);
             }
