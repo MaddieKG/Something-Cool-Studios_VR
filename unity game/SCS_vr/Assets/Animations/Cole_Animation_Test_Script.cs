@@ -34,11 +34,13 @@ private Animator anim;
 
 
     // Update is called once per frame
+    /*
     public void walk()
     {
         anim.SetBool("TestBool", true);
         //anim.SetBool("TestBool", false);
         Debug.Log("walk");
     }
+    */
 
 }

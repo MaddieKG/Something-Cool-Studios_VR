@@ -13570,11 +13570,8 @@ MonoBehaviour:
   chickenData: {fileID: 11400000, guid: 21e04e86a60dbce4bb6a962e99dda84e, type: 2}
   gmoLettData: {fileID: 11400000, guid: 9b90a7fdf6c2cb94ea3cea5e2e4341f8, type: 2}
   orgLettData: {fileID: 11400000, guid: 76c27cb922ba94645aecf8968e61d485, type: 2}
-  picoData: {fileID: 0}
-  guacData: {fileID: 0}
   currentMeat: 0
   currentLettuce: 0
-  currentTopping: 0
   cartPos: {x: 0, y: 0, z: 0}
   totalCost: 0
 --- !u!114 &1522653391
@@ -14820,7 +14817,6 @@ MonoBehaviour:
   totalRounds: 2
   gameOver: 0
   customers: 0
-  roundEnd: 0
 --- !u!4 &1619960050
 Transform:
   m_ObjectHideFlags: 0
@@ -15083,7 +15079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawnpoint: {fileID: 640107551}
-  Taco: []
+  Taco: {fileID: 1174968495461962, guid: 1675fa542ab36f142bd41da02504ef18, type: 2}
 --- !u!65 &1628763322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15990,12 +15986,7 @@ MonoBehaviour:
   chickenData: {fileID: 11400000, guid: 21e04e86a60dbce4bb6a962e99dda84e, type: 2}
   orgLettData: {fileID: 11400000, guid: 76c27cb922ba94645aecf8968e61d485, type: 2}
   guacData: {fileID: 11400000, guid: 9b90a7fdf6c2cb94ea3cea5e2e4341f8, type: 2}
-  objectives: []
   rounds: 3
-  obj1: 
-  obj2: 
-  obj3: 
-  obj4: 
 --- !u!1001 &1719242956
 Prefab:
   m_ObjectHideFlags: 0
