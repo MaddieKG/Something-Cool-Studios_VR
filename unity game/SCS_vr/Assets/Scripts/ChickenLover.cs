@@ -12,7 +12,7 @@ public class ChickenLover : MonoBehaviour
     public int greens = 0;
     public int meat = 1;
     public Animator anim;
-    private bool ordering = false;
+    public bool ordering = false;
     public GameObject recievedTaco;
     public GameObject tacoInfo;
 
@@ -51,6 +51,7 @@ public class ChickenLover : MonoBehaviour
     }
     private IEnumerator waitWalking()
     {
+        yield return new WaitForSeconds(3);
       anim.SetBool("walkBool", true);
       yield return new WaitForSeconds(4);
       anim.SetBool("walkBool", false);
@@ -61,30 +62,28 @@ public class ChickenLover : MonoBehaviour
         tacoInfo = GameObject.Find("cart");
         detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
         addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
-        Debug.Log("ChickenLover on plate: " + detectTaco.onPlate);
         if(detectTaco.onPlate == true)
         {
-          detectTaco.setTacoFalse();
-          Debug.Log("ChickenLover on plate: " + detectTaco.onPlate);
-          detectTaco.moveUpTrue();
-          Debug.Log(detectTaco.onPlate);
-          //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
-          if(ordering == true)
-          {
-            if(addingToCart.currentMeat == 1)
+            detectTaco.setTacoFalse();
+            detectTaco.moveUpTrue();
+            //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
+            if(ordering == true)
             {
-              anim.SetBool("gotTacoHappy", true);
+                if(addingToCart.currentMeat == 1)
+                {
+                    anim.SetBool("gotTacoHappy", true);
+                }
+                else
+                {
+                    anim.SetBool("gotTacoSad", true);
+                }
+                ordering = false;
             }
-            else
-            {
-              anim.SetBool("gotTacoSad", true);
-            }
-          }
         }
         else if(detectTaco.moveUp == true)
         {
-          StartCoroutine(waitWalking());
-          detectTaco.moveUpFalse();
+            StartCoroutine(waitWalking());
+            detectTaco.moveUpFalse();
         }
     }
 }

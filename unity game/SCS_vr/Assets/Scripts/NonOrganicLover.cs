@@ -11,12 +11,14 @@ public class NonOrganicLover : MonoBehaviour {
     public int greens = 0;
     public int meat = 0;
     public Animator anim;
-    private bool ordering = false;
+    public bool ordering = false;
     public GameObject recievedTaco;
     public GameObject tacoInfo;
 
     void Start () {
-        anim = GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
+        recievedTaco = GameObject.Find("plate");
+        tacoInfo = GameObject.Find("cart");
         /*
         Debug.Log("name: " + cname);
         Debug.Log("green: " + greens.ToString());
@@ -41,11 +43,9 @@ public class NonOrganicLover : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-      Debug.Log(ordering);
         if (col.gameObject.name == "orderPos")
         {
             ordering = true;
-            Debug.Log(ordering);
             anim.SetBool("walkBool",false);
             anim.SetBool("talkStage", true);
         }
@@ -59,11 +59,31 @@ public class NonOrganicLover : MonoBehaviour {
     }
     void Update()
     {
-        recievedTaco = GameObject.Find("plate");
-        tacoInfo = GameObject.Find("cart");
+
         detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
         addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
-        Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
+        Debug.Log("taco on plate: " + detectTaco.onPlate);
+        if (ordering == true && detectTaco.onPlate == true) {
+
+            Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
+
+            if (addingToCart.currentMeat == 1)
+            {
+                anim.SetBool("gotTacoHappy", true);
+            }
+            else
+            {
+                anim.SetBool("gotTacoSad", true);
+            }
+            detectTaco.moveUpTrue();
+        }
+        if (detectTaco.moveUp == true)
+        {
+            StartCoroutine(waitWalking());
+        }
+    }
+
+        /*
         if(detectTaco.onPlate == true)
         {
           detectTaco.setTacoFalse();
@@ -76,10 +96,13 @@ public class NonOrganicLover : MonoBehaviour {
             if(addingToCart.currentMeat == 1)
             {
               anim.SetBool("gotTacoHappy", true);
+                    Debug.Log(anim.GetCurrentAnimatorStateInfo().TagHash);
             }
             else
             {
-              anim.SetBool("gotTacoSad", true);
+                anim.SetBool("gotTacoSad", true);
+
+                    Debug.Log(anim.GetCurrentAnimatorStateInfo().TagHash);
             }
           }
         }
@@ -87,5 +110,5 @@ public class NonOrganicLover : MonoBehaviour {
         {
           StartCoroutine(waitWalking());
         }
-    }
+    }*/
 }

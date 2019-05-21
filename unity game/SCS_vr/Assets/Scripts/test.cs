@@ -17,7 +17,7 @@ public class test : MonoBehaviour
         Debug.Log("on plate 2:" + onPlate);
 				//Destroy(col.gameObject);
 			}
-      Debug.Log(col.gameObject.name);
+
 	}
   private void setTacoTrue()
   {
