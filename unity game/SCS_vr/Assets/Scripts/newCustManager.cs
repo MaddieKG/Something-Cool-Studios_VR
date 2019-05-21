@@ -22,7 +22,7 @@ public class newCustManager : MonoBehaviour
     void SpawnCustomer()
     {
         //number of customers = 6
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 6; i++)
         {
             current = allCust[i];
             position = posArray[i];
@@ -37,7 +37,7 @@ public class newCustManager : MonoBehaviour
       {
         SpawnCustomer();
       }
-        for(int j = 0; j < 2; j++)
+        for(int j = 0; j < 6; j++)
         {
             cust = allCust[j];
             Debug.Log(cust.gameObject.name);

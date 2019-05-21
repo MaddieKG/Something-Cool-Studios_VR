@@ -6,21 +6,21 @@ public class GenericCust : MonoBehaviour
 {
 
 
-    public string cname = "Paul";
+    public string cname = "Bob";
 
     //0 for not sustainable, 1 for sustainable
-    public int greens;
-    public int meat;
+    public int greens = 0;
+    public int meat = 0;
     public Animator anim;
-    private bool ordering = false;
+    public bool ordering = false;
     public GameObject recievedTaco;
     public GameObject tacoInfo;
 
     void Start()
     {
-        greens = Random.Range(0, 2);
-        meat = Random.Range(0, 2);
-        anim = GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
+        recievedTaco = GameObject.Find("plate");
+        tacoInfo = GameObject.Find("cart");
         /*
         Debug.Log("name: " + cname);
         Debug.Log("green: " + greens.ToString());
@@ -48,43 +48,74 @@ public class GenericCust : MonoBehaviour
         if (col.gameObject.name == "orderPos")
         {
             ordering = true;
+            anim.SetBool("walkBool", false);
             anim.SetBool("talkStage", true);
         }
+
     }
     private IEnumerator waitWalking()
     {
-      anim.SetBool("walkBool", true);
-      yield return new WaitForSeconds(4);
-      anim.SetBool("walkBool", false);
+        detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
+        yield return new WaitForSeconds(5);
+        anim.SetBool("walkBool", true);
+        yield return new WaitForSeconds(3 * detectTaco.counter);
+        anim.SetBool("walkBool", false);
     }
     void Update()
     {
-        recievedTaco = GameObject.Find("plate");
-        tacoInfo = GameObject.Find("cart");
         detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
         addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
-        if(detectTaco.onPlate == true)
+        if (ordering == true && detectTaco.onPlate == true)
         {
-          Debug.Log("taco on plate");
-          detectTaco.setTacoFalse();
-          detectTaco.moveUpTrue();
-          Debug.Log(detectTaco.onPlate);
-          //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
-          if(ordering == true)
-          {
-            if(addingToCart.currentMeat == 1)
-            {
-              anim.SetBool("gotTacoHappy", true);
-            }
+
+            //Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
+
+            //if (addingToCart.currentMeat == 1)
+            //{
+                anim.SetBool("gotTacoHappy", true);
+            //}
+            /*
             else
             {
-              anim.SetBool("gotTacoSad", true);
+                anim.SetBool("gotTacoSad", true);
             }
-          }
+            */
+            ordering = false;
+            detectTaco.moveUpTrue();
         }
-        else if(detectTaco.moveUp == true)
+        else if (detectTaco.moveUp == true)
         {
-          StartCoroutine(waitWalking());
+            StartCoroutine(waitWalking());
+            detectTaco.moveUpFalse();
         }
     }
+
+    /*
+    if(detectTaco.onPlate == true)
+    {
+      detectTaco.setTacoFalse();
+      Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
+      detectTaco.moveUpTrue();
+      Debug.Log(detectTaco.onPlate);
+      //beef = 0, chicken = 1, gmoLettuce = 0, other lettuce = 1
+      if(ordering == true)
+      {
+        if(addingToCart.currentMeat == 1)
+        {
+          anim.SetBool("gotTacoHappy", true);
+                Debug.Log(anim.GetCurrentAnimatorStateInfo().TagHash);
+        }
+        else
+        {
+            anim.SetBool("gotTacoSad", true);
+
+                Debug.Log(anim.GetCurrentAnimatorStateInfo().TagHash);
+        }
+      }
+    }
+    else if(detectTaco.moveUp == true)
+    {
+      StartCoroutine(waitWalking());
+    }
+}*/
 }

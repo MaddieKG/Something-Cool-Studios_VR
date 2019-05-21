@@ -49,25 +49,25 @@ public class NonOrganicLover : MonoBehaviour {
             anim.SetBool("walkBool",false);
             anim.SetBool("talkStage", true);
         }
+
     }
     private IEnumerator waitWalking()
     {
-      yield return new WaitForSeconds(5);
-      anim.SetBool("walkBool", true);
-      yield return new WaitForSeconds(4);
-      anim.SetBool("walkBool", false);
+        detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
+        yield return new WaitForSeconds(5);
+        anim.SetBool("walkBool", true);
+        yield return new WaitForSeconds(3 * detectTaco.counter);
+        anim.SetBool("walkBool", false);
     }
     void Update()
     {
-
         detectTaco detectTaco = recievedTaco.GetComponent<detectTaco>();
         addingToCart addingToCart = tacoInfo.GetComponent<addingToCart>();
-        Debug.Log("taco on plate: " + detectTaco.onPlate);
         if (ordering == true && detectTaco.onPlate == true) {
 
-            Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
+            //Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
 
-            if (addingToCart.currentMeat == 1)
+            if (addingToCart.currentLettuce == 0)
             {
                 anim.SetBool("gotTacoHappy", true);
             }

@@ -9,6 +9,7 @@ public class detectTaco : MonoBehaviour
     public int tacoPop;
     public bool onPlate = false;
     public bool moveUp = false;
+    public int counter = 0;
 
     IEnumerator OnCollisionEnter(Collision col)
 	{
@@ -19,6 +20,7 @@ public class detectTaco : MonoBehaviour
             Debug.Log("on plate :" + onPlate);
 	    	yield return new WaitForSeconds(1);
             onPlate = false;
+            counter += 1;
             Destroy(col.gameObject);
             //Debug.Log(tacoPrice);
             pointsScript.sellTaco(tacoPrice, tacoPop);
