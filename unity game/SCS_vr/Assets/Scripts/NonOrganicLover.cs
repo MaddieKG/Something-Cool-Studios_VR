@@ -77,14 +77,14 @@ public class NonOrganicLover : MonoBehaviour
 
             if (addingToCart.currentLettuce == 0)
             {
-                message = "I love the tacos!";
+                message = "I love the tacos! It tastes so prefabricated!";
                 controller.updateTranslator(message);
                 detectScript.tacoPop = 3;
                 anim.SetBool("gotTacoHappy", true);
             }
             else
             {
-                message = "I wish the tacos were less organic.";
+                message = "Did the lettuce grow up on a happy farm? Going on about organic. SMH!";
                 controller.updateTranslator(message);
                 detectScript.tacoPop = -1;
                 anim.SetBool("gotTacoSad", true);
