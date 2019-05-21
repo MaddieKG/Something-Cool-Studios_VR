@@ -43,7 +43,7 @@ public class TutorialUIController : MonoBehaviour
 
     private void setObjective()
     {
-        newsText.text = "Sell some tacos!";
+        //newsText.text = "Sell some tacos!";
     }
 
     //uses money to estimate total cost

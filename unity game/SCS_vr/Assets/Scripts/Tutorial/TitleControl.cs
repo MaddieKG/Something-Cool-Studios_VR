@@ -23,7 +23,7 @@ public class TitleControl : MonoBehaviour {
         titleCanvas = GameObject.Find("TitleDisplay");
         pointsDisplay = GameObject.Find("PointsScreen");
         //costDisplay = GameObject.Find("CostDisplay");
-        newsDisplay = GameObject.Find("NewsDisplay");
+        //newsDisplay = GameObject.Find("NewsDisplay");
         translator = GameObject.Find("Translator");
         sliders = GameObject.Find("Sliders");
 
@@ -31,7 +31,7 @@ public class TitleControl : MonoBehaviour {
         titleCanvas.SetActive(true);
         pointsDisplay.SetActive(false);
         UIcontrol.hideCost(true);
-        newsDisplay.SetActive(false);
+        //newsDisplay.SetActive(false);
         translator.SetActive(false);
         sliders.SetActive(false);
 
@@ -57,7 +57,7 @@ public class TitleControl : MonoBehaviour {
             titleCanvas.SetActive(false);
             pointsDisplay.SetActive(true);
             UIcontrol.hideCost(false);
-            newsDisplay.SetActive(true);
+            //newsDisplay.SetActive(true);
             translator.SetActive(true);
             sliders.SetActive(true);
             tutorialStart = true;
@@ -77,11 +77,11 @@ public class TitleControl : MonoBehaviour {
 
     public void setS2(bool set)
     {
+        Debug.Log("Step 2: " + set);
         GameObject.Find("s2").GetComponent<Text>().enabled = set;
         GameObject.Find("step2").GetComponent<MeshRenderer>().enabled = set;
         s2Status = set;
     }
-
     public void setS3(bool set)
     {
         GameObject.Find("s3").GetComponent<Text>().enabled = set;
