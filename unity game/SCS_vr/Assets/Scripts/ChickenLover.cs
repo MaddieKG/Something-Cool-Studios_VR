@@ -77,7 +77,7 @@ public class ChickenLover : MonoBehaviour
 
             if (addingToCart.currentMeat == 1)
             {
-                message = "I love the tacos!";
+                message = "I love the chicken! BTW, why are you wearing that funny headset?";
                 controller.updateTranslator(message);
                 detectScript.tacoPop = 3;
                 anim.SetBool("gotTacoHappy", true);

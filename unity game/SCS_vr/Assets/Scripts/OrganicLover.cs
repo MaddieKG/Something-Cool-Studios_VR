@@ -77,7 +77,7 @@ public class OrganicLover : MonoBehaviour
 
             if (addingToCart.currentLettuce == 1)
             {
-                message = "I love the tacos!";
+                message = "This taco is 'gram worthy! #organicAllDayEveryday!";
                 controller.updateTranslator(message);
                 detectScript.tacoPop = 3;
                 anim.SetBool("gotTacoHappy", true);

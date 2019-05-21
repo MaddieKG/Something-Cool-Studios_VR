@@ -77,14 +77,14 @@ public class CheapLover : MonoBehaviour
 
             if (addingToCart.currentMeat == 1 && addingToCart.currentLettuce == 0)
             {
-                message = "I love the tacos!";
+                message = "This is how much you charge for ONE taco?!? What a deal!";
                 controller.updateTranslator(message);
                 detectScript.tacoPop = 3;
                 anim.SetBool("gotTacoHappy", true);
             }
             else
             {
-                message = "I wish the tacos were cheaper.";
+                message = "This is how much you charge for ONE taco?!? RIDICULOUS!!";
                 controller.updateTranslator(message);
                 detectScript.tacoPop = -1;
                 anim.SetBool("gotTacoSad", true);
