@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Upgrades : MonoBehaviour {
 
     [SerializeField] public PointsData points;
-    private GameObject upgradeMusic, upgradeBanner;
+    private GameObject upgradeMusic, upgradeBanner, currentUpgrade;
+    public Text upgradeText;
     private bool onPress;
 
     // Use this for initialization
@@ -16,6 +18,7 @@ public class Upgrades : MonoBehaviour {
         upgradeBanner.SetActive(false);
         upgradeMusic.SetActive(false);
 
+        currentUpgrade = getUpgrade(1);
         onPress = false;
     }
 
@@ -28,10 +31,8 @@ public class Upgrades : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
-        GameObject currentUpgrade;
         if ((other.gameObject.name == "RightHandAnchor" || gameObject.name == "LeftHandAnchor") && onPress == false)
         {
-            currentUpgrade = getUpgrade(0);
             currentUpgrade.SetActive(true);
             pointsScript.addPoints(points.money *= 0.2f, 0, 0);
             onPress = true;
@@ -42,10 +43,12 @@ public class Upgrades : MonoBehaviour {
     {
         if (r == 0)
         {
+            upgradeText.text = "Buy Banner";
             return upgradeBanner;
         }
         else
         {
+            upgradeText.text = "Buy music";
             return upgradeMusic;
         }
     }
