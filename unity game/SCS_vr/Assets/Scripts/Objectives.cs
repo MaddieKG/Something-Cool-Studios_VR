@@ -11,12 +11,12 @@ public class Objectives : MonoBehaviour {
 	void Start () {
         GameController controller = GameObject.Find("GameManager").GetComponent<GameController>();
 
-        obj1 = "Shady Sal's lettuce has had an E.coli outbreak. People won't want to buy food made with it. On the bright side, Shady Sal's prices are now lower than ever.";
+        obj1 = "The US-Mexico border has closed, resulting in a 10x cost increase in avocados. Guacamole is now more expensive.";
         obj2 = "Cost of chicken has skyrocketed due to innovation in chicken production. All chicken farms now provide spas to give their chickens comfortable lives.";
         obj3 = "Beef has gone on sale! The ever-popular meat is now at an all-time low price! Buy some before it's gone!";
         obj4 = "Our local farms have raised the price of their lettuce due to water shortage from the current drought.";
         objectives = new string[] { obj2, obj1, obj3, obj4 };
-        objectiveList.objectives = setObjectives(objectives, controller.totalRounds);
+        objectiveList.objectives = setObjectives(objectives, 2);
     }
 	
 	// Update is called once per frame
@@ -32,7 +32,7 @@ public class Objectives : MonoBehaviour {
         int val;
         bool used = false;
 
-        for (int i = 0; i < rounds; i++)
+        for (int i = 0; i < r; i++)
         {
             used = false;
             while (used == false)
