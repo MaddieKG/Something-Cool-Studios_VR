@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 65652110931202582}
   m_Layer: 0
   m_Name: taco_chicken_pico
-  m_TagString: Untagged
+  m_TagString: taco
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
