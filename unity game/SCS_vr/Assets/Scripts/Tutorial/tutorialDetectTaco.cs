@@ -14,7 +14,7 @@ public class tutorialDetectTaco : MonoBehaviour
         TitleControl titleControl = GameObject.Find("start").GetComponent<TitleControl>();
         TutorialUIController tutorialUI = GameObject.Find("UIController").GetComponent<TutorialUIController>();
 
-        if (col.gameObject.name == "taco(Clone)")
+        if (col.gameObject.name == "tutorialtaco(Clone)")
         {
             yield return new WaitForSeconds(3);
             ///call something
