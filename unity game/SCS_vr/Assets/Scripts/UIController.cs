@@ -84,9 +84,14 @@ public class UIController : MonoBehaviour {
         popText.text = "Popularity: ";// + pointsScript.pointsData.popularity.ToString();
     }
 
-    public IEnumerator updateTranslator(string m)
+    public void updateTranslator(string m)
     {
         message.text = m;
+        StartCoroutine(playSound());
+    }
+
+    IEnumerator playSound()
+    {
         translatorSound.SetActive(true);
         yield return new WaitForSeconds(1);
         translatorSound.SetActive(false);

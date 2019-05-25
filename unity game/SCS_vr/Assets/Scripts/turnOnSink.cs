@@ -12,6 +12,7 @@ public class turnOnSink : MonoBehaviour {
         //Debug.Log("sink: " + col.gameObject.name);
         if (col.gameObject.name == "RightHandAnchor" || col.gameObject.name == "LeftHandAnchor")
         {
+            turnOn = !turnOn;
             Instantiate(water, Spawnpoint.position, Spawnpoint.rotation);
 
         }

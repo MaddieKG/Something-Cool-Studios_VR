@@ -45,6 +45,7 @@ public class tutorialAddingToCart : MonoBehaviour
             totalGreen *= customers;
             pointsScript.buyProducts(totalCost, totalGreen);
             startScript.ready = true;
+            Debug.Log("start: " + startScript.ready);
             titleControl.setS2(true);
             titleControl.setS3(false);
             titleControl.setS1(false);

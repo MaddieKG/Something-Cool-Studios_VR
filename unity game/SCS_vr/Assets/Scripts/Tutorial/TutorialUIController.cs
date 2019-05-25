@@ -14,7 +14,7 @@ public class TutorialUIController : MonoBehaviour
     [SerializeField]
     private PointsData pointsData;
     private bool isCostShowing;
-    private GameObject costDisplay, startButton, pointsController, translatorSound;
+    private GameObject costDisplay, startButton, pointsController;
     private float monRemaining, cost;
 
     // Use this for initialization
@@ -34,8 +34,6 @@ public class TutorialUIController : MonoBehaviour
 
         //For translator
         message.text = "Waiting for input...";
-        translatorSound = GameObject.Find("TranslatorSound");
-        translatorSound.SetActive(false);
 
         //sets all text
         setObjective();
@@ -87,12 +85,9 @@ public class TutorialUIController : MonoBehaviour
         popText.text = "Popularity: ";// + pointsScript.pointsData.popularity.ToString();
     }
 
-    public IEnumerator updateTranslator(string m)
+    public void updateTranslator(string m)
     {
         message.text = m;
-        translatorSound.SetActive(true);
-        yield return new WaitForSeconds(1);
-        translatorSound.SetActive(false);
     }
 
 }
