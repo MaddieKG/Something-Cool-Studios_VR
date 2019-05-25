@@ -14,9 +14,9 @@ public class tutorialDetectTaco : MonoBehaviour
         TitleControl titleControl = GameObject.Find("start").GetComponent<TitleControl>();
         TutorialUIController tutorialUI = GameObject.Find("UIController").GetComponent<TutorialUIController>();
 
-        if (col.gameObject.name == "tutorialtaco(Clone)")
+        if (col.gameObject.tag == "taco")
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1);
             ///call something
             Destroy(col.gameObject);
             titleControl.setS3(false);

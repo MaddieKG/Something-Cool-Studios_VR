@@ -19,7 +19,7 @@ public class tutorialNewCustManager : MonoBehaviour
         cartControl = GameObject.Find("cart");
         UIcontrol = GameObject.Find("UIController");
     }
-
+    /*
     void SpawnCustomer()
     {
         //number of customers = 6
@@ -29,20 +29,20 @@ public class tutorialNewCustManager : MonoBehaviour
             position = posArray[i];
             Instantiate(current, position.transform.position, transform.rotation);
         }
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("space"))
         {
-            SpawnCustomer();
+            //SpawnCustomer();
         }
     }
 
     void OnTriggerEnter()
     {
-        SpawnCustomer();
+        //SpawnCustomer();
         tutorialAddingToCart cartScript = cartControl.GetComponent<tutorialAddingToCart>();
         UIcontrol = GameObject.Find("UIController");
         TutorialUIController controller = UIcontrol.GetComponent<TutorialUIController>();

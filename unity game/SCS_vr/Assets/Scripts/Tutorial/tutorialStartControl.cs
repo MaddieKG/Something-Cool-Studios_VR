@@ -15,11 +15,11 @@ public class tutorialStartControl : MonoBehaviour
 
     void Start()
     {
-        start = false;
+        ready = false;
         buttonDisplay.text = "Buy";
     }
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider col)
     {
         UIcontrol = GameObject.Find("UIController");
         TutorialUIController controller = UIcontrol.GetComponent<TutorialUIController>();
@@ -27,17 +27,22 @@ public class tutorialStartControl : MonoBehaviour
 
 
         start = true;
-        if (start == false)
+        if(col.gameObject.name == "RightHandAnchor" || col.gameObject.name == "LeftHandAnchor")
         {
-            buttonDisplay.text = "Buy";
-            controller.hideCost(start);
-        }
-        else if (ready == true)
-        {
-            buttonDisplay.text = "...";
-            controller.hideCost(start);
+            Debug.Log("Start: " + ready);
+            if (ready == false)
+            {
+                buttonDisplay.text = "Buy";
+            }
+            else if (ready == true)
+            {
+                buttonDisplay.text = "...";
+                controller.hideCost(start);
+                controller.updateTranslator("Serve one taco");
+            }
         }
     }
+        
 
     public bool getStart()
     {

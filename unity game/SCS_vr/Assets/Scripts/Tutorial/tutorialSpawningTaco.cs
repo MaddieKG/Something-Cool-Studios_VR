@@ -6,12 +6,19 @@ public class tutorialSpawningTaco : MonoBehaviour
 {
     public Transform Spawnpoint;
     public GameObject Taco;
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider col)
     {
-        tutorialStartControl startScript = GameObject.Find("StartButton").GetComponent<tutorialStartControl>();
-        if (startScript.ready == true)
+        if (col.gameObject.name == "RightHandAnchor" || col.gameObject.name == "LeftHandAnchor")
         {
-            Instantiate(Taco, Spawnpoint.position, Spawnpoint.rotation);
+            tutorialStartControl startScript = GameObject.Find("StartButton").GetComponent<tutorialStartControl>();
+            TitleControl titleControl = GameObject.Find("start").GetComponent<TitleControl>();
+            if (startScript.ready == true)
+            {
+                titleControl.setS2(false);
+                titleControl.setS3(true);
+                Instantiate(Taco, Spawnpoint.position, Spawnpoint.rotation);
+            }
         }
+        
     }
 }

@@ -28,9 +28,8 @@ public class TipsControl : MonoBehaviour {
         else if (titleControl.getS2Status() == true)
         {
             setTip1(false);
-            //setTip2(true);
+            setTip2(true);
             setTip3(true);
-            controller.updateTranslator("Serve one taco");
         }
         else if (titleControl.getS3Status() == true)
         {
@@ -41,7 +40,7 @@ public class TipsControl : MonoBehaviour {
 
     private void setTip1(bool set)
     {
-        tip1.SetActive(false);
+        tip1.SetActive(set);
     }
 
     private void setTip2(bool set)

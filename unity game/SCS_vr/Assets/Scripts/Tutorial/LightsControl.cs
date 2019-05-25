@@ -22,7 +22,7 @@ public class LightsControl : MonoBehaviour {
         if (titleControl.getS1Status() == true)
         {
             s1Lights.SetActive(true);
-            Debug.Log("s1 true");
+            
         }
         else
         {
@@ -31,6 +31,7 @@ public class LightsControl : MonoBehaviour {
         if (titleControl.getS2Status() == true)
         {
             s2Lights.SetActive(true);
+            Debug.Log("s2 true");
         }
         else
         {

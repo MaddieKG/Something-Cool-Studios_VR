@@ -10,7 +10,8 @@ public class TitleControl : MonoBehaviour {
     public StartData startData;
     private GameObject titleCanvas;
     private GameObject pointsDisplay, costDisplay, newsDisplay, translator, screen, sliders;
-    private Text s1, s2, s3;
+    private GameObject step1, step2, step3;
+    //private Text s1, s2, s3;
     private bool tutorialStart, s1Status, s2Status, s3Status;
 
 	// Use this for initialization
@@ -26,6 +27,10 @@ public class TitleControl : MonoBehaviour {
         //newsDisplay = GameObject.Find("NewsDisplay");
         translator = GameObject.Find("Translator");
         sliders = GameObject.Find("Sliders");
+
+        step1 = GameObject.Find("step1");
+        step2 = GameObject.Find("step2");
+        step3 = GameObject.Find("step3");
 
         //s1 = GameObject.Find("s1").GetComponent<Text>();
         titleCanvas.SetActive(true);
@@ -60,6 +65,9 @@ public class TitleControl : MonoBehaviour {
             //newsDisplay.SetActive(true);
             translator.SetActive(true);
             sliders.SetActive(true);
+
+            GameObject.Find("logo").GetComponent<MeshRenderer>().enabled = false ;
+
             tutorialStart = true;
 
             setS1(true);
@@ -69,23 +77,25 @@ public class TitleControl : MonoBehaviour {
 
     public void setS1(bool set)
     {
-        GameObject.Find("s1").GetComponent<Text>().enabled = set;
-        GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = set;
+        //GameObject.Find("s1").GetComponent<Text>().enabled = set;
+        //GameObject.Find("step1").GetComponent<MeshRenderer>().enabled = set;
+        step1.SetActive(set);
         s1Status = set;
         
     }
 
     public void setS2(bool set)
     {
-        Debug.Log("Step 2: " + set);
-        GameObject.Find("s2").GetComponent<Text>().enabled = set;
-        GameObject.Find("step2").GetComponent<MeshRenderer>().enabled = set;
+        //GameObject.Find("s2").GetComponent<Text>().enabled = set;
+        //GameObject.Find("step2").GetComponent<MeshRenderer>().enabled = set;
+        step2.SetActive(set);
         s2Status = set;
     }
     public void setS3(bool set)
     {
-        GameObject.Find("s3").GetComponent<Text>().enabled = set;
-        GameObject.Find("step3").GetComponent<MeshRenderer>().enabled = set;
+        //GameObject.Find("s3").GetComponent<Text>().enabled = set;
+        //GameObject.Find("step3").GetComponent<MeshRenderer>().enabled = set;
+        step3.SetActive(set);
         s3Status = set;
     }
 

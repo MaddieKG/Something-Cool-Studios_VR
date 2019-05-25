@@ -46,6 +46,7 @@ public class tutorialAddingToCart : MonoBehaviour
             pointsScript.buyProducts(totalCost, totalGreen);
             startScript.ready = true;
             titleControl.setS2(true);
+            titleControl.setS3(false);
             titleControl.setS1(false);
         }
     }

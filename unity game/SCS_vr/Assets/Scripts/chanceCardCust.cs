@@ -80,7 +80,7 @@ public class chanceCardCust : MonoBehaviour
                 message = "I’m so happy you’re using chicken in your tacos, that's so sustainable.";
                 controller.updateTranslator(message);
                 detectScript.tacoPop = -5;
-                anim.SetBool("gotTacoSad", true);
+                anim.SetBool("gotTacoHappy", true);
             }
             else
             {

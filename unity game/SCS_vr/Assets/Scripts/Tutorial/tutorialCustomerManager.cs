@@ -45,14 +45,11 @@ public class tutorialCustomerManager : MonoBehaviour
     void OnTriggerEnter()
     {
         tutorialStartControl startScript = GameObject.Find("StartButton").GetComponent<tutorialStartControl>();
-        TitleControl titleControl = GameObject.Find("start").GetComponent<TitleControl>();
         TutorialUIController controller = GameObject.Find("UIController").GetComponent<TutorialUIController>();
 
-        titleControl.setS2(false);
-        titleControl.setS3(true);
 
         if (startScript.ready == true)
-        {
+        {/*
             Debug.Log("customer spawned");
             SpawnCustomer();
             //get customer popularity
@@ -71,7 +68,7 @@ public class tutorialCustomerManager : MonoBehaviour
                 OrganicLover orgStats = current.GetComponent<OrganicLover>();
                 green = orgStats.getGreens();
                 meat = orgStats.getMeat();
-            }
+            }*/
             //generates response
             message = "Serve one taco";//getResponse(meat, green);
             controller.updateTranslator(message);
