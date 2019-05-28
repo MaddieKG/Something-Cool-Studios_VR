@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericCust : MonoBehaviour
+public class CheapLover : MonoBehaviour
 {
 
 
@@ -46,9 +46,14 @@ public class GenericCust : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+
+        UIcontrol = GameObject.Find("UIController");
+        UIController controller = UIcontrol.GetComponent<UIController>();
         if (col.gameObject.name == "orderPos")
         {
             ordering = true;
+            message = "One taco, please.";
+            controller.updateTranslator(message);
             anim.SetBool("walkBool", false);
             anim.SetBool("talkStage", true);
         }
@@ -75,22 +80,20 @@ public class GenericCust : MonoBehaviour
 
             //Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
 
-            //if (addingToCart.currentMeat == 1)
-            //{
-                message = "Tacos are my favorite food!";
+            if (addingToCart.currentMeat == 1 && addingToCart.currentLettuce == 0)
+            {
+                message = "This is how much you charge for ONE taco?!? What a deal!";
                 controller.updateTranslator(message);
-                detectScript.tacoPop = 3;
+                detectScript.tacoPop = 2;
                 anim.SetBool("gotTacoHappy", true);
-            //}
-            /*
+            }
             else
             {
-                message = "I wish the tacos had chicken.";
+                message = "This is how much you charge for ONE taco?!? RIDICULOUS!!";
                 controller.updateTranslator(message);
-                detectScript.tacoPop = -1;
+                detectScript.tacoPop = -2;
                 anim.SetBool("gotTacoSad", true);
             }
-            */
             ordering = false;
             detectTaco.moveUpTrue();
         }

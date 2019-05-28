@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrganicLover : MonoBehaviour
+public class chanceCardCust : MonoBehaviour
 {
 
 
@@ -75,18 +75,18 @@ public class OrganicLover : MonoBehaviour
 
             //Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
 
-            if (addingToCart.currentLettuce == 1)
+            if (addingToCart.currentMeat == 1)
             {
-                message = "This taco is 'gram worthy! #organicAllDayEveryday!";
+                message = "I’m so happy you’re using chicken in your tacos, that's so sustainable.";
                 controller.updateTranslator(message);
-                detectScript.tacoPop = 3;
+                detectScript.tacoPop = 20;
                 anim.SetBool("gotTacoHappy", true);
             }
             else
             {
-                message = "I wish the tacos were more organic.";
+                message = "I’m so disgusted you’re using beef in your tacos, that's so unsustainable.";
                 controller.updateTranslator(message);
-                detectScript.tacoPop = -1;
+                detectScript.tacoPop = -20;
                 anim.SetBool("gotTacoSad", true);
             }
             ordering = false;

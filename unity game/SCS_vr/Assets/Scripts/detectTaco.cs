@@ -10,10 +10,12 @@ public class detectTaco : MonoBehaviour
     public bool onPlate = false;
     public bool moveUp = false;
     public int counter = 0;
+    private string message;
     public GameObject chanceCustomer, chanceCustPos, nextSceneButton, nextScenePos;
 
     IEnumerator OnCollisionEnter(Collision col)
 	{
+        UIController controller = GameObject.Find("UIController").GetComponent<UIController>();
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
         if (col.gameObject.tag == "taco")
 	    {
@@ -27,6 +29,8 @@ public class detectTaco : MonoBehaviour
             pointsScript.sellTaco(tacoPrice, tacoPop);
             if (counter == 5)
             {
+                message = "I'm the city inspector, let's see what ingredients you're using.";
+                controller.updateTranslator(message);
                 Instantiate(chanceCustomer, chanceCustPos.transform.position, transform.rotation);
             }
             else if (counter == 6)

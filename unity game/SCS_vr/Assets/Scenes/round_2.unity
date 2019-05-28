@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 890653478}
-  m_IndirectSpecularColor: {r: 0.72629595, g: 0.7566718, b: 0.7296365, a: 1}
+  m_IndirectSpecularColor: {r: 0.7263223, g: 0.7566841, b: 0.7296347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6959,7 +6959,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Who doesn't love guacamole? While a fan-favorite, avocadoes require much
+  m_Text: Who doesn't love guacamole? While a fan-favorite, avocados require much
     more water than other produce to grow.
 --- !u!222 &537100308
 CanvasRenderer:
@@ -16323,7 +16323,7 @@ MonoBehaviour:
   onPlate: 0
   moveUp: 0
   counter: 0
-  chanceCustomer: {fileID: 1957300421075868, guid: 3707d29b5183e7e4f866ae8e70d9452e,
+  chanceCustomer: {fileID: 1392861916762424, guid: 65ae95a30a31cfa49ba58e16a5340fb5,
     type: 2}
   chanceCustPos: {fileID: 2141718270}
   nextSceneButton: {fileID: 1502507478056966, guid: ead900a175211c743957befb13927d62,

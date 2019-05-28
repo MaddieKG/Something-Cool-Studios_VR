@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NonOrganicLover : MonoBehaviour
+public class ChickenLover : MonoBehaviour
 {
 
 
@@ -46,9 +46,14 @@ public class NonOrganicLover : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+        
+        UIcontrol = GameObject.Find("UIController");
+        UIController controller = UIcontrol.GetComponent<UIController>();
         if (col.gameObject.name == "orderPos")
         {
             ordering = true;
+            message = "One taco, please.";
+            controller.updateTranslator(message);
             anim.SetBool("walkBool", false);
             anim.SetBool("talkStage", true);
         }
@@ -75,18 +80,18 @@ public class NonOrganicLover : MonoBehaviour
 
             //Debug.Log("nonorganicLover on plate: " + detectTaco.onPlate);
 
-            if (addingToCart.currentLettuce == 0)
+            if (addingToCart.currentMeat == 1)
             {
-                message = "I love the tacos! It tastes so prefabricated!";
+                message = "I love the chicken! BTW, why are you wearing that funny headset?";
                 controller.updateTranslator(message);
                 detectScript.tacoPop = 3;
                 anim.SetBool("gotTacoHappy", true);
             }
             else
             {
-                message = "Did the lettuce grow up on a happy farm? Going on about organic. SMH!";
+                message = "I wish the tacos had chicken.";
                 controller.updateTranslator(message);
-                detectScript.tacoPop = -1;
+                detectScript.tacoPop = -3;
                 anim.SetBool("gotTacoSad", true);
             }
             ordering = false;
