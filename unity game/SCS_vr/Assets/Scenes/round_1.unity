@@ -16236,6 +16236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1284999087}
   - component: {fileID: 1284999086}
+  - component: {fileID: 1284999088}
   m_Layer: 0
   m_Name: PointsController
   m_TagString: Untagged
@@ -16268,6 +16269,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1284999088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1284999085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4bb157409ba4342a206c6ab9d392e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsData: {fileID: 11400000, guid: 4f1a7410bc53d7b4b938db60dd6c9cb2, type: 2}
 --- !u!4 &1289355245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4818465643224764, guid: 92487f405f0aebc4499799308a089867,
