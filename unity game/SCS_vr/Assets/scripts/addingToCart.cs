@@ -33,25 +33,26 @@ public class addingToCart : MonoBehaviour
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
         StartControl startScript = GameObject.Find("StartButton").GetComponent<StartControl>();
         detectTaco tacoDetector = GameObject.Find("plate").GetComponent<detectTaco>();
+        
 
         if (ing1In == true && ing2In == true && ing3In == true && conflict == false && startScript.start == true && onPress == true)
         {
             //totalCost *= customers;
             setIngredient(ing1Name, ing2Name, ing3Name);
             onPress = false;
-            tacoDetector.tacoPrice = (totalCost * 3) + totalCost;
             totalCost *= customers;
             totalGreen *= customers;
             pointsScript.buyProducts(totalCost, totalGreen);
             startScript.ready = true;
             Debug.Log("ingredient bought");
         }
+        
+        tacoDetector.tacoPrice = (totalCost * customers);
     }
 
     private void OnTriggerEnter(Collider col)
     {
         addData(col.gameObject.name, 1);
-        Debug.Log(col.gameObject.name);
     }
 
     private void OnTriggerStay(Collider col)

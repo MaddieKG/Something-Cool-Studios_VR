@@ -77,14 +77,14 @@ public class chanceCardCust : MonoBehaviour
 
             if (addingToCart.currentMeat == 1)
             {
-                message = "I’m so happy you’re using chicken in your tacos, that's so sustainable.";
+                message = "Inspector: Congratulations on using sustainable ingredients. I'm going to increase your popularity.";
                 controller.updateTranslator(message);
                 detectScript.tacoPop = 20;
                 anim.SetBool("gotTacoHappy", true);
             }
             else
             {
-                message = "I’m so disgusted you’re using beef in your tacos, that's so unsustainable.";
+                message = "Inspector: You haven't been using sustainable ingredients. I'm reducing your popularity.";
                 controller.updateTranslator(message);
                 detectScript.tacoPop = -20;
                 anim.SetBool("gotTacoSad", true);

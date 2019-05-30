@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour {
 
     public Text newsText;
-    public Text costText, remainingMonText;
+    public Text costText, remainingMonText, tacoPrice;
     public Text moneyText, popText, greenText;
     public Text message;
 
@@ -70,9 +70,11 @@ public class UIController : MonoBehaviour {
     public void setCostText(float cost)
     {
         PointsController pointsScript = GameObject.Find("PointsController").GetComponent<PointsController>();
-        costText.text = "Total cost: " + cost.ToString("0.##");
+        addingToCart cartScript = GameObject.Find("cart").GetComponent<addingToCart>();
+        costText.text = "Total cost: $" + cost.ToString("0.##");
         monRemaining = pointsScript.pointsData.money - cost;
-        remainingMonText.text = "Remaining Money: " + monRemaining.ToString();
+        remainingMonText.text = "Remaining Money: $" + monRemaining.ToString("0.##");
+        tacoPrice.text = "Price of taco: $" + (cartScript.totalCost * 2).ToString("0.##");
     }
 
     //use to update whenever changes are made → make global
